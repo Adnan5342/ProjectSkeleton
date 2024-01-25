@@ -16,6 +16,15 @@ namespace Testing4
         }
 
         [TestMethod]
+        public void MovieIdPropertyOK()
+        {
+            clsMovie AMovie = new clsMovie();
+            Int32 TestData = 1;
+            AMovie.MovieId = TestData;
+            Assert.AreEqual(AMovie.MovieId, TestData); 
+        }
+
+        [TestMethod]
         public void TitlePropertyOK()
         {
             clsMovie AMovie = new clsMovie();
@@ -70,30 +79,30 @@ namespace Testing4
         }
 
         [TestMethod]
-        public void DirectorOK()
+        public void DirectorsOK()
         {
             clsMovie AMovie = new clsMovie();
             string TestData = "John Smith";
-            AMovie.Director = TestData;
-            Assert.AreEqual(AMovie.Director, TestData);
+            AMovie.Directors = TestData;
+            Assert.AreEqual(AMovie.Directors, TestData);
         }
 
         [TestMethod]
-        public void WriterOK()
+        public void WritersOK()
         {
             clsMovie AMovie = new clsMovie();
             string TestData = "Smith John";
-            AMovie.Writer = TestData;
-            Assert.AreEqual(AMovie.Writer, TestData);
+            AMovie.Writers = TestData;
+            Assert.AreEqual(AMovie.Writers, TestData);
         }
 
         [TestMethod]
-        public void StarActorOK()
+        public void StarActorsOK()
         {
             clsMovie AMovie = new clsMovie();
             string TestData = "Tom Holland";
-            AMovie.StarActor= TestData;
-            Assert.AreEqual(AMovie.StarActor, TestData);
+            AMovie.StarActors= TestData;
+            Assert.AreEqual(AMovie.StarActors, TestData);
         }
     }
 }

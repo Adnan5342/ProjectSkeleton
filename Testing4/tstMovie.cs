@@ -19,7 +19,7 @@ namespace Testing4
         public void MovieIdPropertyOK()
         {
             clsMovie AMovie = new clsMovie();
-            Int32 TestData = 1;
+            Int32 TestData = 21;
             AMovie.MovieId = TestData;
             Assert.AreEqual(AMovie.MovieId, TestData); 
         }
@@ -112,8 +112,48 @@ namespace Testing4
             string TestData = "/MovieCoverImages/UnchartedMoviePoster.jpg";
             AMovie.CoverImage = TestData;
             Assert.AreEqual(AMovie.CoverImage, TestData);
-
         }
 
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            clsMovie AMovie = new clsMovie();
+            //boolean stores the validation results
+            Boolean Found = false;
+            Int32 MovieId = 21;
+            Found = AMovie.Find(MovieId);
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestMovieIdFound()
+        {
+            clsMovie AMovie = new clsMovie();
+            //boolean stores the result of the search
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieId = 21;
+            Found = AMovie.Find(MovieId);
+            if (AMovie.MovieId != 21)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestTitleFound()
+        {
+            clsMovie AMovie = new clsMovie();
+            Boolean Found = false;
+            Boolean OK = true; 
+            Int32 MovieId = 21;
+            Found = AMovie.Find(MovieId);
+            if (AMovie.Title != "The Lost World")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
     }
 }

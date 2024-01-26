@@ -155,5 +155,51 @@ namespace Testing4
             }
             Assert.IsTrue(OK);
         }
+
+        [TestMethod]
+        public void TestRuntimeFound()
+        {
+            clsMovie AMovie = new clsMovie();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieId = 21;
+            Found = AMovie.Find(MovieId);
+            if (AMovie.Runtime != new TimeSpan(1, 30, 0))
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestReleaseDateFound()
+        {
+            clsMovie AMovie = new clsMovie();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieId = 21;
+            Found = AMovie.Find(MovieId);
+            if (AMovie.ReleaseDate != new DateTime(2002, 1, 7))
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestDescriptionFound()
+        {
+            clsMovie AMovie = new clsMovie();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieId = 21;
+            Found = AMovie.Find(MovieId);
+            if (AMovie.Description != "A very exciting movie!")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
     }
 }

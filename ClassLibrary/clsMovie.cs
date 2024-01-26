@@ -14,5 +14,6 @@ namespace ClassLibrary
         public string Directors { get; set; }
         public string Writers { get; set; }
         public string StarActors { get; set; }
+        public string CoverImage { get; set; }
     }
 }

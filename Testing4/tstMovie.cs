@@ -101,8 +101,19 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             string TestData = "Tom Holland";
-            AMovie.StarActors= TestData;
+            AMovie.StarActors = TestData;
             Assert.AreEqual(AMovie.StarActors, TestData);
         }
+
+        [TestMethod]
+        public void CoverImageOK()
+        {
+            clsMovie AMovie = new clsMovie();
+            string TestData = "/MovieCoverImages/UnchartedMoviePoster.jpg";
+            AMovie.CoverImage = TestData;
+            Assert.AreEqual(AMovie.CoverImage, TestData);
+
+        }
+
     }
 }

@@ -27,6 +27,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         AMovie.Directors = txtDirectors.Text;
         AMovie.Writers = txtWriters.Text;
         AMovie.StarActors = txtStarActors.Text;
+        AMovie.CoverImage = txtCoverImage.Text;
         //store
         Session["AMovie"] = AMovie;
         //navigate to the viewer page

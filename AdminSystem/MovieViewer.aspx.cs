@@ -24,5 +24,6 @@ public partial class _1Viewer : System.Web.UI.Page
         Response.Write(AMovie.Directors);
         Response.Write(AMovie.Writers);
         Response.Write(AMovie.StarActors);
+        Response.Write(AMovie.CoverImage);
     }
 }

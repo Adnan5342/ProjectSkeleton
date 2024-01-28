@@ -111,5 +111,10 @@ namespace ClassLibrary
             }
         }
 
+        public string Valid(string title, string runtime, string releaseDate, string description, string genre, 
+            string rating, string directors, string writers, string starActors, string coverImage)
+        {
+           return "";
+        }
     }
 }

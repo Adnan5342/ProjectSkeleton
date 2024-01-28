@@ -7,6 +7,17 @@ namespace Testing4
     [TestClass]
     public class tstMovie
     {
+        //good test data 
+        string Title = "Test title";
+        string Runtime = TimeSpan.Parse("1:30").ToString();
+        string ReleaseDate = Convert.ToDateTime("07/01/2002").ToString();
+        string Description = "A very exciting movie!";
+        string Genre = "Action";
+        string Rating = 4.5.ToString();
+        string Directors = "John Smith";
+        string Writers = "Smith John";
+        String StarActors = "Tom Holland";
+        string CoverImage = "/MovieCoverImages/UnchartedMoviePoster.jpg";
 
         [TestMethod]
         public void InstanceOK()
@@ -19,7 +30,7 @@ namespace Testing4
         public void MovieIdPropertyOK()
         {
             clsMovie AMovie = new clsMovie();
-            Int32 TestData = 4;
+            Int32 TestData = 21;
             AMovie.MovieId = TestData;
             Assert.AreEqual(AMovie.MovieId, TestData); 
         }
@@ -28,7 +39,7 @@ namespace Testing4
         public void TitlePropertyOK()
         {
             clsMovie AMovie = new clsMovie();
-            string TestData = "The Lost World";
+            string TestData = "Test title";
             AMovie.Title = TestData;
             Assert.AreEqual(AMovie.Title, TestData);
         }
@@ -37,7 +48,7 @@ namespace Testing4
         public void RuntimePropertyOK()
         {
             clsMovie AMovie = new clsMovie();
-            TimeSpan TestData = TimeSpan.Parse("2:07");
+            TimeSpan TestData = TimeSpan.Parse("1:30");
             AMovie.Runtime = TestData;
             Assert.AreEqual(AMovie.Runtime, TestData);
         }
@@ -291,6 +302,17 @@ namespace Testing4
                 OK = false;
             }
             Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            clsMovie AMovie = new clsMovie();
+            //store any error message
+            String Error = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors, CoverImage);
+            Assert.AreEqual(Error, "");
         }
 
     }

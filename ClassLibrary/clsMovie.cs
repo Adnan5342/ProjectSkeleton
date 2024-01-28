@@ -82,21 +82,34 @@ namespace ClassLibrary
             set { mCoverImage = value; }
         }
 
-        public bool Find(int movieId)
+        public bool Find(int MovieId)
         {
-            mMovieId = 21;
-            mTitle = "The Lost World";
-            mRuntime = new TimeSpan(1, 30, 0);
-            mReleaseDate = new DateTime(2002, 1, 7);
-            mDescription = "A very exciting movie!";
-            mGenre = "Action";
-            mRating = 4.5;
-            mDirectors = "John Smith";
-            mWriters = "Smith John";
-            mStarActors = "Tom Holland";
-            mCoverImage = "MovieCoverImages/UnchartedMoviePoster.jpg";
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@MovieId", MovieId);
+            DB.Execute("sproc_tblMovie_FilterByMovieId");
+            //should be either one or zero
+            if (DB.Count == 1)
+            {
+                //copy data from database to private data members
+                mMovieId = Convert.ToInt32(DB.DataTable.Rows[0]["MovieId"]);
+                mTitle = Convert.ToString(DB.DataTable.Rows[0]["Title"]);
+                mRuntime = TimeSpan.Parse(Convert.ToString(DB.DataTable.Rows[0]["Runtime"]));
+                mReleaseDate = Convert.ToDateTime(DB.DataTable.Rows[0]["ReleaseDate"]);
+                mDescription = Convert.ToString(DB.DataTable.Rows[0]["Description"]);
+                mGenre = Convert.ToString(DB.DataTable.Rows[0]["Genre"]);
+                mRating = Convert.ToDouble(DB.DataTable.Rows[0]["Rating"]);
+                mDirectors = Convert.ToString(DB.DataTable.Rows[0]["Directors"]);
+                mWriters = Convert.ToString(DB.DataTable.Rows[0]["Writers"]);
+                mStarActors = Convert.ToString(DB.DataTable.Rows[0]["StarActors"]);
+                mCoverImage = Convert.ToString(DB.DataTable.Rows[0]["CoverImage"]);
 
-            return true;
+                return true;
+            }     
+            else
+            {
+                return false;
+            }
         }
+
     }
 }

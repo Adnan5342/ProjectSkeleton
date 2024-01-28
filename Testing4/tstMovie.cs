@@ -19,7 +19,7 @@ namespace Testing4
         public void MovieIdPropertyOK()
         {
             clsMovie AMovie = new clsMovie();
-            Int32 TestData = 21;
+            Int32 TestData = 4;
             AMovie.MovieId = TestData;
             Assert.AreEqual(AMovie.MovieId, TestData); 
         }
@@ -37,7 +37,7 @@ namespace Testing4
         public void RuntimePropertyOK()
         {
             clsMovie AMovie = new clsMovie();
-            TimeSpan TestData = new TimeSpan(1, 30, 0);
+            TimeSpan TestData = TimeSpan.Parse("2:07");
             AMovie.Runtime = TestData;
             Assert.AreEqual(AMovie.Runtime, TestData);
         }
@@ -46,7 +46,7 @@ namespace Testing4
         public void ReleaseDateOK()
         {
             clsMovie AMovie = new clsMovie();
-            DateTime TestData = new DateTime(2002, 1, 7);
+            DateTime TestData = Convert.ToDateTime("07/01/2002");
             AMovie.ReleaseDate = TestData;
             Assert.AreEqual(AMovie.ReleaseDate, TestData);
         }
@@ -120,7 +120,7 @@ namespace Testing4
             clsMovie AMovie = new clsMovie();
             //boolean stores the validation results
             Boolean Found = false;
-            Int32 MovieId = 21;
+            Int32 MovieId = 4;
             Found = AMovie.Find(MovieId);
             Assert.IsTrue(Found);
         }
@@ -132,9 +132,9 @@ namespace Testing4
             //boolean stores the result of the search
             Boolean Found = false;
             Boolean OK = true;
-            Int32 MovieId = 21;
+            Int32 MovieId = 4;
             Found = AMovie.Find(MovieId);
-            if (AMovie.MovieId != 21)
+            if (AMovie.MovieId != 4)
             {
                 OK = false;
             }
@@ -147,9 +147,9 @@ namespace Testing4
             clsMovie AMovie = new clsMovie();
             Boolean Found = false;
             Boolean OK = true; 
-            Int32 MovieId = 21;
+            Int32 MovieId = 4;
             Found = AMovie.Find(MovieId);
-            if (AMovie.Title != "The Lost World")
+            if (AMovie.Title != "Jurassic Park")
             {
                 OK = false;
             }
@@ -162,9 +162,9 @@ namespace Testing4
             clsMovie AMovie = new clsMovie();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 MovieId = 21;
+            Int32 MovieId = 4;
             Found = AMovie.Find(MovieId);
-            if (AMovie.Runtime != new TimeSpan(1, 30, 0))
+            if (AMovie.Runtime != TimeSpan.Parse("2:07"))
             {
                 OK = false;
             }
@@ -177,9 +177,9 @@ namespace Testing4
             clsMovie AMovie = new clsMovie();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 MovieId = 21;
+            Int32 MovieId = 4;
             Found = AMovie.Find(MovieId);
-            if (AMovie.ReleaseDate != new DateTime(2002, 1, 7))
+            if (AMovie.ReleaseDate != Convert.ToDateTime("15/07/1993"))
             {
                 OK = false;
             }
@@ -192,9 +192,101 @@ namespace Testing4
             clsMovie AMovie = new clsMovie();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 MovieId = 21;
+            Int32 MovieId = 4;
             Found = AMovie.Find(MovieId);
-            if (AMovie.Description != "A very exciting movie!")
+            if (AMovie.Description != "A pragmatic paleontologist touring an almost complete theme park " +
+                "on an island in Central America is tasked with protecting a couple of kids after a power " +
+                "failure causes the park's cloned dinosaurs to run loose.")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void GenreFound()
+        {
+            clsMovie AMovie = new clsMovie();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieId = 4;
+            Found = AMovie.Find(MovieId);
+            if (AMovie.Genre != "Action, Adventure, Sci-fi")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void RatingFound()
+        {
+            clsMovie AMovie = new clsMovie();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieId = 4;
+            Found = AMovie.Find(MovieId);
+            if (AMovie.Rating != 4.1)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void DirectorsFound()
+        {
+            clsMovie AMovie = new clsMovie();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieId = 4;
+            Found = AMovie.Find(MovieId);
+            if (AMovie.Directors != "Steven Speilberg")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void WritersFound()
+        {
+            clsMovie AMovie = new clsMovie();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieId = 4;
+            Found = AMovie.Find(MovieId);
+            if (AMovie.Writers != "Michael Crichton, David Koepp")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void StarActorsFound()
+        {
+            clsMovie AMovie = new clsMovie();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieId = 4;
+            Found = AMovie.Find(MovieId);
+            if (AMovie.StarActors != "Sam Niell, Laura Dern, Jeff Goldblum")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void CoverImageFound()
+        {
+            clsMovie AMovie = new clsMovie();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieId = 4;
+            Found = AMovie.Find(MovieId);
+            if (AMovie.CoverImage != "/MovieCoverImages/JurassicParkMoviePoster.jpg")
             {
                 OK = false;
             }

@@ -9,18 +9,19 @@
 <body>
     <form id="form1" runat="server">
     &nbsp;<p>
-            <asp:TextBox ID="txtMovieId" runat="server" style="z-index: 1; left: 107px; top: 20px; position: absolute"></asp:TextBox>
-        </p>
+            &nbsp;</p>
         <div>
         </div>
         <asp:Label ID="lblTitle" runat="server" style="z-index: 1; left: 13px; top: 53px; position: absolute" Text="Title:"></asp:Label>
         <asp:TextBox ID="txtTitle" runat="server" style="z-index: 1; left: 107px; top: 52px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblRuntime" runat="server" style="z-index: 1; left: 13px; top: 88px; position: absolute" Text="Runtime:"></asp:Label>
+        <asp:TextBox ID="txtMovieId" runat="server" style="z-index: 1; left: 107px; top: 20px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtRuntime" runat="server" style="z-index: 1; left: 107px; top: 87px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblMovieId" runat="server" style="z-index: 1; left: 13px; top: 21px; position: absolute" Text="Movie ID:"></asp:Label>
         <asp:Label ID="lblReleaseDate" runat="server" style="z-index: 1; left: 13px; top: 131px; position: absolute" Text="Release Date:"></asp:Label>
         <p>
             <asp:TextBox ID="txtReleaseDate" runat="server" style="z-index: 1; left: 107px; top: 130px; position: absolute"></asp:TextBox>
+            <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 324px; top: 18px; position: absolute" Text="Find" width="60px" />
         </p>
         <p>
             <asp:Label ID="lblCoverImage" runat="server" style="z-index: 1; left: 13px; top: 399px; position: absolute" Text="Cover Image: "></asp:Label>

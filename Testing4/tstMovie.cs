@@ -311,7 +311,79 @@ namespace Testing4
             //store any error message
             String Error = "";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
-                Writers, StarActors, CoverImage);
+                Writers, StarActors);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleExtremeMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Title = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMinMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Title = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Title = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMinPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Title = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMid()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Title = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMaxMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Title = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
             Assert.AreEqual(Error, "");
         }
 

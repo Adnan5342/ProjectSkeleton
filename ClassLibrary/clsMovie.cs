@@ -112,9 +112,11 @@ namespace ClassLibrary
         }
 
         public string Valid(string title, string runtime, string releaseDate, string description, string genre, 
-            string rating, string directors, string writers, string starActors)
+            double rating, string directors, string writers, string starActors)
         {
             String Error = "";
+            TimeSpan TempRuntime;
+            DateTime TempReleaseDate;
             
             if (title.Length == 0)
             {
@@ -129,6 +131,23 @@ namespace ClassLibrary
             if (title.Length > 100)
             {
                 Error = Error + "The title must be under 100 characters: ";
+            }
+
+            TempReleaseDate = Convert.ToDateTime(releaseDate);
+
+            if (TempReleaseDate < Convert.ToDateTime("01/01/1900"))
+            {
+                Error = Error + "The release date must be no earlier than 01/01/1900: ";
+            }
+
+            if (TempReleaseDate > DateTime.Now.Date.AddDays(60))
+            {
+                Error = Error + "The release date must be no later than 60 days in the future: ";
+            }
+
+            if (description.Length > 1000)
+            {
+                Error = Error + "The description must not exceed 1000 characters: ";
             }
 
             return Error;

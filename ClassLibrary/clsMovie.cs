@@ -114,7 +114,24 @@ namespace ClassLibrary
         public string Valid(string title, string runtime, string releaseDate, string description, string genre, 
             string rating, string directors, string writers, string starActors)
         {
-           return "";
+            String Error = "";
+            
+            if (title.Length == 0)
+            {
+                Error = Error + "The title must not be blank: ";
+            }
+
+            if (title.Length < 1)
+            {
+                Error = Error + "The title must have at least 1 character: ";
+            }
+
+            if (title.Length > 100)
+            {
+                Error = Error + "The title must be under 100 characters: ";
+            }
+
+            return Error;
         }
     }
 }

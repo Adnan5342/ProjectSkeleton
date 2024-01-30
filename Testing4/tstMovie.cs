@@ -387,5 +387,701 @@ namespace Testing4
             Assert.AreEqual(Error, "");
         }
 
+        [TestMethod]
+        public void TitleMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Title = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMaxPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Title = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleExtremeMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Title = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RuntimeExtremeMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Runtime = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RuntimeMinMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Runtime = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RuntimeMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Runtime = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RuntimeMinPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Runtime = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RuntimeMid()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Runtime = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RuntimeMaxMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Runtime = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RuntimeMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Runtime = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RuntimeMaxPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Runtime = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RuntimeExtremeMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Runtime = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionExtremeMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Description = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMinMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Description = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Description = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMinPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Description = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMid()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Description = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMaxMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Description = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Description = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMaxPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Description = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionExtremeMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Description = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenreExtremeMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Genre = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenreMinMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Genre = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenreMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Genre = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenreMinPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Genre = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenreMid()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Genre = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenreMaxMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Genre = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenreMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Genre = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenreMaxPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Genre = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenreExtremeMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Genre = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Rating = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMinPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Rating = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMid()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Rating = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMaxMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Rating = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Rating = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMaxPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Rating = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingExtremeMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Rating = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DirectorsMinMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Directors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DirectorsMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Directors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DirectorsMaxMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Directors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DirectorsMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Directors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DirectorsMaxPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Directors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DirectorsExtremeMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Directors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void WritersMinMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Writers = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void WritersMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Writers = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void WritersMinPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Writers = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void WritersMid()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Writers = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void WritersMaxMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Writers = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void WritersMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Writers = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void WritersMaxPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Writers = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void WritersExtremeMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string Writers = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StarActorsMin()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string StarActors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StarActorsMinPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string StarActors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StarActorsMid()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string StarActors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StarActorsMaxMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string StarActors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StarActorsMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string StarActors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there ISN'T an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StarActorsMaxPlusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string StarActors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StarActorsExtremeMax()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string StarActors = "";
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
     }
 }

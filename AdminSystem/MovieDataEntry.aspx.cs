@@ -8,13 +8,36 @@ using ClassLibrary;
 
 public partial class _1_DataEntry : System.Web.UI.Page
 {
-    p
+    Int32 MovieId;
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        Int32 MovieId;
-
         MovieId = Convert.ToInt32(Session["MovieId"]);
-        
+        if (IsPostBack == false)
+        {
+            if (MovieId != -1)
+            {
+                DisplayMovies();
+            }
+        }
+    }
+
+    void DisplayMovies()
+    {
+        clsMovieCollection MovieList = new clsMovieCollection();
+        MovieList.ThisMovie.Find(MovieId);
+
+        txtMovieId.Text = MovieList.ThisMovie.MovieId.ToString();
+        txtTitle.Text = MovieList.ThisMovie.Title;
+        txtRuntime.Text = MovieList.ThisMovie.Runtime.ToString();
+        txtReleaseDate.Text = MovieList.ThisMovie.ReleaseDate.ToString();
+        txtDescription.Text = MovieList.ThisMovie.Description;
+        txtGenre.Text = MovieList.ThisMovie.Genre;
+        txtRating.Text = MovieList.ThisMovie.Rating.ToString();
+        txtDirectors.Text = MovieList.ThisMovie.Directors;
+        txtWriters.Text = MovieList.ThisMovie.Writers;
+        txtStarActors.Text = MovieList.ThisMovie.StarActors;
+        txtCoverImage.Text = MovieList.ThisMovie.CoverImage;
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
@@ -48,6 +71,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         if (Error == "")
         {
             //capture
+            AMovie.MovieId = MovieId;
             AMovie.Title = Title;
             AMovie.Runtime = TimeSpan.Parse(Runtime);
             AMovie.ReleaseDate = Convert.ToDateTime(ReleaseDate);
@@ -58,16 +82,24 @@ public partial class _1_DataEntry : System.Web.UI.Page
             AMovie.Writers = Writers;
             AMovie.StarActors = StarActors;
             AMovie.CoverImage = CoverImage;
-            
+
             clsMovieCollection MovieList = new clsMovieCollection();
-            MovieList.ThisMovie = AMovie;
-            MovieList.Add();
-            //navigate to the viewer page
+
+            if (MovieId == -1)
+            {
+                MovieList.ThisMovie = AMovie;
+                MovieList.Add();
+            }
+            else
+            {
+                MovieList.ThisMovie.Find(MovieId);
+                MovieList.ThisMovie = AMovie;
+                MovieList.Update();
+            }
             Response.Redirect("MovieList.aspx");
         }
         else
         {
-            //display error
             lblError.Text = Error;
         }
     }

@@ -8,9 +8,13 @@ using ClassLibrary;
 
 public partial class _1_DataEntry : System.Web.UI.Page
 {
+    p
     protected void Page_Load(object sender, EventArgs e)
     {
+        Int32 MovieId;
 
+        MovieId = Convert.ToInt32(Session["MovieId"]);
+        
     }
 
     protected void btnOK_Click(object sender, EventArgs e)

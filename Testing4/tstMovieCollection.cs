@@ -124,6 +124,18 @@ namespace Testing4
             TestItem.Title = "A new film";
             TestItem.Runtime = TimeSpan.Parse("3:00");
             TestItem.ReleaseDate = Convert.ToDateTime("01/01/2001");
+            TestItem.Description = "This is a new description that replaces the old one.";
+            TestItem.Genre = "Thriller";
+            TestItem.Rating = 1.7;
+            TestItem.Directors = "Director name";
+            TestItem.Writers = "Writer name";
+            TestItem.StarActors = "Actor name";
+            TestItem.CoverImage = "";
+
+            AllMovies.ThisMovie = TestItem;
+            AllMovies.Update();
+            AllMovies.ThisMovie.Find(PrimaryKey);
+            Assert.AreEqual(AllMovies.ThisMovie, TestItem);
         }
 
     }

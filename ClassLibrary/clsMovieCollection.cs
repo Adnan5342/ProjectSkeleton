@@ -92,5 +92,24 @@ namespace ClassLibrary
 
             return DB.Execute("sproc_tblMovie_Insert");
         }
+
+        public void Update()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@MovieId", mThisMovie.MovieId);
+            DB.AddParameter("@Title", mThisMovie.Title);
+            DB.AddParameter("@Runtime", mThisMovie.Runtime);
+            DB.AddParameter("@ReleaseDate", mThisMovie.ReleaseDate);
+            DB.AddParameter("@Description", mThisMovie.Description);
+            DB.AddParameter("@Genre", mThisMovie.Genre);
+            DB.AddParameter("@Rating", mThisMovie.Rating);
+            DB.AddParameter("@Directors", mThisMovie.Directors);
+            DB.AddParameter("@Writers", mThisMovie.Writers);
+            DB.AddParameter("@StarActors", mThisMovie.StarActors);
+            DB.AddParameter("@CoverImage", mThisMovie.CoverImage);
+
+            DB.Execute("sproc_tblMovie_Update");
+        }
     }
 }

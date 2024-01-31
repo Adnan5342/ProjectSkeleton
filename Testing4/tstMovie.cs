@@ -18,7 +18,6 @@ namespace Testing4
         string Directors = "John Smith";
         string Writers = "Smith John";
         String StarActors = "Tom Holland";
-        string CoverImage = "/MovieCoverImages/UnchartedMoviePoster.jpg";
 
         [TestMethod]
         public void InstanceOK()

@@ -111,5 +111,12 @@ namespace ClassLibrary
 
             DB.Execute("sproc_tblMovie_Update");
         }
+
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@MovieId", mThisMovie.MovieId);
+            DB.Execute("sproc_tblMovie_Delete");
+        }
     }
 }

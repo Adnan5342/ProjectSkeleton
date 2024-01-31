@@ -124,7 +124,7 @@ namespace Testing4
             TestItem.Title = "A new film";
             TestItem.Runtime = TimeSpan.Parse("3:00");
             TestItem.ReleaseDate = Convert.ToDateTime("01/01/2001");
-            TestItem.Description = "This is a new description that replaces the old one.";
+            TestItem.Description = "This is a new description.";
             TestItem.Genre = "Thriller";
             TestItem.Rating = 1.7;
             TestItem.Directors = "Director name";
@@ -133,9 +133,52 @@ namespace Testing4
             TestItem.CoverImage = "";
 
             AllMovies.ThisMovie = TestItem;
+            PrimaryKey = AllMovies.Add();
+            TestItem.MovieId = PrimaryKey;
+
+            //modify
+            TestItem.Title = "A different film";
+            TestItem.Runtime = TimeSpan.Parse("1:00");
+            TestItem.ReleaseDate = Convert.ToDateTime("23/09/2019");
+            TestItem.Description = "I have replaced the description.";
+            TestItem.Genre = "Horror";
+            TestItem.Rating = 3.0;
+            TestItem.Directors = "Steven Connor";
+            TestItem.Writers = "Sarah Hikkins";
+            TestItem.StarActors = "Zendaya";
+            TestItem.CoverImage = "";
+
+            AllMovies.ThisMovie = TestItem;
             AllMovies.Update();
             AllMovies.ThisMovie.Find(PrimaryKey);
             Assert.AreEqual(AllMovies.ThisMovie, TestItem);
+        }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsMovieCollection AllMovies = new clsMovieCollection();
+            clsMovie TestItem = new clsMovie();
+            Int32 PrimaryKey = 0;
+
+            TestItem.Title = "A new film";
+            TestItem.Runtime = TimeSpan.Parse("3:00");
+            TestItem.ReleaseDate = Convert.ToDateTime("01/01/2001");
+            TestItem.Description = "This is a new description.";
+            TestItem.Genre = "Thriller";
+            TestItem.Rating = 1.7;
+            TestItem.Directors = "Director name";
+            TestItem.Writers = "Writer name";
+            TestItem.StarActors = "Actor name";
+            TestItem.CoverImage = "";
+
+            AllMovies.ThisMovie = TestItem;
+            PrimaryKey = AllMovies.Add();
+            TestItem.MovieId = PrimaryKey;
+            AllMovies.ThisMovie.Find(PrimaryKey);
+            AllMovies.Delete();
+            Boolean Found = AllMovies.ThisMovie.Find(PrimaryKey);
+            Assert.IsFalse(Found);
         }
 
     }

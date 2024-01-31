@@ -21,7 +21,6 @@ public partial class _1_List : System.Web.UI.Page
     {
         clsMovieCollection Movies = new clsMovieCollection();
         lstMovieList.DataSource = Movies.MovieList;
-        lstMovieList.DataSource = Movies.MovieList;
         lstMovieList.DataValueField = "MovieId";
         lstMovieList.DataTextField = "Title";
         lstMovieList.DataBind();
@@ -30,8 +29,7 @@ public partial class _1_List : System.Web.UI.Page
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-        Int32 MovieId;
-        Session["MovieId"] = MovieId;
+        Session["MovieId"] = -1;
         Response.Redirect("MovieDataEntry.aspx");
     }
 
@@ -47,7 +45,22 @@ public partial class _1_List : System.Web.UI.Page
         }
         else
         {
-            lblError.Text = "Please select a record to edit from the list";
+            lblError.Text = "Please select a record to edit: ";
         }                
+    }
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        Int32 MovieId;
+        if (lstMovieList.SelectedIndex != -1)
+        {
+            MovieId = Convert.ToInt32(lstMovieList.SelectedValue);
+            Session["MovieId"] = MovieId;
+            Response.Redirect("MovieConfirmDelete.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a record to delete: ";
+        }
     }
 }

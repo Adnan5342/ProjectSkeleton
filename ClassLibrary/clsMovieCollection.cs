@@ -12,11 +12,17 @@ namespace ClassLibrary
 
         public clsMovieCollection()
         {
-            Int32 Index = 0;
-            Int32 RecordCount = 0;
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblMovie_SelectAll");
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            Int32 Index = 0;
+            Int32 RecordCount;
             RecordCount = DB.Count;
+            mMovieList = new List<clsMovie>();
 
             while (Index < RecordCount)
             {
@@ -117,6 +123,15 @@ namespace ClassLibrary
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@MovieId", mThisMovie.MovieId);
             DB.Execute("sproc_tblMovie_Delete");
+        }
+
+        public void ReportByTitle(string Title)
+        {
+            //filters records based on title
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Title", Title);
+            DB.Execute("sproc_tblMovie_FilterByTitle");
+            PopulateArray(DB);
         }
     }
 }

@@ -181,5 +181,47 @@ namespace Testing4
             Assert.IsFalse(Found);
         }
 
+        [TestMethod]
+        public void ReportByTitleMethodOK()
+        {
+            clsMovieCollection AllMovies = new clsMovieCollection();
+            clsMovieCollection FilteredMovies = new clsMovieCollection();
+            FilteredMovies.ReportByTitle("");
+            Assert.AreEqual(AllMovies.Count, FilteredMovies.Count);
+        }
+
+        [TestMethod]
+        public void ReportByTitleNoneFound() 
+        {
+            clsMovieCollection FilteredMovies = new clsMovieCollection();
+            FilteredMovies.ReportByTitle("aaaaaaaaa");
+            Assert.AreEqual(0, FilteredMovies.Count);
+        }
+
+        [TestMethod]
+        public void ReportByTitleTestDataFound()
+        {
+            clsMovieCollection FilteredMovies = new clsMovieCollection();
+            Boolean OK = true;
+            FilteredMovies.ReportByTitle("A different film");
+
+            if (FilteredMovies.Count == 2)
+            {
+                if (FilteredMovies.MovieList[0].MovieId != 1030)
+                {
+                    OK = false;
+                }
+                if (FilteredMovies.MovieList[1].MovieId != 1034)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
     }
 }

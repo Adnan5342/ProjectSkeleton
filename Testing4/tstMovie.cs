@@ -547,7 +547,7 @@ namespace Testing4
             clsMovie AMovie = new clsMovie();
             String Error = "";
             TimeSpan TestRuntime;
-            TestRuntime = TimeSpan.Parse("50:00");
+            TestRuntime = TimeSpan.FromHours(50);
             string Runtime = TestRuntime.ToString();
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -912,6 +912,18 @@ namespace Testing4
         }
 
         [TestMethod]
+        public void RatingMinMinusOne()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            double Rating = -0.1;
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
         public void RatingMin()
         {
             clsMovie AMovie = new clsMovie();
@@ -991,6 +1003,26 @@ namespace Testing4
             double Rating = 15;
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
+            //test to see that there IS an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingInvalidData()
+        {
+            clsMovie AMovie = new clsMovie();
+            String Error = "";
+            string invalidRating = "Invalid rating";
+            double Rating;
+            if (double.TryParse(invalidRating, out Rating))
+            {
+                Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                    Writers, StarActors);
+            }
+            else
+            {
+                Error = "Must be a valid 'rating': ";  
+            }
             //test to see that there IS an error
             Assert.AreNotEqual(Error, "");
         }

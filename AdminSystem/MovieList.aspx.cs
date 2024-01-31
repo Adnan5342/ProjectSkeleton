@@ -30,7 +30,24 @@ public partial class _1_List : System.Web.UI.Page
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-        Session["MovieId"] = -1;
+        Int32 MovieId;
+        Session["MovieId"] = MovieId;
         Response.Redirect("MovieDataEntry.aspx");
+    }
+
+    protected void btnEdit_Click(object sender, EventArgs e)
+    {
+        Int32 MovieId;
+
+        if (lstMovieList.SelectedIndex != -1)
+        {
+            MovieId = Convert.ToInt32(lstMovieList.SelectedValue);
+            Session["MovieId"] = MovieId;
+            Response.Redirect("MovieDataEntry.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a record to edit from the list";
+        }                
     }
 }

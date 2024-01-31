@@ -54,10 +54,12 @@ public partial class _1_DataEntry : System.Web.UI.Page
             AMovie.Writers = Writers;
             AMovie.StarActors = StarActors;
             AMovie.CoverImage = CoverImage;
-            //store
-            Session["AMovie"] = AMovie;
+            
+            clsMovieCollection MovieList = new clsMovieCollection();
+            MovieList.ThisMovie = AMovie;
+            MovieList.Add();
             //navigate to the viewer page
-            Response.Write("MovieViewer.aspx");
+            Response.Redirect("MovieList.aspx");
         }
         else
         {

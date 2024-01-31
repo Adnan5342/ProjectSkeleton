@@ -86,5 +86,45 @@ namespace Testing4
             Assert.AreEqual(AllMovies.Count, TestList.Count);
         }
 
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            clsMovieCollection AllMovies = new clsMovieCollection();
+            clsMovie TestItem = new clsMovie();
+            Int32 PrimaryKey = 0;
+
+            TestItem.MovieId = 4;
+            TestItem.Title = "Jurassic Park";
+            TestItem.Runtime = TimeSpan.Parse("2:07");
+            TestItem.ReleaseDate = Convert.ToDateTime("15/07/1993");
+            TestItem.Description = "A pragmatic paleontologist touring an almost complete theme park on " +
+                "an island in Central America is tasked with protecting a couple of kids after a power failure " +
+                "causes the park's cloned dinosaurs to run loose.";
+            TestItem.Genre = "Action, Adventure, Sci-fi";
+            TestItem.Rating = 4.1;
+            TestItem.Directors = "Steven Speilberg";
+            TestItem.Writers = "Michael Crichton, David Koepp";
+            TestItem.StarActors = "Sam Niell, Laura Dern, Jeff Goldblum";
+            TestItem.CoverImage = "/MovieCoverImages/JurassicParkMoviePoster.jpg";
+
+            AllMovies.ThisMovie = TestItem;
+            PrimaryKey = AllMovies.Add();
+            TestItem.MovieId = PrimaryKey;
+            AllMovies.ThisMovie.Find(PrimaryKey);
+            Assert.AreEqual(AllMovies.ThisMovie, TestItem);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            clsMovieCollection AllMovies = new clsMovieCollection();
+            clsMovie TestItem = new clsMovie();
+            Int32 PrimaryKey = 0;
+
+            TestItem.Title = "A new film";
+            TestItem.Runtime = TimeSpan.Parse("3:00");
+            TestItem.ReleaseDate = Convert.ToDateTime("01/01/2001");
+        }
+
     }
 }

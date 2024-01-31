@@ -4,11 +4,33 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ClassLibrary;
 
 public partial class _1_List : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (IsPostBack == false)
+        {
+            //update list
+            DisplayMovies();
+        }
+    }
 
+    void DisplayMovies()
+    {
+        clsMovieCollection Movies = new clsMovieCollection();
+        lstMovieList.DataSource = Movies.MovieList;
+        lstMovieList.DataSource = Movies.MovieList;
+        lstMovieList.DataValueField = "MovieId";
+        lstMovieList.DataTextField = "Title";
+        lstMovieList.DataBind();
+    }
+
+
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        Session["MovieId"] = -1;
+        Response.Redirect("MovieDataEntry.aspx");
     }
 }

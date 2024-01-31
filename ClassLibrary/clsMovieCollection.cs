@@ -8,6 +8,7 @@ namespace ClassLibrary
     {
         //private data member
         List<clsMovie> mMovieList = new List<clsMovie>();
+        clsMovie mThisMovie = new clsMovie();
 
         public clsMovieCollection()
         {
@@ -62,6 +63,34 @@ namespace ClassLibrary
             }
         }
 
-        public clsMovie ThisMovie { get; set; }
+        public clsMovie ThisMovie
+        {
+            get
+            {
+                return mThisMovie;
+            }
+            set
+            {
+                mThisMovie = value;
+            }
+        }
+
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@Title", mThisMovie.Title);
+            DB.AddParameter("@Runtime", mThisMovie.Runtime);
+            DB.AddParameter("@ReleaseDate", mThisMovie.ReleaseDate);
+            DB.AddParameter("@Description", mThisMovie.Description);
+            DB.AddParameter("@Genre", mThisMovie.Genre);
+            DB.AddParameter("@Rating", mThisMovie.Rating);
+            DB.AddParameter("@Directors", mThisMovie.Directors);
+            DB.AddParameter("@Writers", mThisMovie.Writers);
+            DB.AddParameter("@StarActors", mThisMovie.StarActors);
+            DB.AddParameter("@CoverImage", mThisMovie.CoverImage);
+
+            return DB.Execute("sproc_tblMovie_Insert");
+        }
     }
 }

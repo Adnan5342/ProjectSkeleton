@@ -30,7 +30,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         }
         else
         {
-            Rating = double.Parse(txtRating.Text);
+            Rating = 0;
         }
         string Directors = txtDirectors.Text;
         string Writers = txtWriters.Text;
@@ -44,22 +44,23 @@ public partial class _1_DataEntry : System.Web.UI.Page
         if (Error == "")
         {
             //capture
-            AMovie.MovieId = Convert.ToInt32(txtMovieId.Text);
-            AMovie.Title = txtTitle.Text;
-            AMovie.Runtime = TimeSpan.Parse(txtRuntime.Text);
-            AMovie.ReleaseDate = Convert.ToDateTime(txtReleaseDate.Text);
-            AMovie.Description = txtDescription.Text;
-            AMovie.Genre = txtGenre.Text;
-            AMovie.Rating = Convert.ToDouble(txtRating.Text);
-            AMovie.Directors = txtDirectors.Text;
-            AMovie.Writers = txtWriters.Text;
-            AMovie.StarActors = txtStarActors.Text;
-            AMovie.CoverImage = txtCoverImage.Text;
+            AMovie.Title = Title;
+            AMovie.Runtime = TimeSpan.Parse(Runtime);
+            AMovie.ReleaseDate = Convert.ToDateTime(ReleaseDate);
+            AMovie.Description = Description;
+            AMovie.Genre = Genre;
+            AMovie.Rating = Rating; ;
+            AMovie.Directors = Directors;
+            AMovie.Writers = Writers;
+            AMovie.StarActors = StarActors;
+            AMovie.CoverImage = CoverImage;
             //store
             Session["AMovie"] = AMovie;
             //navigate to the viewer page
             Response.Write("MovieViewer.aspx");
-
+        }
+        else
+        {
             //display error
             lblError.Text = Error;
         }

@@ -1011,17 +1011,9 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
-            string invalidRating = "Invalid rating";
-            double Rating;
-            if (double.TryParse(invalidRating, out Rating))
-            {
-                Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
-                    Writers, StarActors);
-            }
-            else
-            {
-                Error = "Must be a valid 'rating': ";  
-            }
+            double Rating = -1;
+            Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
+                Writers, StarActors);
             //test to see that there IS an error
             Assert.AreNotEqual(Error, "");
         }

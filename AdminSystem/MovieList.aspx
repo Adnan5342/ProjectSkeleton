@@ -21,6 +21,9 @@
         <asp:Button ID="btnApply" runat="server" OnClick="btnApply_Click" style="z-index: 1; left: 570px; top: 71px; position: absolute" Text="Apply" />
         <asp:Button ID="btnClear" runat="server" height="26px" OnClick="btnClear_Click" style="z-index: 1; left: 638px; top: 71px; position: absolute" Text="Clear" width="49px" />
         <asp:TextBox ID="txtFilterByTitle" runat="server" style="z-index: 1; left: 570px; top: 39px; position: absolute"></asp:TextBox>
+        <p>
+            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 569px; top: 131px; position: absolute" />
+        </p>
     </form>
 </body>
 </html>

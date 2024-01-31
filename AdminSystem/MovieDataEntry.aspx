@@ -25,6 +25,7 @@
         </p>
         <p>
             <asp:Label ID="lblCoverImage" runat="server" style="z-index: 1; left: 13px; top: 399px; position: absolute" Text="Cover Image: "></asp:Label>
+            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 323px; top: 63px; position: absolute" />
         </p>
         <asp:Label ID="lblDescription" runat="server" style="z-index: 1; left: 13px; top: 172px; position: absolute" Text="Description:"></asp:Label>
         <p>

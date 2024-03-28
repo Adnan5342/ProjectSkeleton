@@ -77,7 +77,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
             AMovie.ReleaseDate = Convert.ToDateTime(ReleaseDate);
             AMovie.Description = Description;
             AMovie.Genre = Genre;
-            AMovie.Rating = Rating; ;
+            AMovie.Rating = Rating; 
             AMovie.Directors = Directors;
             AMovie.Writers = Writers;
             AMovie.StarActors = StarActors;

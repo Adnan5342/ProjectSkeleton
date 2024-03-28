@@ -103,5 +103,46 @@ namespace Testing3
             AShow.CoverImage = TestData;
             Assert.AreEqual(AShow.CoverImage, TestData);
         }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            clsShow AShow = new clsShow();
+            Boolean Found = false;
+            Int32 ShowId = 1;
+            Found = AShow.Find(ShowId);
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestShowIdFound()
+        {
+            clsShow AShow = new clsShow();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ShowId = 1;
+            Found = AShow.Find(ShowId);
+            if (AShow.ShowId != 1)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestTitleFound()
+        {
+            clsShow AShow = new clsShow();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ShowId = 1;
+            Found = AShow.Find(ShowId);
+            if (AShow.Title != "Title")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
     }
 }

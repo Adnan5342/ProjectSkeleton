@@ -1,6 +1,10 @@
 ﻿using ClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
+using System.Reflection.Emit;
+using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace Testing3
 {
@@ -109,7 +113,7 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             Boolean Found = false;
-            Int32 ShowId = 1;
+            Int32 ShowId = 2;
             Found = AShow.Find(ShowId);
             Assert.IsTrue(Found);
         }
@@ -120,9 +124,9 @@ namespace Testing3
             clsShow AShow = new clsShow();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 ShowId = 1;
+            Int32 ShowId = 2;
             Found = AShow.Find(ShowId);
-            if (AShow.ShowId != 1)
+            if (AShow.ShowId != 2)
             {
                 OK = false;
             }
@@ -135,14 +139,133 @@ namespace Testing3
             clsShow AShow = new clsShow();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 ShowId = 1;
+            Int32 ShowId = 2;
             Found = AShow.Find(ShowId);
-            if (AShow.Title != "Title")
+            if (AShow.Title != "Arrow")
             {
                 OK = false;
             }
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
+        public void TestSeasonsFound()
+        {
+            clsShow AShow = new clsShow();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ShowId = 2;
+            Found = AShow.Find(ShowId);
+            if (AShow.Seasons != 8)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestReleaseDateFound()
+        {
+            clsShow AShow = new clsShow();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ShowId = 2;
+            Found = AShow.Find(ShowId);
+            if (AShow.ReleaseDate != Convert.ToDateTime("22/10/2012"))
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestDescriptionFound()
+        {
+            clsShow AShow = new clsShow();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ShowId = 2;
+            Found = AShow.Find(ShowId);
+            if (AShow.Description != "Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. " +
+                "He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.\r\n\r\n")
+             {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        
+    [TestMethod]
+    public void TestGenreFound()
+    {
+        clsShow AShow = new clsShow();
+        Boolean Found = false;
+        Boolean OK = true;
+        Int32 ShowId = 2;
+        Found = AShow.Find(ShowId);
+        if (AShow.Genre != "Action, Adventure, Crime")
+        {
+            OK = false;
+        }
+        Assert.IsTrue(OK);
+    }
+    [TestMethod]
+    public void TestRatingFound()
+    {
+        clsShow AShow = new clsShow();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ShowId = 2;
+            Found = AShow.Find(ShowId);
+            if (AShow.Rating != 3.75)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCreators()
+        {
+            clsShow AShow = new clsShow();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ShowId = 2;
+            Found = AShow.Find(ShowId);
+            if (AShow.Creators != "Greg Berlanti, Marc Guggenheim, Andrew Kreisberg")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestStarActors()
+        {
+            clsShow AShow = new clsShow();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ShowId = 2;
+            Found = AShow.Find(ShowId);
+            if (AShow.StarActors != "Stephen Amell, Katie Cassidy, David Ramsey\r\n")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCoverImageOK()
+        {
+            clsShow AShow = new clsShow();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ShowId = 2;
+            Found = AShow.Find(ShowId);
+            if (AShow.CoverImage != string.Empty)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
     }
 }

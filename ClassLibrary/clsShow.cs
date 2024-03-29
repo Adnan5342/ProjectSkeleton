@@ -136,18 +136,28 @@ namespace ClassLibrary
 
         public bool Find(int ShowId)
         {
-            mShowId = 1;
-            mTitle = "Title";
-            mSeasons = 3;
-            mReleaseDate = Convert.ToDateTime("07/01/2002");
-            mDescription = "A lovely description";
-            mGenre = "Action";
-            mRating = 4.5;
-            mCreators = "A name";
-            mStarActors = "Another name";
-            mCoverImage = string.Empty;
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@ShowId", ShowId);
+            DB.Execute("sproc_tblShow_FilterByShowId");
+            if (DB.Count == 1)
+            {
+                mShowId = Convert.ToInt32(DB.DataTable.Rows[0]["ShowId"]);
+                mTitle = Convert.ToString(DB.DataTable.Rows[0]["Title"]);
+                mSeasons = Convert.ToInt32(DB.DataTable.Rows[0]["Seasons"]);
+                mReleaseDate = Convert.ToDateTime(DB.DataTable.Rows[0]["ReleaseDate"]);
+                mDescription = Convert.ToString(DB.DataTable.Rows[0]["Description"]);
+                mGenre = Convert.ToString(DB.DataTable.Rows[0]["Genre"]);
+                mRating = Convert.ToDouble(DB.DataTable.Rows[0]["Rating"]);
+                mCreators = Convert.ToString(DB.DataTable.Rows[0]["Creators"]);
+                mStarActors = Convert.ToString(DB.DataTable.Rows[0]["StarActors"]);
+                mCoverImage = Convert.ToString(DB.DataTable.Rows[0]["CoverImage"]);
 
-            return true;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

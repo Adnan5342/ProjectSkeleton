@@ -203,15 +203,15 @@ namespace Testing4
         {
             clsMovieCollection FilteredMovies = new clsMovieCollection();
             Boolean OK = true;
-            FilteredMovies.ReportByTitle("A different film");
+            FilteredMovies.ReportByTitle("Jurassic Park");
 
             if (FilteredMovies.Count == 2)
             {
-                if (FilteredMovies.MovieList[0].MovieId != 1030)
+                if (FilteredMovies.MovieList[0].MovieId != 4)
                 {
                     OK = false;
                 }
-                if (FilteredMovies.MovieList[1].MovieId != 1034)
+                if (FilteredMovies.MovieList[1].MovieId != 1043)
                 {
                     OK = false;
                 }

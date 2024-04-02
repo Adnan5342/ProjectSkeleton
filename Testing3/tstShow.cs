@@ -11,6 +11,14 @@ namespace Testing3
     [TestClass]
     public class tstShow
     {
+        string Title = "Test Title";
+        string Description = "This is a test description.";
+        string Genre = "Action";
+        string Creators = "A person";
+        string StarActors = "Another person";
+        string CoverImage = "/MovieCoverImages/ArrowShowPoster.jpg";
+        string ReleaseDate = Convert.ToDateTime("07/01/2002").ToString();
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -267,5 +275,175 @@ namespace Testing3
             }
             Assert.IsTrue(OK);
         }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMinLessOne()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Title = "";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMin()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Title = "a";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMinPlusOne()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Title = "aa";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMid()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Title = "";
+            Title = Title.PadRight(50, 'a');
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMaxMinusOne()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Title = "";
+            Title = Title.PadRight(99, 'a');
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMax()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Title = "";
+            Title = Title.PadRight(100, 'a');
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleMaxPlusOne()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Title = "";
+            Title = Title.PadRight(101, 'a');
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TitleExtremeMax()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Title = "";
+            Title = Title.PadRight(300, 'a');
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMin()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Description = "";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMinPlusOne()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Description = "a";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMid()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Description = "";
+            Description = Description.PadRight(500, 'a');
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMaxMinusOne()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Description = "";
+            Description = Description.PadRight(999, 'a');
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMax()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Description = "";
+            Description = Description.PadRight(1000, 'a');
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionMaxPlusOne()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Description = "";
+            Description = Description.PadRight(1001, 'a');
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DescriptionExtremeMax()
+        {
+            clsShow AShow = new clsShow();
+            String Error = "";
+            string Description = "";
+            Description = Description.PadRight(1500, 'a');
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
     }
 }

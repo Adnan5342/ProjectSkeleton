@@ -159,5 +159,27 @@ namespace ClassLibrary
                 return false;
             }
         }
+
+        public string Valid(string title, string description, string genre, string creators, 
+            string starActors, string coverImage, string releaseDate)
+        {
+            String Error = "";
+
+            if (title.Length == 0)
+            {
+                Error = Error + "The title may not be blank: ";
+            }
+            if (title.Length > 100)
+            {
+                Error = Error + "The title must not exceed 100 characters: ";
+            }
+
+            if (description.Length > 1000)
+            {
+                Error = Error + "The description must not exceed 1000 characters: ";
+            }
+
+            return Error;
+        }
     }
 }

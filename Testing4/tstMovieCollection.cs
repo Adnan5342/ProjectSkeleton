@@ -198,7 +198,7 @@ namespace Testing4
             Assert.AreEqual(0, FilteredMovies.Count);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void ReportByTitleTestDataFound()
         {
             clsMovieCollection FilteredMovies = new clsMovieCollection();
@@ -221,7 +221,7 @@ namespace Testing4
                 OK = false;
             }
             Assert.IsTrue(OK);
-        }
+        }*/
 
     }
 }

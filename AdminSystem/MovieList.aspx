@@ -24,6 +24,7 @@
         <p>
             <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 569px; top: 131px; position: absolute" />
         </p>
+        <asp:Button ID="btnShowPage" runat="server" OnClick="btnShowPage_Click" style="z-index: 1; left: 570px; top: 268px; position: absolute" Text="Go to show list" />
     </form>
 </body>
 </html>

@@ -161,7 +161,7 @@ namespace ClassLibrary
         }
 
         public string Valid(string title, string description, string genre, string creators, 
-            string starActors, string coverImage, string releaseDate)
+            string starActors, string coverImage, string releaseDate, double rating)
         {
             String Error = "";
             DateTime TempReleaseDate;
@@ -220,6 +220,23 @@ namespace ClassLibrary
             catch
             {
                 Error = Error + "The 'release date' must be a valid date: ";
+            }
+
+            try
+            {
+                if (rating < 0)
+                {
+                    Error = Error + "The 'rating' must not be a negative number: ";
+                }
+
+                if (rating > 5)
+                {
+                    Error = Error + "The 'rating' cannot be above 5: ";
+                }
+            }
+            catch
+            {
+                Error = Error + "The 'rating' must be a valid number from 0 to 5: ";
             }
 
             return Error;

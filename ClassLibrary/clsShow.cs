@@ -164,6 +164,7 @@ namespace ClassLibrary
             string starActors, string coverImage, string releaseDate)
         {
             String Error = "";
+            DateTime TempReleaseDate;
 
             if (title.Length == 0)
             {
@@ -177,6 +178,48 @@ namespace ClassLibrary
             if (description.Length > 1000)
             {
                 Error = Error + "The description must not exceed 1000 characters: ";
+            }
+
+            if (genre.Length < 3)
+            {
+                Error = Error + "The genre must be at least 3 characters: ";
+            }
+            if (genre.Length > 50)
+            {
+                Error = Error + "The genre must not exceed 50 characters: ";
+            }
+
+            if (creators.Length > 200)
+            {
+                Error = Error + "'Creators' must not exceed 200 characters: ";
+            }
+
+            if (starActors.Length > 200)
+            {
+                Error = Error + "'Star Actors must not exceed 200 characters: ";
+            }
+
+            if (coverImage.Length > 100)
+            {
+                Error = Error + "The cover image must not exceed 100 characters: ";
+            }
+
+            try
+            {
+                TempReleaseDate = Convert.ToDateTime(releaseDate);
+
+                if (TempReleaseDate < Convert.ToDateTime("01/01/1900"))
+                {
+                    Error = Error + "The 'release date' must be no earlier than 01/01/1900: ";
+                }
+                if (TempReleaseDate > DateTime.Now.Date.AddDays(60))
+                {
+                    Error = Error + "The 'release date' must be no later than 60 days in the future: ";
+                }
+            }
+            catch
+            {
+                Error = Error + "The 'release date' must be a valid date: ";
             }
 
             return Error;

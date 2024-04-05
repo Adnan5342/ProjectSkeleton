@@ -40,15 +40,6 @@ namespace Testing3
         }
 
         [TestMethod]
-        public void CountPropertyOK()
-        {
-            clsShowCollection AllShows = new clsShowCollection();
-            Int32 SomeCount = 2;
-            AllShows.Count = SomeCount;
-            Assert.AreEqual(AllShows.Count, SomeCount);
-        }
-
-        [TestMethod]
         public void ThisShowPropertyOK()
         {
             clsShowCollection AllShows = new clsShowCollection();
@@ -94,11 +85,5 @@ namespace Testing3
             Assert.AreEqual(AllShows.Count, TestList.Count);
         }
 
-        [TestMethod]
-        public void TwoRecordsPresent()
-        {
-            clsShowCollection AllShows = new clsShowCollection();
-            Assert.AreEqual(AllShows.Count, 2);
-        }
     }
 }

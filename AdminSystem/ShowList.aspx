@@ -10,6 +10,10 @@
     <form id="form1" runat="server">
         <div>
         </div>
+            <asp:ListBox ID="lstShowList" runat="server" style="z-index: 1; left: 10px; top: 15px; position: absolute; height: 480px; width: 531px"></asp:ListBox>
+        <p>
+            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 569px; top: 131px; position: absolute" />
+        </p>
     </form>
 </body>
 </html>

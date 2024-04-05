@@ -19,6 +19,7 @@ namespace Testing3
         string StarActors = "Another person";
         string CoverImage = "/MovieCoverImages/ArrowShowPoster.jpg";
         string ReleaseDate = Convert.ToDateTime("07/01/2002").ToString();
+        int Seasons = 3;
         double Rating = 4.5;
 
         [TestMethod]

@@ -89,5 +89,23 @@ namespace ClassLibrary
 
             return DB.Execute("sproc_tblShow_Insert");
         }
+
+        public void Update()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@ShowId", mThisShow.ShowId);
+            DB.AddParameter("@Title", mThisShow.Title);
+            DB.AddParameter("@Seasons", mThisShow.Seasons);
+            DB.AddParameter("@ReleaseDate", mThisShow.ReleaseDate);
+            DB.AddParameter("@Description", mThisShow.Description);
+            DB.AddParameter("@Genre", mThisShow.Genre);
+            DB.AddParameter("@Rating", mThisShow.Rating);
+            DB.AddParameter("@Creators", mThisShow.Creators);
+            DB.AddParameter("@StarActors", mThisShow.StarActors);
+            DB.AddParameter("@CoverImage", mThisShow.CoverImage);
+
+            DB.Execute("sproc_tblShow_Update");
+        }
     }
 }

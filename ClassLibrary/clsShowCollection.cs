@@ -7,6 +7,7 @@ namespace ClassLibrary
     {
         //private data member
         List<clsShow> mShowList = new List<clsShow>();
+        clsShow mThisShow = new clsShow();
 
         public clsShowCollection()
         {
@@ -60,6 +61,33 @@ namespace ClassLibrary
             }
         }
 
-        public clsShow ThisShow { get; set; }
+        public clsShow ThisShow
+        {
+            get
+            {
+                return mThisShow;
+            }
+            set
+            {
+                mThisShow = value;
+            }
+        }
+
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@Title", mThisShow.Title);
+            DB.AddParameter("@Seasons", mThisShow.Seasons);
+            DB.AddParameter("@ReleaseDate", mThisShow.ReleaseDate);
+            DB.AddParameter("@Description", mThisShow.Description);
+            DB.AddParameter("@Genre", mThisShow.Genre);
+            DB.AddParameter("@Rating", mThisShow.Rating);
+            DB.AddParameter("@Creators", mThisShow.Creators);
+            DB.AddParameter("@StarActors", mThisShow.StarActors);
+            DB.AddParameter("@CoverImage", mThisShow.CoverImage);
+
+            return DB.Execute("sproc_tblShow_Insert");
+        }
     }
 }

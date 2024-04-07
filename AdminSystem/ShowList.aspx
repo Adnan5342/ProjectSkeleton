@@ -10,17 +10,23 @@
     <form id="form1" runat="server">
         <div>
         </div>
-            <asp:ListBox ID="lstShowList" runat="server" style="z-index: 1; left: 10px; top: 15px; position: absolute; height: 480px; width: 531px"></asp:ListBox>
+            <asp:ListBox ID="lstShowList" runat="server" style="z-index: 1; left: 10px; top: 76px; position: absolute; height: 413px; width: 531px"></asp:ListBox>
+        <asp:Label ID="lblTitle" runat="server" Font-Bold="True" Font-Size="X-Large" style="z-index: 1; left: 10px; top: 15px; position: absolute" Text="Show List"></asp:Label>
         <p>
             <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 569px; top: 131px; position: absolute" />
+        <asp:Label ID="lblFilterByTitle" runat="server" style="z-index: 1; left: 569px; top: 15px; position: absolute" Text="Filter by title: "></asp:Label>
         </p>
         <p>
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1; left: 10px; top: 504px; position: absolute" Text="Add new record" />
         <asp:Button ID="btnEdit" runat="server" OnClick="btnEdit_Click" style="z-index: 1; left: 183px; top: 504px; position: absolute" Text="Edit record" width="136px" height="26px" />
+        <asp:TextBox ID="txtFilterByTitle" runat="server" style="z-index: 1; left: 570px; top: 39px; position: absolute"></asp:TextBox>
+        <asp:Button ID="btnApply" runat="server" OnClick="btnApply_Click" style="z-index: 1; left: 570px; top: 71px; position: absolute" Text="Apply" />
         </p>
         <p>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 14px; top: 558px; position: absolute"></asp:Label>
         <asp:Button ID="btnDelete" runat="server" height="26px" OnClick="btnDelete_Click" style="z-index: 1; left: 355px; top: 504px; position: absolute" Text="Delete record" width="136px" />
+        <asp:Button ID="btnClear" runat="server" height="26px" OnClick="btnClear_Click" style="z-index: 1; left: 638px; top: 71px; position: absolute" Text="Clear" width="49px" />
+        <asp:Button ID="btnMoviePage" runat="server" OnClick="btnShowPage_Click" style="z-index: 1; left: 570px; top: 268px; position: absolute" Text="Go to movie list" />
         </p>
     </form>
 </body>

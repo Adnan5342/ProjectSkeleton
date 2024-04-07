@@ -175,5 +175,47 @@ namespace Testing3
             Boolean Found = AllShows.ThisShow.Find(PrimaryKey);
             Assert.IsFalse(Found);
         }
+
+        [TestMethod]
+        public void ReportByTitleMethodOK()
+        {
+            clsShowCollection AllShows = new clsShowCollection();
+            clsShowCollection FilteredShows = new clsShowCollection();
+            FilteredShows.ReportByTitle("");
+            Assert.AreEqual(AllShows.Count, FilteredShows.Count);
+        }
+
+        [TestMethod]
+        public void ReportByTitleNoneFound()
+        {
+            clsShowCollection FilteredShows = new clsShowCollection();
+            FilteredShows.ReportByTitle("xxxx");
+            Assert.AreEqual(0, FilteredShows.Count);
+        }
+
+        [TestMethod]
+        public void ReportByTitleDataFound()
+        {
+            clsShowCollection FilteredShows = new clsShowCollection();
+            Boolean OK = true;
+            FilteredShows.ReportByTitle("Random show");
+
+            if (FilteredShows.Count == 2)
+            {
+                if (FilteredShows.ShowList[0].ShowId != 5)
+                {
+                    OK = false;
+                }
+                if (FilteredShows.ShowList[1].ShowId != 27)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
     }
 }

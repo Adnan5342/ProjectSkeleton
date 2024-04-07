@@ -62,4 +62,30 @@ public partial class _1_List : System.Web.UI.Page
             lblError.Text = "Please select a record to delete: ";
         }
     }
+
+    protected void btnApply_Click(object sender, EventArgs e)
+    {
+        clsShowCollection Shows = new clsShowCollection();
+        Shows.ReportByTitle(txtFilterByTitle.Text);
+        lstShowList.DataSource = Shows.ShowList;
+        lstShowList.DataValueField = "ShowId";
+        lstShowList.DataTextField = "Title";
+        lstShowList.DataBind();
+    }
+
+    protected void btnClear_Click(object sender, EventArgs e)
+    {
+        clsShowCollection Shows = new clsShowCollection();
+        Shows.ReportByTitle("");
+        txtFilterByTitle.Text = "";
+        lstShowList.DataSource = Shows.ShowList;
+        lstShowList.DataValueField = "ShowId";
+        lstShowList.DataTextField= "Title";
+        lstShowList.DataBind();
+    }
+
+    protected void btnShowPage_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieList.aspx");
+    }
 }

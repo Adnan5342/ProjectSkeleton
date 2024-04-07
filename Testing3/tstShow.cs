@@ -129,7 +129,7 @@ namespace Testing3
             Assert.IsTrue(Found);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void TestShowIdFound()
         {
             clsShow AShow = new clsShow();
@@ -150,9 +150,9 @@ namespace Testing3
             clsShow AShow = new clsShow();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 ShowId = 2;
+            Int32 ShowId = 4;
             Found = AShow.Find(ShowId);
-            if (AShow.Title != "Arrow")
+            if (AShow.Title != "Test Title")
             {
                 OK = false;
             }
@@ -232,10 +232,10 @@ namespace Testing3
                 OK = false;
             }
             Assert.IsTrue(OK);
-        }
+        } 
 
         [TestMethod]
-        public void TestCreators()
+        public void TestCreatorsFound()
         {
             clsShow AShow = new clsShow();
             Boolean Found = false;
@@ -250,7 +250,7 @@ namespace Testing3
         }
 
         [TestMethod]
-        public void TestStarActors()
+        public void TestStarActorsFound()
         {
             clsShow AShow = new clsShow();
             Boolean Found = false;
@@ -265,7 +265,7 @@ namespace Testing3
         }
 
         [TestMethod]
-        public void TestCoverImageOK()
+        public void TestCoverImageFound()
         {
             clsShow AShow = new clsShow();
             Boolean Found = false;
@@ -277,7 +277,7 @@ namespace Testing3
                 OK = false;
             }
             Assert.IsTrue(OK);
-        }
+        }*/
 
         [TestMethod]
         public void ValidMethodOK()

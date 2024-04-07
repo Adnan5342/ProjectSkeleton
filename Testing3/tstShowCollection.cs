@@ -148,5 +148,32 @@ namespace Testing3
             AllShows.ThisShow.Find(PrimaryKey);
             Assert.AreEqual(AllShows.ThisShow, TestItem);
         }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsShowCollection AllShows = new clsShowCollection();
+            clsShow TestItem = new clsShow();
+            Int32 PrimaryKey = 0;
+
+            TestItem.ShowId = 1;
+            TestItem.Title = "Test Title";
+            TestItem.Seasons = 3;
+            TestItem.ReleaseDate = Convert.ToDateTime("07/01/2002");
+            TestItem.Description = "This is a test description.";
+            TestItem.Genre = "Action";
+            TestItem.Rating = 4.5;
+            TestItem.Creators = "A person";
+            TestItem.StarActors = "Another person";
+            TestItem.CoverImage = "/MovieCoverImages/ArrowShowPoster.jpg";
+
+            AllShows.ThisShow = TestItem;
+            PrimaryKey = AllShows.Add();
+            TestItem.ShowId = PrimaryKey;
+            AllShows.ThisShow.Find(PrimaryKey);
+            AllShows.Delete();
+            Boolean Found = AllShows.ThisShow.Find(PrimaryKey);
+            Assert.IsFalse(Found);
+        }
     }
 }

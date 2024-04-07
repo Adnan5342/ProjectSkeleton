@@ -24,4 +24,10 @@ public partial class _1_List : System.Web.UI.Page
         lstShowList.DataTextField = "Title";
         lstShowList.DataBind();
     }
+
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        Session["ShowId"] = -1;
+        Response.Redirect("ShowDataEntry.aspx");
+    }
 }

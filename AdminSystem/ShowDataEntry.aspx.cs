@@ -59,8 +59,11 @@ public partial class _1_DataEntry : System.Web.UI.Page
             AShow.Creators = Creators;
             AShow.StarActors = StarActors;
             AShow.CoverImage = CoverImage;
-            Session["AShow"] = AShow;
-            Response.Write("ShowViewer.aspx");
+
+            clsShowCollection ShowList = new clsShowCollection();
+            ShowList.ThisShow = AShow;
+            ShowList.Add();
+            Response.Redirect("ShowList.aspx");
         }
         else
         {

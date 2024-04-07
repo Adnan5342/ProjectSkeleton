@@ -9,9 +9,34 @@ using ClassLibrary;
 
 public partial class _1_DataEntry : System.Web.UI.Page
 {
+    Int32 ShowId;
+
     protected void Page_Load(object sender, EventArgs e)
     {
+        ShowId = Convert.ToInt32(Session["ShowId"]);
+        if (IsPostBack == false)
+        {
+            if (ShowId != 1)
+            {
+                DisplayShow();
+            }
+        }
+    }
 
+    void DisplayShow()
+    {
+        clsShowCollection Shows = new clsShowCollection();
+        Shows.ThisShow.Find(ShowId);
+
+        txtShowId.Text = Shows.ThisShow.ShowId.ToString();
+        txtTitle.Text = Shows.ThisShow.Title;
+        txtSeasons.Text = Shows.ThisShow.Seasons.ToString();
+        txtDescription.Text = Shows.ThisShow.Description;
+        txtGenre.Text = Shows.ThisShow.Genre;
+        txtRating.Text = Shows.ThisShow.Rating.ToString();
+        txtCreators.Text = Shows.ThisShow.Creators;
+        txtStarActors.Text = Shows.ThisShow.StarActors;
+        txtCoverImage.Text = Shows.ThisShow.CoverImage;
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
@@ -49,7 +74,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
         if (Error == "")
         {
-            //AShow.ShowId = ShowId;
+            AShow.ShowId = ShowId;
             AShow.Title = Title;
             AShow.Seasons = Convert.ToInt32(Seasons);
             AShow.ReleaseDate = Convert.ToDateTime(ReleaseDate);
@@ -61,8 +86,18 @@ public partial class _1_DataEntry : System.Web.UI.Page
             AShow.CoverImage = CoverImage;
 
             clsShowCollection ShowList = new clsShowCollection();
-            ShowList.ThisShow = AShow;
-            ShowList.Add();
+
+            if (ShowId == -1)
+            {
+                ShowList.ThisShow = AShow;
+                ShowList.Add();
+            }
+            else
+            {
+                ShowList.ThisShow.Find(ShowId);
+                ShowList.ThisShow = AShow;
+                ShowList.Update();
+            }
             Response.Redirect("ShowList.aspx");
         }
         else

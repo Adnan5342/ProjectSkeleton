@@ -30,4 +30,20 @@ public partial class _1_List : System.Web.UI.Page
         Session["ShowId"] = -1;
         Response.Redirect("ShowDataEntry.aspx");
     }
+
+    protected void btnEdit_Click(object sender, EventArgs e)
+    {
+        Int32 ShowId;
+
+        if (lstShowList.SelectedIndex != -1)
+        {
+            ShowId = Convert.ToInt32(lstShowList.SelectedValue);
+            Session["ShowId"] = ShowId;
+            Response.Redirect("ShowDataEntry.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a record to edit from the list";
+        }
+    }
 }

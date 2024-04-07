@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace ClassLibrary
 {
@@ -11,12 +12,18 @@ namespace ClassLibrary
 
         public clsShowCollection()
         {
-            Int32 Index = 0;
-            Int32 RecordCount = 0;
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblShow_SelectAll");
-            RecordCount = DB.Count;
+            PopulateArray(DB);
+        }
 
+        void PopulateArray(clsDataConnection DB)
+        {
+            Int32 Index = 0;
+            Int32 RecordCount;
+            RecordCount = DB.Count;
+            mShowList = new List<clsShow>();
+            
             while (Index < RecordCount)
             {
                 clsShow AShow = new clsShow();
@@ -95,6 +102,15 @@ namespace ClassLibrary
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@ShowId", mThisShow.ShowId);
             DB.Execute("sproc_tblShow_Delete");
+        }
+
+        public void ReportByTitle(string Title)
+        {
+            //filters the records based on a full or partial post code
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Title", Title);
+            DB.Execute("sproc_tblShow_FilterByTitle");
+            PopulateArray(DB);
         }
 
         public void Update()

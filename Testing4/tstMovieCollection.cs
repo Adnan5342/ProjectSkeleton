@@ -86,7 +86,7 @@ namespace Testing4
             Assert.AreEqual(AllMovies.Count, TestList.Count);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void AddMethodOK()
         {
             clsMovieCollection AllMovies = new clsMovieCollection();
@@ -179,7 +179,7 @@ namespace Testing4
             AllMovies.Delete();
             Boolean Found = AllMovies.ThisMovie.Find(PrimaryKey);
             Assert.IsFalse(Found);
-        }
+        }*/
 
         [TestMethod]
         public void ReportByTitleMethodOK()

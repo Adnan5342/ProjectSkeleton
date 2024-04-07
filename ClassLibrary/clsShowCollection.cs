@@ -90,6 +90,13 @@ namespace ClassLibrary
             return DB.Execute("sproc_tblShow_Insert");
         }
 
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@ShowId", mThisShow.ShowId);
+            DB.Execute("sproc_tblShow_Delete");
+        }
+
         public void Update()
         {
             clsDataConnection DB = new clsDataConnection();

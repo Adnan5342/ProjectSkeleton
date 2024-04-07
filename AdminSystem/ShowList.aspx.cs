@@ -43,7 +43,23 @@ public partial class _1_List : System.Web.UI.Page
         }
         else
         {
-            lblError.Text = "Please select a record to edit from the list";
+            lblError.Text = "Please select a record to edit: ";
+        }
+    }
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        Int32 ShowId;
+
+        if (lstShowList.SelectedIndex != -1)
+        {
+            ShowId = Convert.ToInt32(lstShowList.SelectedValue);
+            Session["ShowId"] = ShowId;
+            Response.Redirect("ShowConfirmDelete.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a record to delete: ";
         }
     }
 }

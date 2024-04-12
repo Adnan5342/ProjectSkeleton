@@ -41,6 +41,7 @@ namespace Registration
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
                 int v = (int)command.ExecuteScalar();
+                connection.Close();
                 if (v != 1)
                 {
                     MessageBox.Show("Error username or password", "Error!");

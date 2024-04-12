@@ -32,8 +32,8 @@ namespace Registration
                         if (v != 1)
                         {
                             connection.Open();
-                            SqlCommand command = new SqlCommand("insert into tblRegistration values(@username, " +
-                                "@email, @password)", connection);
+                            SqlCommand command = new SqlCommand("INSERT INTO tblRegistration (username, email, password) " +
+                                    "VALUES (@username, @email, @password)", connection);
                             command.Parameters.AddWithValue("@username", username.Text);
                             command.Parameters.AddWithValue("@email", email.Text);
                             command.Parameters.AddWithValue("@password", password.Text);

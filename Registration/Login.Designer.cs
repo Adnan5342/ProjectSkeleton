@@ -96,6 +96,7 @@
             password.Name = "password";
             password.Size = new Size(145, 23);
             password.TabIndex = 6;
+            password.UseSystemPasswordChar = true;
             // 
             // lnkLblRegister
             // 

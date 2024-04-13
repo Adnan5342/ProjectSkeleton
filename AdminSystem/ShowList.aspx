@@ -26,8 +26,8 @@
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 14px; top: 558px; position: absolute"></asp:Label>
         <asp:Button ID="btnDelete" runat="server" height="26px" OnClick="btnDelete_Click" style="z-index: 1; left: 355px; top: 504px; position: absolute" Text="Delete record" width="136px" />
         <asp:Button ID="btnClear" runat="server" height="26px" OnClick="btnClear_Click" style="z-index: 1; left: 645px; top: 138px; position: absolute" Text="Clear" width="49px" />
-        <asp:Button ID="btnMoviePage" runat="server" OnClick="btnShowPage_Click" style="z-index: 1; left: 569px; top: 268px; position: absolute" Text="Go to movie list" />
         </p>
+        <asp:LinkButton ID="lnkBtnMovies" runat="server" OnClick="lnkBtnMovies_Click" style="z-index: 1; left: 567px; top: 273px; position: absolute">Go to &#39;movies&#39; list</asp:LinkButton>
     </form>
 </body>
 </html>

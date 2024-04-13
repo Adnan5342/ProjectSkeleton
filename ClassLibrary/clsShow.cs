@@ -15,7 +15,7 @@ namespace ClassLibrary
         private string mStarActors;
         private string mCoverImage;
 
-        public int ShowId
+        public Int32 ShowId
         {
             get
             {
@@ -39,7 +39,7 @@ namespace ClassLibrary
             }
         }
 
-        public int Seasons
+        public Int32 Seasons
         {
             get
             {

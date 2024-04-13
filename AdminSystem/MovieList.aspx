@@ -25,7 +25,9 @@
         <p>
             <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 570px; top: 154px; position: absolute" />
         </p>
-        <asp:Button ID="btnShowPage" runat="server" OnClick="btnShowPage_Click" style="z-index: 1; left: 570px; top: 268px; position: absolute" Text="Go to show list" />
+        <p>
+            <asp:LinkButton ID="lnkBtnShows" runat="server" OnClick="lnkBtnMovies_Click" style="z-index: 1; left: 567px; top: 273px; position: absolute">Go to &#39;shows&#39; list</asp:LinkButton>
+        </p>
     </form>
 </body>
 </html>

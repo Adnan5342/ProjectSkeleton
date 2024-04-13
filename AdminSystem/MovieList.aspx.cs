@@ -89,4 +89,9 @@ public partial class _1_List : System.Web.UI.Page
     {
         Response.Redirect("ShowList.aspx");
     }
+
+    protected void lnkBtnMovies_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowList.aspx");
+    }
 }

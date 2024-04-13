@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -25,18 +24,18 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
     void DisplayShow()
     {
-        clsShowCollection Shows = new clsShowCollection();
-        Shows.ThisShow.Find(ShowId);
+        clsShowCollection ShowList = new clsShowCollection();
+        ShowList.ThisShow.Find(ShowId);
 
-        txtShowId.Text = Shows.ThisShow.ShowId.ToString();
-        txtTitle.Text = Shows.ThisShow.Title;
-        txtSeasons.Text = Shows.ThisShow.Seasons.ToString();
-        txtDescription.Text = Shows.ThisShow.Description;
-        txtGenre.Text = Shows.ThisShow.Genre;
-        txtRating.Text = Shows.ThisShow.Rating.ToString();
-        txtCreators.Text = Shows.ThisShow.Creators;
-        txtStarActors.Text = Shows.ThisShow.StarActors;
-        txtCoverImage.Text = Shows.ThisShow.CoverImage;
+        txtShowId.Text = ShowList.ThisShow.ShowId.ToString();
+        txtTitle.Text = ShowList.ThisShow.Title;
+        txtSeasons.Text = ShowList.ThisShow.Seasons.ToString();
+        txtDescription.Text = ShowList.ThisShow.Description;
+        txtGenre.Text = ShowList.ThisShow.Genre;
+        txtRating.Text = ShowList.ThisShow.Rating.ToString();
+        txtCreators.Text = ShowList.ThisShow.Creators;
+        txtStarActors.Text = ShowList.ThisShow.StarActors;
+        txtCoverImage.Text = ShowList.ThisShow.CoverImage;
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
@@ -44,7 +43,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         clsShow AShow = new clsShow();
 
         string Title = txtTitle.Text;
-        int Seasons;
+        Int32 Seasons;
         if (txtSeasons.Text.Length == 0)
         {
             Seasons = 0;
@@ -125,5 +124,10 @@ public partial class _1_DataEntry : System.Web.UI.Page
             txtStarActors.Text = AShow.StarActors;
             txtCoverImage.Text = AShow.CoverImage;
         }
+    }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowList.aspx");
     }
 }

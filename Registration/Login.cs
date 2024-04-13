@@ -59,6 +59,7 @@ namespace Registration
                     else
                     {
                         MessageBox.Show("Welcome to your profile!");
+                        this.Hide();
 
                         Process.Start("cmd", $"/c start http://localhost:53096/HomePage.aspx");
 

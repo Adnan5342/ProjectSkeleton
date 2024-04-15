@@ -25,4 +25,9 @@ public partial class HomePage : System.Web.UI.Page
     {
         Response.Redirect("ProfileViewer.aspx");
     }
+
+    protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("HomePage.aspx");
+    }
 }

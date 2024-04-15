@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
         </div>
-        <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 10px; top: 34px; position: absolute" />
+        <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 10px; top: 34px; position: absolute" OnClick="imgBtnLogo_Click" />
         <asp:Label ID="lblTitle" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="XX-Large" Font-Underline="True" style="z-index: 1; left: 279px; top: 70px; position: absolute" Text="Home Page"></asp:Label>
         <asp:Label ID="lblMovies" runat="server" style="z-index: 1; left: 21px; top: 157px; position: absolute; right: 647px" Text="Movies"></asp:Label>
         <asp:ListBox ID="lstMovies" runat="server" style="z-index: 1; left: 17px; top: 186px; position: absolute; height: 134px; width: 221px"></asp:ListBox>

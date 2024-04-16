@@ -46,7 +46,7 @@ public partial class HomePage : System.Web.UI.Page
     {
         Int32 MovieId;
 
-        if (lstMovieList.SelectedIndex == -1)
+        if (lstMovieList.SelectedIndex != -1)
         {
             MovieId = Convert.ToInt32(lstMovieList.SelectedValue);
             Session["MovieId"] = MovieId;

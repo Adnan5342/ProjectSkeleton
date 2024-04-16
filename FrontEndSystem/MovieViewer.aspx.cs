@@ -12,14 +12,13 @@ public partial class MovieViewer : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
-        {
+        
             MovieId = Convert.ToInt32(Session["MovieId"]);
             if (MovieId != -1)
             {
                 DisplayMovies();
             }
-        }
+        
     }
 
     void DisplayMovies()
@@ -27,6 +26,16 @@ public partial class MovieViewer : System.Web.UI.Page
         clsMovieCollection Movies = new clsMovieCollection();
         Movies.ThisMovie.Find(MovieId);
 
+        txtMovieId.Text = Movies.ThisMovie.MovieId.ToString();
         lblTitle.Text = Movies.ThisMovie.Title;
+        lblRuntime.Text = Movies.ThisMovie.Runtime.ToString();
+        lblReleaseDate.Text = Movies.ThisMovie.ReleaseDate.ToString();
+        lblDescription.Text = Movies.ThisMovie.Description;
+        lblGenre.Text = Movies.ThisMovie.Genre;
+        lblRating.Text = Movies.ThisMovie.Rating.ToString();
+        lblDirectors.Text = Movies.ThisMovie.Directors;
+        lblWriters.Text = Movies.ThisMovie.Writers;
+        lblStarActors.Text = Movies.ThisMovie.StarActors;
+        imgCoverImage.ImageUrl = Movies.ThisMovie.CoverImage;
     }
 }

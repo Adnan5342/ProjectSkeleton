@@ -26,10 +26,10 @@ public partial class HomePage : System.Web.UI.Page
     void DisplayShows()
     {
         clsShowCollection Shows = new clsShowCollection();
-        lstShows.DataSource = Shows.ShowList;
-        lstShows.DataValueField = "ShowId";
-        lstShows.DataTextField = "Title";
-        lstShows.DataBind();
+        lstShowList.DataSource = Shows.ShowList;
+        lstShowList.DataValueField = "ShowId";
+        lstShowList.DataTextField = "Title";
+        lstShowList.DataBind();
     }
 
     protected void imgBtnProfile_Click(object sender, ImageClickEventArgs e)
@@ -62,9 +62,9 @@ public partial class HomePage : System.Web.UI.Page
     {
         Int32 ShowId;
 
-        if (lstShows.SelectedIndex != -1)
+        if (lstShowList.SelectedIndex != -1)
         {
-            ShowId = Convert.ToInt32(lstShows.SelectedValue);
+            ShowId = Convert.ToInt32(lstShowList.SelectedValue);
             Session["ShowId"] = ShowId;
             Response.Redirect("ShowViewer.aspx");
         }
@@ -72,5 +72,47 @@ public partial class HomePage : System.Web.UI.Page
         {
             lblShowError.Text = "Please select a show to view.";
         }
+    }
+
+    protected void btnSearchMovies_Click(object sender, EventArgs e)
+    {
+        clsMovieCollection MovieCollection = new clsMovieCollection();
+        MovieCollection.ReportByTitle(txtSearchMovie.Text);
+        lstMovieList.DataSource = MovieCollection.MovieList;
+        lstMovieList.DataValueField = "MovieId";
+        lstMovieList.DataTextField = "Title";
+        lstMovieList.DataBind();
+    }
+
+    protected void btnClearMovies_Click(object sender, EventArgs e)
+    {
+        clsMovieCollection MovieCollection = new clsMovieCollection();
+        MovieCollection.ReportByTitle("");
+        txtSearchMovie.Text = "";
+        lstMovieList.DataSource = MovieCollection.MovieList;
+        lstMovieList.DataValueField = "MovieId";
+        lstMovieList.DataTextField = "Title";
+        lstMovieList.DataBind();
+    }
+
+    protected void btnSearchShows_Click(object sender, EventArgs e)
+    {
+        clsShowCollection ShowCollection = new clsShowCollection();
+        ShowCollection.ReportByTitle(txtSearchShow.Text);
+        lstShowList.DataSource = ShowCollection.ShowList;
+        lstShowList.DataValueField = "ShowId";
+        lstShowList.DataTextField = "Title";
+        lstShowList.DataBind();
+    }
+
+    protected void btnClearShows_Click(object sender, EventArgs e)
+    {
+        clsShowCollection ShowCollection = new clsShowCollection();
+        ShowCollection.ReportByTitle("");
+        txtSearchShow.Text = "";
+        lstShowList.DataSource = ShowCollection.ShowList;
+        lstShowList.DataValueField = "ShowId";
+        lstShowList.DataTextField = "Title";
+        lstShowList.DataBind();
     }
 }

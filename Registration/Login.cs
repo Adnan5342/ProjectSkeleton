@@ -61,7 +61,7 @@ namespace Registration
                         MessageBox.Show("Welcome to your profile!");
                         this.Hide();
 
-                        Process.Start("cmd", $"/c start http://localhost:53096/HomePage.aspx");
+                        System.Diagnostics.Process.Start("cmd", $"/c start http://localhost:53096/HomePage.aspx");
 
                         username.Text = "";
                         email.Text = "";

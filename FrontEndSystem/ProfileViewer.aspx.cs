@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Registration;
 
 public partial class ProfileViewer : System.Web.UI.Page
 {
@@ -69,4 +70,8 @@ public partial class ProfileViewer : System.Web.UI.Page
         DisplayProfile();
     }
 
+    protected void btnSignOut_Click(object sender, EventArgs e)
+    {
+        
+    }
 }

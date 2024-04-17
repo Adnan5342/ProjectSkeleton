@@ -45,16 +45,18 @@
             // lblSignUp
             // 
             lblSignUp.AutoSize = true;
-            lblSignUp.Location = new Point(356, 136);
+            lblSignUp.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblSignUp.Location = new Point(359, 127);
             lblSignUp.Name = "lblSignUp";
-            lblSignUp.Size = new Size(48, 15);
+            lblSignUp.Size = new Size(79, 15);
             lblSignUp.TabIndex = 0;
-            lblSignUp.Text = "Sign Up";
+            lblSignUp.Text = "Sign up form";
+            lblSignUp.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(272, 164);
+            lblUsername.Location = new Point(291, 164);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(60, 15);
             lblUsername.TabIndex = 1;
@@ -63,7 +65,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(442, 164);
+            lblEmail.Location = new Point(468, 164);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 2;
@@ -71,14 +73,14 @@
             // 
             // username
             // 
-            username.Location = new Point(229, 182);
+            username.Location = new Point(246, 182);
             username.Name = "username";
             username.Size = new Size(145, 23);
             username.TabIndex = 3;
             // 
             // email
             // 
-            email.Location = new Point(389, 182);
+            email.Location = new Point(411, 182);
             email.Name = "email";
             email.Size = new Size(145, 23);
             email.TabIndex = 4;
@@ -86,7 +88,7 @@
             // lblPass
             // 
             lblPass.AutoSize = true;
-            lblPass.Location = new Point(275, 223);
+            lblPass.Location = new Point(294, 223);
             lblPass.Name = "lblPass";
             lblPass.Size = new Size(57, 15);
             lblPass.TabIndex = 5;
@@ -94,7 +96,7 @@
             // 
             // password
             // 
-            password.Location = new Point(229, 241);
+            password.Location = new Point(246, 241);
             password.Name = "password";
             password.Size = new Size(145, 23);
             password.TabIndex = 6;
@@ -103,7 +105,7 @@
             // lblConPass
             // 
             lblConPass.AutoSize = true;
-            lblConPass.Location = new Point(411, 223);
+            lblConPass.Location = new Point(430, 223);
             lblConPass.Name = "lblConPass";
             lblConPass.Size = new Size(104, 15);
             lblConPass.TabIndex = 7;
@@ -111,7 +113,7 @@
             // 
             // conPassword
             // 
-            conPassword.Location = new Point(389, 241);
+            conPassword.Location = new Point(411, 241);
             conPassword.Name = "conPassword";
             conPassword.Size = new Size(145, 23);
             conPassword.TabIndex = 8;
@@ -119,7 +121,7 @@
             // 
             // btnRegister
             // 
-            btnRegister.Location = new Point(321, 279);
+            btnRegister.Location = new Point(339, 279);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(115, 23);
             btnRegister.TabIndex = 9;
@@ -130,7 +132,7 @@
             // lnkLblSignIn
             // 
             lnkLblSignIn.AutoSize = true;
-            lnkLblSignIn.Location = new Point(357, 305);
+            lnkLblSignIn.Location = new Point(383, 305);
             lnkLblSignIn.Name = "lnkLblSignIn";
             lnkLblSignIn.Size = new Size(43, 15);
             lnkLblSignIn.TabIndex = 10;

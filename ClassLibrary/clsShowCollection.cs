@@ -97,22 +97,6 @@ namespace ClassLibrary
             return DB.Execute("sproc_tblShow_Insert");
         }
 
-        public void Delete()
-        {
-            clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@ShowId", mThisShow.ShowId);
-            DB.Execute("sproc_tblShow_Delete");
-        }
-
-        public void ReportByTitle(string Title)
-        {
-            //filters the records based on a full or partial post code
-            clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@Title", Title);
-            DB.Execute("sproc_tblShow_FilterByTitle");
-            PopulateArray(DB);
-        }
-
         public void Update()
         {
             clsDataConnection DB = new clsDataConnection();
@@ -130,5 +114,23 @@ namespace ClassLibrary
 
             DB.Execute("sproc_tblShow_Update");
         }
+
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@ShowId", mThisShow.ShowId);
+            DB.Execute("sproc_tblShow_Delete");
+        }
+
+        public void ReportByTitle(string Title)
+        {
+            //filters the records based on a full or partial post code
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Title", Title);
+            DB.Execute("sproc_tblShow_FilterByTitle");
+            PopulateArray(DB);
+        }
+
+        
     }
 }

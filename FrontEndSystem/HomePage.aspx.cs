@@ -4,14 +4,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Registration;
+using System.Linq;
 using ClassLibrary;
 
 public partial class HomePage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        DisplayMovies();
-        DisplayShows();
+        if (!IsPostBack)
+        {
+            DisplayMovies();
+            DisplayShows();
+        }
     }
 
     void DisplayMovies()
@@ -44,11 +48,9 @@ public partial class HomePage : System.Web.UI.Page
 
     protected void btnViewMovie_Click(object sender, EventArgs e)
     {
-        Int32 MovieId;
-
         if (lstMovieList.SelectedIndex != -1)
         {
-            MovieId = Convert.ToInt32(lstMovieList.SelectedValue);
+            Int32 MovieId = Convert.ToInt32(lstMovieList.SelectedValue);
             Session["MovieId"] = MovieId;
             Response.Redirect("MovieViewer.aspx");
         }
@@ -60,11 +62,9 @@ public partial class HomePage : System.Web.UI.Page
 
     protected void btnViewShow_Click(object sender, EventArgs e)
     {
-        Int32 ShowId;
-
         if (lstShowList.SelectedIndex != -1)
         {
-            ShowId = Convert.ToInt32(lstShowList.SelectedValue);
+            Int32 ShowId = Convert.ToInt32(lstShowList.SelectedValue);
             Session["ShowId"] = ShowId;
             Response.Redirect("ShowViewer.aspx");
         }

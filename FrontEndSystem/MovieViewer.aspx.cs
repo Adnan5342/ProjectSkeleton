@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Registration; 
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -37,5 +38,10 @@ public partial class MovieViewer : System.Web.UI.Page
         lblWriters.Text = Movies.ThisMovie.Writers;
         lblStarActors.Text = Movies.ThisMovie.StarActors;
         imgCoverImage.ImageUrl = Movies.ThisMovie.CoverImage;
+    }
+
+    protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("HomePage.aspx");
     }
 }

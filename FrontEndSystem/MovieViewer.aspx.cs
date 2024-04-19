@@ -27,21 +27,25 @@ public partial class MovieViewer : System.Web.UI.Page
         clsMovieCollection Movies = new clsMovieCollection();
         Movies.ThisMovie.Find(MovieId);
 
-        txtMovieId.Text = Movies.ThisMovie.MovieId.ToString();
         lblTitle.Text = Movies.ThisMovie.Title;
-        lblRuntime.Text = Movies.ThisMovie.Runtime.ToString();
-        lblReleaseDate.Text = Movies.ThisMovie.ReleaseDate.ToString();
-        lblDescription.Text = Movies.ThisMovie.Description;
-        lblGenre.Text = Movies.ThisMovie.Genre;
-        lblRating.Text = Movies.ThisMovie.Rating.ToString();
-        lblDirectors.Text = Movies.ThisMovie.Directors;
-        lblWriters.Text = Movies.ThisMovie.Writers;
-        lblStarActors.Text = Movies.ThisMovie.StarActors;
+        lblRuntimeText.Text = Movies.ThisMovie.Runtime.ToString();
+        lblReleaseDateText.Text = Movies.ThisMovie.ReleaseDate.ToString();
+        lblDescriptionText.Text = Movies.ThisMovie.Description;
+        lblGenreText.Text = Movies.ThisMovie.Genre;
+        lblRatingText.Text = Movies.ThisMovie.Rating.ToString();
+        lblDirectorsText.Text = Movies.ThisMovie.Directors;
+        lblWritersText.Text = Movies.ThisMovie.Writers;
+        lblStarActorsText.Text = Movies.ThisMovie.StarActors;
         imgCoverImage.ImageUrl = Movies.ThisMovie.CoverImage;
     }
 
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("HomePage.aspx");
+    }
+
+    protected void imgBtnProfile_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("ProfileViewer.aspx");
     }
 }

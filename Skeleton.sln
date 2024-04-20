@@ -39,12 +39,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingMovieReview", "Testi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingAdmin", "Testing1\TestingAdmin.csproj", "{4186B3B3-EBEA-434E-844F-F79D774C252B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registration", "Registration\Registration.csproj", "{934B2ACC-54BD-41BD-9FF7-9B88B6F037CA}"
-EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FrontEndSystem", "FrontEndSystem\", "{79AFD657-E067-4D6C-A46E-586A2B4F5288}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
-		ProjectReferences = "{e32146cf-ec09-4709-9881-42adf1b0735b}|ClassLibrary.dll;{934b2acc-54bd-41bd-9ff7-9b88b6f037ca}|Registration.dll;"
+		ProjectReferences = "{e32146cf-ec09-4709-9881-42adf1b0735b}|ClassLibrary.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_53096"
 		Debug.AspNetCompiler.PhysicalPath = "FrontEndSystem\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53096\"
@@ -102,10 +100,6 @@ Global
 		{4186B3B3-EBEA-434E-844F-F79D774C252B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4186B3B3-EBEA-434E-844F-F79D774C252B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4186B3B3-EBEA-434E-844F-F79D774C252B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{934B2ACC-54BD-41BD-9FF7-9B88B6F037CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{934B2ACC-54BD-41BD-9FF7-9B88B6F037CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{934B2ACC-54BD-41BD-9FF7-9B88B6F037CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{934B2ACC-54BD-41BD-9FF7-9B88B6F037CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79AFD657-E067-4D6C-A46E-586A2B4F5288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{79AFD657-E067-4D6C-A46E-586A2B4F5288}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79AFD657-E067-4D6C-A46E-586A2B4F5288}.Release|Any CPU.ActiveCfg = Debug|Any CPU

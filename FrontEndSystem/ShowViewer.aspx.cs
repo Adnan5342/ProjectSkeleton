@@ -32,6 +32,7 @@ public partial class ShowViewer : System.Web.UI.Page
         lblStarActorsText.Text = Shows.ThisShow.StarActors;
         lblRatingText.Text = Shows.ThisShow.Rating.ToString();
         lblGenreText.Text = Shows.ThisShow.Genre;
+        imgCoverImage.ImageUrl = Shows.ThisShow.CoverImage;
     }
 
 

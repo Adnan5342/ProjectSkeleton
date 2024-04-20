@@ -49,6 +49,7 @@
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsMovie.cs" />
     <Compile Include="clsMovieCollection.cs" />
+    <Compile Include="clsMovieReview.cs" />
     <Compile Include="clsShow.cs" />
     <Compile Include="clsShowCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

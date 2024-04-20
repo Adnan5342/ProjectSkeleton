@@ -14,7 +14,7 @@
         <p>
             &nbsp;</p>
         <p>
-        <asp:ImageButton ID="imgBtnProfile" runat="server" ImageUrl="~/Images/ProfileIcon.png" OnClick="imgBtnProfile_Click" style="z-index: 1; left: 528px; top: 58px; position: absolute; height: 50px; " />
+        <asp:ImageButton ID="imgBtnProfile" runat="server" ImageUrl="~/Images/ProfileIcon.png" OnClick="imgBtnProfile_Click" style="z-index: 1; left: 1115px; top: 62px; position: absolute; height: 50px; " />
         <asp:Label ID="lblShowDetails" runat="server" style="z-index: 1; left: 20px; top: 152px; position: absolute" Text="Show Details" Font-Bold="True" Font-Overline="True" Font-Size="X-Large" Font-Underline="True"></asp:Label>
         </p>
         <p>
@@ -22,21 +22,21 @@
         </p>
         <p>
         <asp:Image ID="imgCoverImage" runat="server" style="z-index: 1; left: 22px; top: 229px; width: 200px; height: 300px; position: absolute" />
-        <asp:Label ID="lblGenreText" runat="server" style="z-index: 1; left: 345px; top: 223px; position: absolute"></asp:Label>
+        <asp:Label ID="lblGenreText" runat="server" style="z-index: 1; left: 372px; top: 223px; position: absolute"></asp:Label>
         <asp:Label ID="lblGenreLabel" runat="server" style="z-index: 1; left: 265px; top: 223px; position: absolute" Text="Genre(s): "></asp:Label>
-        <asp:Label ID="lblDescriptionText" runat="server" style="z-index: 1; left: 264px; top: 255px; position: absolute; right: 996px;"></asp:Label>
-        <asp:Label ID="lblReleaseDate" runat="server" style="z-index: 1; left: 261px; top: 321px; position: absolute" Text="Release Date: "></asp:Label>
-        <asp:Label ID="lblReleaseDateText" runat="server" style="z-index: 1; left: 353px; top: 321px; position: absolute; height: 19px;"></asp:Label>
-        <asp:Label ID="lblCreators" runat="server" style="z-index: 1; left: 260px; top: 346px; position: absolute" Text="Creator(s):"></asp:Label>
-        <asp:Label ID="lblStarActors" runat="server" style="z-index: 1; left: 259px; top: 375px; position: absolute" Text="Star Actors:"></asp:Label>
-        <asp:Label ID="lblCreatorsText" runat="server" style="z-index: 1; left: 353px; top: 347px; position: absolute"></asp:Label>
-        <asp:Label ID="lblStarActorsText" runat="server" style="z-index: 1; left: 355px; top: 372px; position: absolute"></asp:Label>
-        <asp:Label ID="lblSeasons" runat="server" style="z-index: 1; left: 259px; top: 401px; position: absolute" Text="Seasons: "></asp:Label>
-        <asp:Label ID="lblSeasonsText" runat="server" style="z-index: 1; left: 355px; top: 396px; position: absolute"></asp:Label>
+        <asp:Label ID="lblDescriptionText" runat="server" style="z-index: 1; left: 267px; top: 398px; position: absolute; right: 82px; height: 49px;"></asp:Label>
+        <asp:Label ID="lblReleaseDate" runat="server" style="z-index: 1; left: 267px; top: 258px; position: absolute" Text="Release Date: "></asp:Label>
+        <asp:Label ID="lblReleaseDateText" runat="server" style="z-index: 1; left: 367px; top: 259px; position: absolute; height: 19px;"></asp:Label>
+        <asp:Label ID="lblCreators" runat="server" style="z-index: 1; left: 266px; top: 284px; position: absolute" Text="Creator(s):"></asp:Label>
+        <asp:Label ID="lblStarActors" runat="server" style="z-index: 1; left: 266px; top: 311px; position: absolute" Text="Star Actors:"></asp:Label>
+        <asp:Label ID="lblCreatorsText" runat="server" style="z-index: 1; left: 366px; top: 283px; position: absolute"></asp:Label>
+        <asp:Label ID="lblStarActorsText" runat="server" style="z-index: 1; left: 366px; top: 311px; position: absolute"></asp:Label>
+        <asp:Label ID="lblSeasons" runat="server" style="z-index: 1; left: 266px; top: 336px; position: absolute" Text="Seasons: "></asp:Label>
+        <asp:Label ID="lblSeasonsText" runat="server" style="z-index: 1; left: 365px; top: 338px; position: absolute"></asp:Label>
         </p>
         <p>
-        <asp:Label ID="lblRating" runat="server" style="z-index: 1; left: 258px; top: 453px; position: absolute" Text="Rating: "></asp:Label>
-        <asp:Label ID="lblRatingText" runat="server" style="z-index: 1; left: 353px; top: 452px; position: absolute"></asp:Label>
+        <asp:Label ID="lblRating" runat="server" style="z-index: 1; left: 266px; top: 363px; position: absolute" Text="Rating: "></asp:Label>
+        <asp:Label ID="lblRatingText" runat="server" style="z-index: 1; left: 363px; top: 365px; position: absolute"></asp:Label>
         </p>
     </form>
 </body>

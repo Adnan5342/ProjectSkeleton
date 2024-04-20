@@ -32,8 +32,8 @@ namespace Registration
                         if (v != 1)
                         {
                             connection.Open();
-                            SqlCommand command = new SqlCommand("INSERT INTO tblRegistration (username, email, password) " +
-                                    "VALUES (@username, @email, @password)", connection);
+                            string query = "INSERT INTO tblRegistration (username, email, password) VALUES (@username, @email, @password)";
+                            SqlCommand command = new SqlCommand(query, connection);
                             command.Parameters.AddWithValue("@username", username.Text);
                             command.Parameters.AddWithValue("@email", email.Text);
                             command.Parameters.AddWithValue("@password", password.Text);
@@ -65,6 +65,7 @@ namespace Registration
                 MessageBox.Show(ex.Message);
             }
         }
+
         int check(string email)
         {
             connection.Open();
@@ -91,9 +92,9 @@ namespace Registration
 
         private void lnkLblSignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            // Open the login page in the default web browser
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("http://localhost:53096/Login.aspx") { UseShellExecute = true });
             this.Hide();
-            Login login = new Login();
-            login.Show();
         }
     }
 }

@@ -47,4 +47,9 @@ public partial class MovieViewer : System.Web.UI.Page
     {
         Response.Redirect("ProfileViewer.aspx");
     }
+
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieReviewEntry.aspx");
+    }
 }

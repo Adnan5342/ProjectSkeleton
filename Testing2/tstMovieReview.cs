@@ -66,7 +66,107 @@ namespace Testing2
             clsMovieReview AMovieReview = new clsMovieReview();
             DateTime TestData = DateTime.Now.Date;
             AMovieReview.DatePosted = TestData;
-            Assert.AreEqual(AMovieReview, TestData);
+            Assert.AreEqual(AMovieReview.DatePosted, TestData);
+        }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            Boolean Found = false;
+            Int32 MovieReviewId = 5;
+            Found = AMovieReview.Find(MovieReviewId);
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestMovieReviewIdFound()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieReviewId = 5;
+            Found = AMovieReview.Find(MovieReviewId);
+            if (AMovieReview.MovieReviewId != 5)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestMovieIdFound()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieReviewId = 5;
+            Found = AMovieReview.Find(MovieReviewId);
+            if (AMovieReview.MovieId != 4)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestMemberIdFound()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieReviewId = 5;
+            Found = AMovieReview.Find(MovieReviewId);
+            if (AMovieReview.MemberId != 1003)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestDatePostedFound()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieReviewId = 5;
+            Found = AMovieReview.Find(MovieReviewId);
+            if (AMovieReview.DatePosted != Convert.ToDateTime("20/04/2024"))
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestRatingFound()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieReviewId = 5;
+            Found = AMovieReview.Find(MovieReviewId);
+            if (AMovieReview.Rating != 4.5)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCommentFound()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 MovieReviewId = 5;
+            Found = AMovieReview.Find(MovieReviewId);
+            if (AMovieReview.Comment != "Very good movie")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
         }
 
     }

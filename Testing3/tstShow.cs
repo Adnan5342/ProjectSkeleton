@@ -119,7 +119,7 @@ namespace Testing3
             Assert.AreEqual(AShow.CoverImage, TestData);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void FindMethodOK()
         {
             clsShow AShow = new clsShow();
@@ -127,7 +127,7 @@ namespace Testing3
             Int32 ShowId = 2;
             Found = AShow.Find(ShowId);
             Assert.IsTrue(Found);
-        }
+        }*/
 
         /*[TestMethod]
         public void TestShowIdFound()

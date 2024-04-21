@@ -75,5 +75,50 @@ namespace ClassLibrary
             }
         }
 
+        public string Valid(double rating, string comment, string datePosted)
+        {
+            String Error = "";
+            DateTime DateTemp;
+
+            try
+            {
+                if (rating < 0)
+                {
+                    Error = Error + "The rating must not be negative. ";
+                }
+                if (rating > 5)
+                {
+                    Error = Error + "The rating must not exceed 5. ";
+                }
+            }
+            catch
+            {
+                Error = Error + "The rating must be a valid number. ";
+            }
+
+            if (comment.Length > 500)
+            {
+                Error = Error + "Comments must not exceed 500 characters. ";
+            }
+
+            try
+            {
+                DateTemp = Convert.ToDateTime(datePosted);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be in the past. ";
+                }
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be in the future. ";
+                }
+            }
+            catch
+            {
+                Error = Error + "The date must be a valid date. ";
+            }
+            return Error;
+        }
+
     }
 }

@@ -1,12 +1,18 @@
 ﻿using ClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Globalization;
+using System.IO;
 
 namespace Testing2
 {
     [TestClass]
     public class tstMovieReview
     {
+
+        double Rating = 2.5;
+        string Comment = "Test comment.";
+        string DatePosted = DateTime.Now.Date.ToString();
 
         [TestMethod]
         public void InstanceOK()
@@ -167,6 +173,254 @@ namespace Testing2
                 OK = false;
             }
             Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingExtremeMin()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            double Rating = -15;
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMinLessOne()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            double Rating = -0.1;
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMin()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            double Rating = 0.0;
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMinPlusOne()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            double Rating = 0.1;
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMid()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            double Rating = 2.5;
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMaxLessOne()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            double Rating = 4.9;
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMax()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            double Rating = 5.0;
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingMaxPlusOne()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            double Rating = 5.1;
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RatingExtremeMax()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            double Rating = 15;
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentMin()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            string Comment = "";
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentMinPlusOne()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            string Comment = "a";
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentMid()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            string Comment = "";
+            Comment = Comment.PadRight(250, 'a');
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentMaxLessOne()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            string Comment = "";
+            Comment = Comment.PadRight(499, 'a');
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentMax()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            string Comment = "";
+            Comment = Comment.PadRight(500, 'a');
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentMaxPlusOne()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            string Comment = "";
+            Comment = Comment.PadRight(501, 'a');
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentExtremeMax()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            string Comment = "";
+            Comment = Comment.PadRight(1000, 'a');
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DatePostedExtremeMin()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(-100);
+            string DatePosted = TestDate.ToString();
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DatePostedMinLessOne()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(-1);
+            string DatePosted = TestDate.ToString();
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DatePostedMin()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string DatePosted = TestDate.ToString();
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DatePostedMinPlusOne()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddDays(1);
+            string DatePosted = TestDate.ToString();
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DatePostedExtremeMax()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(100);
+            string DatePosted = TestDate.ToString();
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DatePostedInvalidData()
+        {
+            clsMovieReview AMovieReview = new clsMovieReview();
+            String Error = "";
+            string DatePosted = "This is not a date!";
+            Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+            Assert.AreNotEqual(Error, "");
         }
 
     }

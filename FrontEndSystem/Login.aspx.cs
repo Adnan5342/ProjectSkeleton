@@ -39,6 +39,9 @@ public partial class Login :  System.Web.UI.Page
 
             if (v == 1)
             {
+                Session["username"] = username;
+                Session["email"] = email;
+
                 Response.Redirect("HomePage.aspx");
             }
             else

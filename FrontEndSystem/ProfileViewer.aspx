@@ -16,9 +16,9 @@
         </p>
         <asp:Label ID="lblUsername" runat="server" style="z-index: 1; left: 236px; top: 179px; position: absolute" Text="Your username: "></asp:Label>
         <asp:Label ID="lblEmail" runat="server" style="z-index: 1; left: 261px; top: 217px; position: absolute" Text="Your email: "></asp:Label>
-        <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 345px; top: 177px; position: absolute; width: 184px"></asp:TextBox>
-        <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 347px; top: 214px; position: absolute" width="184px"></asp:TextBox>
         <asp:Button ID="btnSignOut" runat="server" OnClick="btnSignOut_Click" style="z-index: 1; left: 350px; top: 263px; position: absolute" Text="Sign out" />
+        <asp:Label ID="lblUsernameText" runat="server" style="z-index: 1; left: 339px; top: 178px; position: absolute"></asp:Label>
+        <asp:Label ID="lblEmailText" runat="server" style="z-index: 1; left: 342px; top: 217px; position: absolute"></asp:Label>
     </form>
 </body>
 </html>

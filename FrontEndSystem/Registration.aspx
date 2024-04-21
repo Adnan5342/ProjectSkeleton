@@ -16,9 +16,9 @@
         <asp:Label ID="lblEmail" runat="server" style="z-index: 1; left: 17px; top: 120px; position: absolute" Text="Email: "></asp:Label>
         <asp:TextBox ID="TextBox2" runat="server" style="z-index: 1; left: 16px; top: 143px; position: absolute" width="176px"></asp:TextBox>
         <asp:Label ID="lblPassword" runat="server" style="z-index: 1; left: 19px; top: 181px; position: absolute" Text="Password: "></asp:Label>
-        <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1; left: 18px; top: 204px; position: absolute" width="176px"></asp:TextBox>
+        <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1; left: 18px; top: 204px; position: absolute" width="176px" TextMode="Password"></asp:TextBox>
         <asp:Label ID="lblConfirmPassword" runat="server" style="z-index: 1; left: 20px; top: 247px; position: absolute" Text="Confirm password: "></asp:Label>
-        <asp:TextBox ID="TextBox4" runat="server" style="z-index: 1; left: 19px; top: 272px; position: absolute" width="176px"></asp:TextBox>
+        <asp:TextBox ID="TextBox4" runat="server" style="z-index: 1; left: 19px; top: 272px; position: absolute" width="176px" TextMode="Password"></asp:TextBox>
         <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" style="z-index: 1; left: 18px; top: 309px; position: absolute" Text="Register account" />
         <asp:Button ID="btnSignIn" runat="server" BorderStyle="None" OnClick="btnSignIn_Click" style="z-index: 1; left: 20px; top: 347px; position: absolute" Text="Sign in" />
         <asp:Label ID="lblMessage" runat="server" style="z-index: 1; left: 25px; top: 383px; position: absolute"></asp:Label>

@@ -10,51 +10,14 @@ public partial class ProfileViewer : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
-    }
-
-    void DisplayProfile()
-    {
-        string username = Session["username"] as string;
-        string email = Session["email"] as string;
-
-        if (!string.IsNullOrEmpty(username))
+        if (Session["username"] != null && Session["email"] != null)
         {
-            using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=H:\\Project Database\\MovieMindsNetwork.mdf;Integrated Security=True;Connect Timeout=30"))
-            {
-                connection.Open();
-
-                string query = "SELECT * FROM tblRegistration WHERE username = @username";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@username", username);
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
-                {
-                    txtUsername.Text = reader["username"].ToString();
-                    txtEmail.Text = reader["email"].ToString();
-                }
-                reader.Close();
-            }
+            lblUsernameText.Text = Session["username"].ToString();
+            lblEmailText.Text = Session["email"].ToString();
         }
-        else if (!string.IsNullOrEmpty(email))
+        else
         {
-            using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=H:\\Project Database\\MovieMindsNetwork.mdf;Integrated Security=True;Connect Timeout=30"))
-            {
-                connection.Open();
-
-                string query = "SELECT * FROM tblRegistration WHERE email = @email";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@email", email);
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
-                {
-                    txtUsername.Text = reader["username"].ToString();
-                    txtEmail.Text = reader["email"].ToString();
-                }
-                reader.Close();
-            }
+            Response.Redirect("Login.aspx");
         }
     }
 
@@ -64,13 +27,9 @@ public partial class ProfileViewer : System.Web.UI.Page
         Response.Redirect("HomePage.aspx");
     }
 
-    protected void Page_LoadComplete(object sender, EventArgs e)
-    {
-        DisplayProfile();
-    }
-
     protected void btnSignOut_Click(object sender, EventArgs e)
     {
-        
+        Session.Clear();
+        Response.Redirect("Login.aspx");
     }
 }

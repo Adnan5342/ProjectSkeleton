@@ -17,121 +17,62 @@ namespace ClassLibrary
 
         public Int32 ShowId
         {
-            get
-            {
-                return mShowId;
-            }
-            set
-            {
-                mShowId = value;
-            }
+            get { return mShowId; }
+            set { mShowId = value; }
         }
 
         public string Title
         {
-            get
-            {
-                return mTitle;
-            }
-            set
-            {
-                mTitle = value;
-            }
+            get { return mTitle; }
+            set { mTitle = value; }
         }
 
         public Int32 Seasons
         {
-            get
-            {
-                return mSeasons;
-            }
-            set
-            {
-                mSeasons = value;
-            }
+            get { return mSeasons; }
+            set { mSeasons = value; }
         }
 
         public DateTime ReleaseDate
         {
-            get
-            {
-                return mReleaseDate;
-            }
-            set
-            {
-                mReleaseDate = value;
-            }
+            get { return mReleaseDate; }
+            set { mReleaseDate = value; }
         }
 
         public string Description
         {
-            get
-            {
-                return mDescription;
-            }
-            set
-            {
-                mDescription = value;
-            }
+            get { return mDescription; }
+            set { mDescription = value; }
         }
 
         public string Genre
         {
-            get
-            {
-                return mGenre;
-            }
-            set
-            {
-                mGenre = value;
-            }
+            get { return mGenre; }
+            set { mGenre = value; }
         }
 
         public double Rating
         {
-            get
-            {
-                return mRating;
-            }
-            set
-            {
-                mRating = value;
-            }
+            get { return mRating; }
+            set { mRating = value; }
         }
+
         public string Creators
         {
-            get 
-            {
-                return mCreators;
-            }
-            set
-            {
-                mCreators = value;
-            }
+            get { return mCreators; }
+            set { mCreators = value; }
         }
 
         public string StarActors
         {
-            get
-            {
-                return mStarActors;
-            }
-            set
-            {
-                mStarActors = value;
-            }
+            get { return mStarActors; }
+            set { mStarActors = value; }
         }
 
         public string CoverImage
         {
-            get
-            {
-                return mCoverImage;
-            }
-            set
-            {
-                mCoverImage = value;
-            }
+            get { return mCoverImage; }
+            set { mCoverImage = value; }
         }
 
         public bool Find(int ShowId)

@@ -12,13 +12,18 @@ public partial class MovieViewer : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        if (Session["memberId"] != null && Session["username"] != null && Session["email"] != null)
+        {
             MovieId = Convert.ToInt32(Session["MovieId"]);
             if (MovieId != -1)
             {
                 DisplayMovies();
             }
-        
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 
     void DisplayMovies()
@@ -50,6 +55,9 @@ public partial class MovieViewer : System.Web.UI.Page
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
+        int movieId = (int)Session["MovieId"];
+
+        Session["MovieId"] = movieId;
         Response.Redirect("MovieReviewEntry.aspx");
     }
 }

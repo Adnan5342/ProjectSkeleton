@@ -10,10 +10,17 @@ public partial class HomePage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        if (Session["memberId"] != null && Session["username"] != null && Session["email"] != null)
         {
-            DisplayMovies();
-            DisplayShows();
+            if (!IsPostBack)
+            {
+                DisplayMovies();
+                DisplayShows();
+            }
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 

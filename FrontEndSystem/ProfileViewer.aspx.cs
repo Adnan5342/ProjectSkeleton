@@ -10,8 +10,9 @@ public partial class ProfileViewer : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["username"] != null && Session["email"] != null)
+        if (Session["memberId"] != null && Session["username"] != null && Session["email"] != null)
         {
+            lblMemberIdText.Text = Session["memberId"].ToString();
             lblUsernameText.Text = Session["username"].ToString();
             lblEmailText.Text = Session["email"].ToString();
         }

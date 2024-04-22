@@ -36,15 +36,6 @@ namespace Testing2
         }
 
         [TestMethod]
-        public void CountPropertyOK()
-        {
-            clsMovieReviewCollection AllMovieReviews = new clsMovieReviewCollection();
-            Int32 SomeCount = 2;
-            AllMovieReviews.Count = SomeCount;
-            Assert.AreEqual(AllMovieReviews.Count, SomeCount);
-        }
-
-        [TestMethod]
         public void ThisMovieReviewPropertyOK()
         {
             clsMovieReviewCollection AllMovieReviews = new clsMovieReviewCollection();
@@ -80,11 +71,5 @@ namespace Testing2
             Assert.AreEqual(AllMovieReviews.Count, TestList.Count);
         }
 
-        [TestMethod]
-        public void TwoRecordsPresent()
-        {
-            clsMovieReviewCollection AllMovieReviews = new clsMovieReviewCollection();
-            Assert.AreEqual(AllMovieReviews.Count, 2);
-        }
     }
 }

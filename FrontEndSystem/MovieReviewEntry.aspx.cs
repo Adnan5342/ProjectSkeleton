@@ -53,4 +53,9 @@ public partial class MovieReviewEntry : System.Web.UI.Page
             Response.Redirect("MovieViewer.aspx");
         }
     }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieViewer.aspx");
+    }
 }

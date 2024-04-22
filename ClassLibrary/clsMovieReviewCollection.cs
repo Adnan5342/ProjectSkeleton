@@ -37,7 +37,12 @@ namespace ClassLibrary
                 AMovieReview.MovieReviewId = Convert.ToInt32(DB.DataTable.Rows[Index]["MovieReviewId"]);
                 AMovieReview.MovieId = Convert.ToInt32(DB.DataTable.Rows[Index]["MovieId"]);
                 AMovieReview.MemberId = Convert.ToInt32(DB.DataTable.Rows[Index]["memberId"]);
-                //continueFromHere 
+                AMovieReview.Rating = Convert.ToDouble(DB.DataTable.Rows[Index]["Rating"]);
+                AMovieReview.Comment = Convert.ToString(DB.DataTable.Rows[Index]["Comment"]);
+                AMovieReview.DatePosted = Convert.ToDateTime(DB.DataTable.Rows[Index]["DatePosted"]);
+
+                mMovieReviewList.Add(AMovieReview);
+                Index++;
             }
         }
 

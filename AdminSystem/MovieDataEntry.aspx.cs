@@ -57,7 +57,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         }
         else
         {
-            Rating = 0;
+            Rating = Convert.ToDouble(txtRating);
         }
         string Directors = txtDirectors.Text;
         string Writers = txtWriters.Text;

@@ -30,12 +30,27 @@ public partial class MovieReviewEntry : System.Web.UI.Page
     {
         clsMovieReview AMovieReview = new clsMovieReview();
 
-        AMovieReview.DatePosted = Convert.ToDateTime(txtDatePosted.Text);
-        AMovieReview.Rating = Convert.ToDouble(txtRating.Text);
-        AMovieReview.Comment = txtComment.Text;
+        Int32 MovieId = Convert.ToInt32(txtMovieId.Text);
+        Int32 MemberId = Convert.ToInt32(txtMemberId.Text);
+        double Rating = Convert.ToDouble(txtRating.Text);
+        string Comment = txtComment.Text;
+        string DatePosted = txtDatePosted.Text;
 
-        Session["AMovieReview"] = AMovieReview;
+        string Error = "";
 
-        Response.Redirect("MovieReviewViewer.aspx");
+        Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+
+        if (Error == "")
+        {
+            AMovieReview.MovieId = MovieId;
+            AMovieReview.MemberId = MemberId;
+            AMovieReview.Rating = Rating;
+            AMovieReview.Comment = Comment;
+            AMovieReview.DatePosted = Convert.ToDateTime(DatePosted);
+
+            Session["AMovieReview"] = AMovieReview;
+
+            Response.Redirect("MovieViewer.aspx");
+        }
     }
 }

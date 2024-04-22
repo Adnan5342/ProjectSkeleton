@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 
 namespace ClassLibrary
@@ -6,6 +7,7 @@ namespace ClassLibrary
     public class clsMovieReviewCollection
     {
         List<clsMovieReview> mMovieReviewList = new List<clsMovieReview>();
+        clsMovieReview mThisMovieReview = new clsMovieReview();
 
         public List<clsMovieReview> MovieReviewList
         {
@@ -20,7 +22,17 @@ namespace ClassLibrary
             set { /*for later*/ }
         }
 
-        public clsMovieReview ThisMovieReview { get; set; }
+        public int Add()
+        {
+            mThisMovieReview.MovieReviewId = 123;
+            return mThisMovieReview.MovieReviewId;
+        }
+
+        public clsMovieReview ThisMovieReview
+        {
+            get { return mThisMovieReview; }
+            set { mThisMovieReview = value; }
+        }
 
         public clsMovieReviewCollection()
         {

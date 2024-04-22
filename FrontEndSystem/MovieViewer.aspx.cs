@@ -18,6 +18,7 @@ public partial class MovieViewer : System.Web.UI.Page
             if (MovieId != -1)
             {
                 DisplayMovies();
+                DisplayMovieReviews();
             }
         }
         else
@@ -41,6 +42,17 @@ public partial class MovieViewer : System.Web.UI.Page
         lblWritersText.Text = Movies.ThisMovie.Writers;
         lblStarActorsText.Text = Movies.ThisMovie.StarActors;
         imgCoverImage.ImageUrl = Movies.ThisMovie.CoverImage;
+    }
+
+    void DisplayMovieReviews()
+    {
+        clsMovieReviewCollection MovieReviews = new clsMovieReviewCollection();
+        MovieReviews.ThisMovieReview.Find(MovieId);
+
+        lstMovieReviewList.DataSource = MovieReviews.MovieReviewList;
+        lstMovieReviewList.DataValueField = "MovieReviewId";
+        lstMovieReviewList.DataTextField = "Comment";
+        lstMovieReviewList.DataBind();
     }
 
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)

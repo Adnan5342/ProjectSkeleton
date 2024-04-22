@@ -27,11 +27,11 @@ public partial class Registration : System.Web.UI.Page
                         using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"H:\\Project Database\\MovieMindsNetwork.mdf\";Integrated Security=True;Connect Timeout=30"))
                         {
                             connection.Open();
-                            string query = "INSERT INTO tblRegistration (username, email, password) VALUES (@username, @email, @password)";
+                            string query = "INSERT INTO tblRegistration (Username, Email, Password) VALUES (@Username, @Email, @Password)";
                             SqlCommand command = new SqlCommand(query, connection);
-                            command.Parameters.AddWithValue("@username", TextBox1.Text);
-                            command.Parameters.AddWithValue("@email", TextBox2.Text);
-                            command.Parameters.AddWithValue("@password", TextBox3.Text);
+                            command.Parameters.AddWithValue("@Username", TextBox1.Text);
+                            command.Parameters.AddWithValue("@Email", TextBox2.Text);
+                            command.Parameters.AddWithValue("@Password", TextBox3.Text);
                             command.ExecuteNonQuery();
                             connection.Close();
                             lblMessage.Text = "Registered successfully!";
@@ -67,12 +67,12 @@ public partial class Registration : System.Web.UI.Page
         }
     }
 
-    int check(string email)
+    int check(string Email)
     {
         using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"H:\\Project Database\\MovieMindsNetwork.mdf\";Integrated Security=True;Connect Timeout=30"))
         {
             connection.Open();
-            string query = "select count(*) from tblRegistration where email='" + email + "'";
+            string query = "select count(*) from tblRegistration where Email='" + Email + "'";
             SqlCommand command = new SqlCommand(query, connection);
             int v = (int)command.ExecuteScalar();
             connection.Close();

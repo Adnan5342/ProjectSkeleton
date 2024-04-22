@@ -48,9 +48,16 @@ public partial class MovieReviewEntry : System.Web.UI.Page
             AMovieReview.Comment = Comment;
             AMovieReview.DatePosted = Convert.ToDateTime(DatePosted);
 
-            Session["AMovieReview"] = AMovieReview;
+            clsMovieReviewCollection MovieReviewList = new clsMovieReviewCollection();
+            
+            MovieReviewList.ThisMovieReview = AMovieReview;
+            MovieReviewList.Add();
 
             Response.Redirect("MovieViewer.aspx");
+        }
+        else
+        {
+            lblError.Text = Error;
         }
     }
 

@@ -24,8 +24,15 @@ namespace ClassLibrary
 
         public int Add()
         {
-            mThisMovieReview.MovieReviewId = 123;
-            return mThisMovieReview.MovieReviewId;
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@MovieId", mThisMovieReview.MovieId);
+            DB.AddParameter("@MemberId", mThisMovieReview.MemberId);
+            DB.AddParameter("@Rating", mThisMovieReview.Rating);
+            DB.AddParameter("@Comment", mThisMovieReview.Comment);
+            DB.AddParameter("@DatePosted", mThisMovieReview.DatePosted);
+
+            return DB.Execute("sproc_tblMovieReview_Insert");
         }
 
         public clsMovieReview ThisMovieReview

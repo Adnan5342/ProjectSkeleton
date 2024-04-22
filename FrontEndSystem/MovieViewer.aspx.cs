@@ -67,9 +67,7 @@ public partial class MovieViewer : System.Web.UI.Page
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-        int movieId = (int)Session["MovieId"];
-
-        Session["MovieId"] = movieId;
+        Session["MovieReviewId"] = -1;
         Response.Redirect("MovieReviewEntry.aspx");
     }
 }

@@ -71,5 +71,27 @@ namespace Testing2
             Assert.AreEqual(AllMovieReviews.Count, TestList.Count);
         }
 
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            clsMovieReviewCollection AllMovieReviews = new clsMovieReviewCollection();
+            clsMovieReview TestItem = new clsMovieReview();
+            Int32 PrimaryKey = 0;
+
+            TestItem.MovieReviewId = 9;
+            TestItem.MovieId = 4;
+            TestItem.MemberId = 1009;
+            TestItem.Rating = 5;
+            TestItem.Comment = "Magnificent editing in this film!";
+            TestItem.DatePosted = DateTime.Now.Date;
+
+            AllMovieReviews.ThisMovieReview = TestItem;
+            PrimaryKey = AllMovieReviews.Add();
+            TestItem.MovieReviewId = PrimaryKey;
+            AllMovieReviews.ThisMovieReview.Find(PrimaryKey);
+
+            Assert.AreEqual(AllMovieReviews.ThisMovieReview, TestItem);
+        }
+
     }
 }

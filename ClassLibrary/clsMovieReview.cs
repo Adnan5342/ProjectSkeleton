@@ -62,7 +62,7 @@ namespace ClassLibrary
             {
                 mMovieReviewId = Convert.ToInt32(DB.DataTable.Rows[0]["MovieReviewId"]);
                 mMovieId = Convert.ToInt32(DB.DataTable.Rows[0]["MovieId"]);
-                mMemberId = Convert.ToInt32(DB.DataTable.Rows[0]["MemberId"]);
+                mMemberId = Convert.ToInt32(DB.DataTable.Rows[0]["memberId"]);
                 mDatePosted = Convert.ToDateTime(DB.DataTable.Rows[0]["DatePosted"]);
                 mRating = Convert.ToDouble(DB.DataTable.Rows[0]["Rating"]);
                 mComment = Convert.ToString(DB.DataTable.Rows[0]["Comment"]);

@@ -34,7 +34,7 @@
         <asp:Label ID="lblWriters" runat="server" style="z-index: 1; left: 265px; top: 332px; position: absolute" Text="Writers: "></asp:Label>
         <asp:Label ID="lblRuntime" runat="server" style="z-index: 1; left: 265px; top: 359px; position: absolute" Text="Runtime: "></asp:Label>
         <asp:Label ID="lblRating" runat="server" style="z-index: 1; left: 265px; top: 388px; position: absolute" Text="Rating: "></asp:Label>
-        <asp:ListBox ID="ListBox1" runat="server" style="z-index: 1; left: 22px; top: 617px; position: absolute; height: 158px; width: 488px; right: 191px"></asp:ListBox>
+        <asp:ListBox ID="lstMovieReviewList" runat="server" style="z-index: 1; left: 22px; top: 617px; position: absolute; height: 158px; width: 488px; right: 191px"></asp:ListBox>
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1; left: 522px; top: 620px; position: absolute" Text="Add a review" />
         <asp:Label ID="lblReviews" runat="server" Font-Bold="True" style="z-index: 1; left: 25px; top: 585px; position: absolute" Text="Reviews:"></asp:Label>
     </form>

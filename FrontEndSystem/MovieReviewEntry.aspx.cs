@@ -23,7 +23,7 @@ public partial class MovieReviewEntry : System.Web.UI.Page
     void DisplaySessionIDs()
     {
         txtMovieId.Text = Session["MovieId"].ToString();
-        txtMemberId.Text = Session["MemberId"].ToString();
+        txtMemberId.Text = Session["memberId"].ToString();
     }
 
     protected void btnOK_Click(object sender, EventArgs e)

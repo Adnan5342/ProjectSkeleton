@@ -14,8 +14,6 @@ public partial class Login :  System.Web.UI.Page
 
     }
 
-
-
     protected void btnSignIn_Click(object sender, EventArgs e)
     {
         string username = txtUsername.Text.Trim();
@@ -26,21 +24,21 @@ public partial class Login :  System.Web.UI.Page
         {
             connection.Open();
 
-            string query = "SELECT COUNT(*) FROM tblRegistration WHERE username=@username AND email=@email AND password=@password";
+            string query = "SELECT memberId FROM tblRegistration WHERE email=@email AND password=@password";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@username", username);
             command.Parameters.AddWithValue("@email", email);
             command.Parameters.AddWithValue("@password", password);
 
-            int v = (int)command.ExecuteScalar();
+            int memberId = (int)command.ExecuteScalar();
 
             connection.Close();
 
-            if (v == 1)
+            if (memberId != 0)
             {
                 Session["username"] = username;
                 Session["email"] = email;
+                Session["memberId"] = memberId;
 
                 Response.Redirect("HomePage.aspx");
             }
@@ -50,7 +48,6 @@ public partial class Login :  System.Web.UI.Page
                 lblError.Visible = true;
             }
         }
-
     }
 
     protected void btnRegister_Click(object sender, EventArgs e)

@@ -10,7 +10,20 @@ public partial class MovieReviewEntry : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["memberId"] != null && Session["username"] != null && Session["email"] != null && Session["MovieId"] != null)
+        {
+            DisplaySessionIDs();
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        }
+    }
 
+    void DisplaySessionIDs()
+    {
+        txtMovieId.Text = Session["MovieId"].ToString();
+        txtMemberId.Text = Session["MemberId"].ToString();
     }
 
     protected void btnOK_Click(object sender, EventArgs e)

@@ -13,8 +13,23 @@ public partial class TopShowsAndMovies : System.Web.UI.Page
 
     }
 
+    void DisplayTopMovies()
+    {
+
+    }
+
+    void DisplayTopShows()
+    {
+
+    }
+
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("Homepage.aspx");
+    }
+
+    protected void imgBtnProfile_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("ProfileViewer.aspx");
     }
 }

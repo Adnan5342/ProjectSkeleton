@@ -50,6 +50,13 @@ namespace ClassLibrary
             DB.Execute("sproc_tblMovieReview_Update");
         }
 
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@MovieReviewId", mThisMovieReview.MovieReviewId);
+            DB.Execute("sproc_tblMovieReview_Delete");
+        }
+
         public clsMovieReview ThisMovieReview
         {
             get { return mThisMovieReview; }

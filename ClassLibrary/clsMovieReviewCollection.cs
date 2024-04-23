@@ -1,5 +1,6 @@
 ﻿using System;
 using System.CodeDom;
+using System.IO;
 using System.Collections.Generic;
 
 namespace ClassLibrary
@@ -35,19 +36,40 @@ namespace ClassLibrary
             return DB.Execute("sproc_tblMovieReview_Insert");
         }
 
+        public void Update()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@MovieReviewId", mThisMovieReview.MovieReviewId);
+            DB.AddParameter("@MovieId", mThisMovieReview.MovieId);
+            DB.AddParameter("@MemberId", mThisMovieReview.MemberId);
+            DB.AddParameter("@Rating", mThisMovieReview.Rating);
+            DB.AddParameter("@Comment", mThisMovieReview.Comment);
+            DB.AddParameter("@DatePosted", mThisMovieReview.DatePosted);
+
+            DB.Execute("sproc_tblMovieReview_Update");
+        }
+
         public clsMovieReview ThisMovieReview
         {
             get { return mThisMovieReview; }
             set { mThisMovieReview = value; }
         }
 
+
         public clsMovieReviewCollection()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.Execute("sproc_tblMovieReview_SelectAll");
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
         {
             Int32 Index = 0;
             Int32 RecordCount = 0;
-            clsDataConnection DB = new clsDataConnection();
-            DB.Execute("sproc_tblMovieReview_SelectAll");
             RecordCount = DB.Count;
+            mMovieReviewList = new List<clsMovieReview>();
 
             while (Index < RecordCount)
             {
@@ -63,6 +85,14 @@ namespace ClassLibrary
                 mMovieReviewList.Add(AMovieReview);
                 Index++;
             }
+        }
+
+        public void ReportByMovieId(Int32 MovieId)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@MovieId", MovieId);
+            DB.Execute("sproc_tblMovieReview_FilterByMovieId");
+            PopulateArray(DB);
         }
 
     }

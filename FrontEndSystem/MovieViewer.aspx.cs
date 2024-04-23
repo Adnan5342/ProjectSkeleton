@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 public partial class MovieViewer : System.Web.UI.Page
 {
     Int32 MovieId;
+    Int32 MovieReviewId;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -71,5 +72,20 @@ public partial class MovieViewer : System.Web.UI.Page
     {
         Session["MovieReviewId"] = -1;
         Response.Redirect("MovieReviewEntry.aspx");
+    }
+
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        if (lstMovieReviewList.SelectedIndex != -1)
+        {
+            Int32 MovieReviewId = Convert.ToInt32(lstMovieReviewList.SelectedItem.Value);
+            Session["MovieReviewId"] = MovieReviewId;
+            Response.Redirect("MovieReviewConfirmDelete.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a review to delete.";
+        }
     }
 }

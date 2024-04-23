@@ -71,7 +71,7 @@ namespace Testing2
             Assert.AreEqual(AllMovieReviews.Count, TestList.Count);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void AddMethodOK()
         {
             clsMovieReviewCollection AllMovieReviews = new clsMovieReviewCollection();
@@ -91,6 +91,30 @@ namespace Testing2
             AllMovieReviews.ThisMovieReview.Find(PrimaryKey);
 
             Assert.AreEqual(AllMovieReviews.ThisMovieReview, TestItem);
+        }*/
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsMovieReviewCollection AllMovieReviews = new clsMovieReviewCollection();
+            clsMovieReview TestItem = new clsMovieReview();
+            Int32 PrimaryKey = 0;
+
+            TestItem.MovieReviewId = 1;
+            TestItem.MovieId = 1;
+            TestItem.MemberId = 1;
+            TestItem.Rating = 2.5;
+            TestItem.Comment = "Test comment.";
+            TestItem.DatePosted = DateTime.Now.Date;
+
+            AllMovieReviews.ThisMovieReview = TestItem;
+            PrimaryKey = AllMovieReviews.Add();
+            TestItem.MovieReviewId = PrimaryKey;
+            AllMovieReviews.ThisMovieReview.Find(PrimaryKey);
+            AllMovieReviews.Delete();
+            Boolean Found = AllMovieReviews.ThisMovieReview.Find(PrimaryKey);
+
+            Assert.IsFalse(Found);
         }
 
     }

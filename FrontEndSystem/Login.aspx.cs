@@ -11,7 +11,7 @@ public partial class Login :  System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        lblError.Visible = true;
     }
 
     protected void btnSignIn_Click(object sender, EventArgs e)
@@ -30,12 +30,11 @@ public partial class Login :  System.Web.UI.Page
             command.Parameters.AddWithValue("@Email", Email);
             command.Parameters.AddWithValue("@Password", Password);
 
-            int MemberId = (int)command.ExecuteScalar();
-
-            connection.Close();
-
-            if (MemberId != 0)
+            object result = command.ExecuteScalar();
+            if (result != null)
             {
+                int MemberId = (int)result;
+
                 Session["Username"] = Username;
                 Session["Email"] = Email;
                 Session["MemberId"] = MemberId;

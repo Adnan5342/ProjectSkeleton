@@ -12,7 +12,7 @@ public partial class MovieViewer : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["memberId"] != null && Session["username"] != null && Session["email"] != null)
+        if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && Session["MovieId"] != null)
         {
             MovieId = Convert.ToInt32(Session["MovieId"]);
             if (MovieId != -1)
@@ -46,8 +46,10 @@ public partial class MovieViewer : System.Web.UI.Page
 
     void DisplayMovieReviews()
     {
+        Int32 MovieId = Convert.ToInt32(Session["MovieId"]);
+
         clsMovieReviewCollection MovieReviews = new clsMovieReviewCollection();
-        MovieReviews.ThisMovieReview.Find(MovieId);
+        MovieReviews.ReportByMovieId(MovieId);
 
         lstMovieReviewList.DataSource = MovieReviews.MovieReviewList;
         lstMovieReviewList.DataValueField = "MovieReviewId";

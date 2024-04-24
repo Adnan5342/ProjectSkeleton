@@ -50,15 +50,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         string ReleaseDate = txtReleaseDate.Text;
         string Description = txtDescription.Text;
         string Genre = txtGenre.Text;
-        double Rating;
-        if (txtRating.Text.Length == 0)
-        {
-            Rating = 0;
-        }
-        else
-        {
-            Rating = Convert.ToDouble(txtRating);
-        }
+        string Rating = txtRating.Text;
         string Directors = txtDirectors.Text;
         string Writers = txtWriters.Text;
         string StarActors = txtStarActors.Text;
@@ -77,7 +69,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
             AMovie.ReleaseDate = Convert.ToDateTime(ReleaseDate);
             AMovie.Description = Description;
             AMovie.Genre = Genre;
-            AMovie.Rating = Rating; 
+            AMovie.Rating = Convert.ToDouble(Rating); 
             AMovie.Directors = Directors;
             AMovie.Writers = Writers;
             AMovie.StarActors = StarActors;

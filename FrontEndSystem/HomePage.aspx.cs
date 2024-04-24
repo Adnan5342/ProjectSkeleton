@@ -121,4 +121,9 @@ public partial class HomePage : System.Web.UI.Page
         lstShowList.DataTextField = "Title";
         lstShowList.DataBind();
     }
+
+    protected void btnTrending_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("TopShowsAndMovies.aspx");
+    }
 }

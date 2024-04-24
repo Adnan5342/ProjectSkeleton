@@ -112,11 +112,12 @@ namespace ClassLibrary
         }
 
         public string Valid(string title, string runtime, string releaseDate, string description, string genre, 
-            double rating, string directors, string writers, string starActors)
+            string rating, string directors, string writers, string starActors)
         {
             String Error = "";
             TimeSpan TempRuntime;
             DateTime TempReleaseDate;
+            double TempRating;
             
             if (title.Length == 0)
             {
@@ -188,12 +189,14 @@ namespace ClassLibrary
 
             try
             {
-                if (rating < 0)
+                TempRating = Convert.ToDouble(rating);
+
+                if (TempRating < 0)
                 {
                     Error = Error + "The 'rating' must not be a negative number: ";
                 }
 
-                if (rating > 5)
+                if (TempRating > 5)
                 {
                     Error = Error + "The 'rating' cannot be above 5: ";
                 }

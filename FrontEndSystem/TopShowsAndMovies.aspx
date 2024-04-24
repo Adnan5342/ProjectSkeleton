@@ -27,6 +27,7 @@
         </p>
         <p>
         <asp:Image ID="imgShowImage3" runat="server" style="z-index: 1; left: 529px; top: 616px; width: 200px; height: 300px; position: absolute" />
+            <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 337px; top: 105px; position: absolute"></asp:Label>
         </p>
         <p>
         <asp:Image ID="imsShowImage4" runat="server" style="z-index: 1; left: 761px; top: 616px; width: 200px; height: 300px; position: absolute" />

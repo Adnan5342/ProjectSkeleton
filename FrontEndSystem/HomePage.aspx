@@ -31,6 +31,9 @@
         <asp:Button ID="btnSearchShows" runat="server" height="26px" OnClick="btnSearchShows_Click" style="z-index: 1; left: 442px; top: 439px; position: absolute" Text="Search" width="56px" />
         <asp:Button ID="btnClearMovies" runat="server" height="26px" OnClick="btnClearMovies_Click" style="z-index: 1; left: 181px; top: 472px; position: absolute" Text="Clear" width="56px" />
         <asp:Button ID="btnClearShows" runat="server" height="26px" OnClick="btnClearShows_Click" style="z-index: 1; left: 442px; top: 472px; position: absolute" Text="Clear" width="56px" />
+        <p>
+            <asp:Button ID="btnTrending" runat="server" OnClick="btnTrending_Click" style="z-index: 1; left: 118px; top: 571px; position: absolute; height: 42px; width: 281px; right: 381px" Text="View the highest rated shows and movies!" />
+        </p>
     </form>
 </body>
 </html>

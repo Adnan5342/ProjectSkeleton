@@ -133,5 +133,17 @@ namespace ClassLibrary
             DB.Execute("sproc_tblMovie_FilterByTitle");
             PopulateArray(DB);
         }
+
+        public void ReportByTop5()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.Execute("sproc_tblMovie_FilterByTop5");
+            PopulateArray(DB);
+
+            if (mMovieList.Count < 5)
+            {
+                throw new Exception("There are fewer than 5 movies in the database.");
+            }
+        } 
     }
 }

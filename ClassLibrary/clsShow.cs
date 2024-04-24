@@ -102,10 +102,12 @@ namespace ClassLibrary
         }
 
         public string Valid(string title, string description, string genre, string creators, 
-            string starActors, string coverImage, string releaseDate, double rating)
+            string starActors, string coverImage, string releaseDate, string rating, string seasons)
         {
             String Error = "";
             DateTime TempReleaseDate;
+            double TempRating;
+            Int32 TempSeasons;
 
             if (title.Length == 0)
             {
@@ -165,12 +167,14 @@ namespace ClassLibrary
 
             try
             {
-                if (rating < 0)
+                TempRating = Convert.ToDouble(rating);
+
+                if (TempRating < 0)
                 {
                     Error = Error + "The 'rating' must not be a negative number: ";
                 }
 
-                if (rating > 5)
+                if (TempRating > 5)
                 {
                     Error = Error + "The 'rating' cannot be above 5: ";
                 }
@@ -180,6 +184,19 @@ namespace ClassLibrary
                 Error = Error + "The 'rating' must be a valid number from 0 to 5: ";
             }
 
+            try
+            {
+                TempSeasons = Convert.ToInt32(seasons);
+
+                if (TempSeasons < 0)
+                {
+                    Error = Error + "The number of seasons cannot be negative: ";
+                }
+            }
+            catch
+            {
+                Error = Error + "'Seasons' must a valid number: ";
+            }
             return Error;
         }
     }

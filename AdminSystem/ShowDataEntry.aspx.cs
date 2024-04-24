@@ -17,12 +17,12 @@ public partial class _1_DataEntry : System.Web.UI.Page
         {
             if (ShowId != 1)
             {
-                DisplayShow();
+                DisplayShows();
             }
         }
     }
 
-    void DisplayShow()
+    void DisplayShows()
     {
         clsShowCollection ShowList = new clsShowCollection();
         ShowList.ThisShow.Find(ShowId);
@@ -31,6 +31,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         txtTitle.Text = ShowList.ThisShow.Title;
         txtSeasons.Text = ShowList.ThisShow.Seasons.ToString();
         txtDescription.Text = ShowList.ThisShow.Description;
+        txtReleaseDate.Text = ShowList.ThisShow.ReleaseDate.ToString();
         txtGenre.Text = ShowList.ThisShow.Genre;
         txtRating.Text = ShowList.ThisShow.Rating.ToString();
         txtCreators.Text = ShowList.ThisShow.Creators;
@@ -43,33 +44,17 @@ public partial class _1_DataEntry : System.Web.UI.Page
         clsShow AShow = new clsShow();
 
         string Title = txtTitle.Text;
-        Int32 Seasons;
-        if (txtSeasons.Text.Length == 0)
-        {
-            Seasons = 0;
-        }
-        else
-        {
-            Seasons = 0;
-        }
+        string Seasons = txtSeasons.Text;
         string ReleaseDate = txtReleaseDate.Text;
         string Description = txtDescription.Text;
         string Genre = txtGenre.Text;
-        double Rating;
-        if (txtRating.Text.Length == 0)
-        {
-            Rating = 0;
-        }
-        else
-        {
-            Rating = 0;
-        }
+        string Rating = txtRating.Text;
         string Creators = txtCreators.Text;
         string StarActors = txtStarActors.Text;
         string CoverImage = txtCoverImage.Text;
 
         string Error = "";
-        Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+        Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
 
         if (Error == "")
         {

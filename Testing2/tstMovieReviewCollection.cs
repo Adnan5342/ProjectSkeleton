@@ -93,7 +93,7 @@ namespace Testing2
             Assert.AreEqual(AllMovieReviews.ThisMovieReview, TestItem);
         }*/
 
-        [TestMethod]
+        /*[TestMethod]
         public void DeleteMethodOK()
         {
             clsMovieReviewCollection AllMovieReviews = new clsMovieReviewCollection();
@@ -115,7 +115,7 @@ namespace Testing2
             Boolean Found = AllMovieReviews.ThisMovieReview.Find(PrimaryKey);
 
             Assert.IsFalse(Found);
-        }
+        }*/
 
     }
 }

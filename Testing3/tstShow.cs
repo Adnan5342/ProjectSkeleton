@@ -284,7 +284,9 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            string Rating = "2.5";
+            string Seasons = "1";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -293,8 +295,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Title = "";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -303,8 +307,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Title = "a";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -313,8 +319,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Title = "aa";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -323,9 +331,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Title = "";
             Title = Title.PadRight(50, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -334,9 +344,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Title = "";
             Title = Title.PadRight(99, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -345,9 +357,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Title = "";
             Title = Title.PadRight(100, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -356,9 +370,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Title = "";
             Title = Title.PadRight(101, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -367,9 +383,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Title = "";
             Title = Title.PadRight(300, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -378,8 +396,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Description = "";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -388,8 +408,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Description = "a";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -398,9 +420,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Description = "";
             Description = Description.PadRight(500, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -409,9 +433,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Description = "";
             Description = Description.PadRight(999, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -420,9 +446,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Description = "";
             Description = Description.PadRight(1000, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -431,9 +459,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Description = "";
             Description = Description.PadRight(1001, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -442,9 +472,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Description = "";
             Description = Description.PadRight(1500, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -453,8 +485,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Genre = "a";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -463,8 +497,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Genre = "aa";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -473,8 +509,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Genre = "aaa";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -483,8 +521,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Genre = "aaaa";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -493,9 +533,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Genre = "";
             Genre = Genre.PadRight(26, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -504,9 +546,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Genre = "";
             Genre = Genre.PadRight(49, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -515,9 +559,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Genre = "";
             Genre = Genre.PadRight(50, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -526,9 +572,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Genre = "";
             Genre = Genre.PadRight(51, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -537,9 +585,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Genre = "";
             Genre = Genre.PadRight(100, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -548,8 +598,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Creators = "";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -558,8 +610,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Creators = "a";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -568,9 +622,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Creators = "";
             Creators = Creators.PadRight(100, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -579,9 +635,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Creators = "";
             Creators = Creators.PadRight(199, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -590,9 +648,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Creators = "";
             Creators = Creators.PadRight(200, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -601,9 +661,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Creators = "";
             Creators = Creators.PadRight(201, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -612,9 +674,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string Creators = "";
             Creators = Creators.PadRight(400, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -623,8 +687,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string StarActors = "";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -633,8 +699,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string StarActors = "a";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -643,9 +711,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string StarActors = "";
             StarActors = StarActors.PadRight(100, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -654,9 +724,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string StarActors = "";
             StarActors = StarActors.PadRight(199, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -665,9 +737,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string StarActors = "";
             StarActors = StarActors.PadRight(200, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -676,9 +750,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string StarActors = "";
             StarActors = StarActors.PadRight(201, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -687,9 +763,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string StarActors = "";
             StarActors = StarActors.PadRight(400, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -698,8 +776,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string CoverImage = "";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -708,8 +788,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string CoverImage = "a";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -718,9 +800,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string CoverImage = "";
             CoverImage = CoverImage.PadRight(50, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -729,9 +813,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string CoverImage = "";
             CoverImage = CoverImage.PadRight(99, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -740,9 +826,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string CoverImage = "";
             CoverImage = CoverImage.PadRight(100, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreEqual(Error, "");
         }
 
@@ -751,9 +839,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string CoverImage = "";
             CoverImage = CoverImage.PadRight(101, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -762,9 +852,11 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string CoverImage = "";
             CoverImage = CoverImage.PadRight(200, 'a');
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             Assert.AreNotEqual(Error, "");
         }
 
@@ -773,10 +865,12 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             DateTime TestDate;
             TestDate = Convert.ToDateTime("01/01/1800");
             string ReleaseDate = TestDate.ToString();
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there IS an error
             Assert.AreNotEqual(Error, "");
         }
@@ -786,10 +880,12 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             DateTime TestDate;
             TestDate = Convert.ToDateTime("31/12/1899");
             string ReleaseDate = TestDate.ToString();
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there IS an error
             Assert.AreNotEqual(Error, "");
         }
@@ -799,10 +895,12 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             DateTime TestDate;
             TestDate = Convert.ToDateTime("01/01/1900");
             string ReleaseDate = TestDate.ToString();
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there ISN'T an error
             Assert.AreEqual(Error, "");
         }
@@ -812,10 +910,12 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             DateTime TestDate;
             TestDate = Convert.ToDateTime("02/01/1900");
             string ReleaseDate = TestDate.ToString();
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating); 
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons); 
             //test to see that there ISN'T an error
             Assert.AreEqual(Error, "");
         }
@@ -825,10 +925,12 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             DateTime TestDate;
             TestDate = Convert.ToDateTime("06/06/2000");
             string ReleaseDate = TestDate.ToString();
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there ISN'T an error
             Assert.AreEqual(Error, "");
         }
@@ -838,11 +940,13 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddDays(59);
             string ReleaseDate = TestDate.ToString();
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there ISN'T an error
             Assert.AreEqual(Error, "");
         }
@@ -852,11 +956,13 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddDays(60);
             string ReleaseDate = TestDate.ToString();
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there ISN'T an error
             Assert.AreEqual(Error, "");
         }
@@ -866,11 +972,13 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddDays(61);
             string ReleaseDate = TestDate.ToString();
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there IS an error
             Assert.AreNotEqual(Error, "");
         }
@@ -880,11 +988,13 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddDays(200);
             string ReleaseDate = TestDate.ToString();
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there IS an error
             Assert.AreNotEqual(Error, "");
         }
@@ -894,8 +1004,10 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
+            string Rating = "2.5";
+            string Seasons = "1";
             string ReleaseDate = "Must be a valid date: ";
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there IS an error
             Assert.AreNotEqual(Error, "");
         }
@@ -905,8 +1017,9 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
-            double Rating = -0.1;
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            string Seasons = "1";
+            string Rating = "0";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there IS an error
             Assert.AreNotEqual(Error, "");
         }
@@ -916,8 +1029,9 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
-            double Rating = 0;
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            string Seasons = "1";
+            string Rating = "0.1";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there ISN'T an error
             Assert.AreEqual(Error, "");
         }
@@ -927,8 +1041,9 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
-            double Rating = 0.1;
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            string Seasons = "1";
+            string Rating = "0.2";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there ISN'T an error
             Assert.AreEqual(Error, "");
         }
@@ -938,8 +1053,9 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
-            double Rating = 2.5;
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            string Seasons = "1";
+            string Rating = "2.5";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there ISN'T an error
             Assert.AreEqual(Error, "");
         }
@@ -949,8 +1065,9 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
-            double Rating = 4.9;
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            string Seasons = "1";
+            string Rating = "4.9";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there ISN'T an error
             Assert.AreEqual(Error, "");
         }
@@ -960,8 +1077,9 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
-            double Rating = 5;
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            string Seasons = "1";
+            string Rating = "5";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there ISN'T an error
             Assert.AreEqual(Error, "");
         }
@@ -971,8 +1089,9 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
-            double Rating = 5.1;
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            string Seasons = "1";
+            string Rating = "5.1";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there IS an error
             Assert.AreNotEqual(Error, "");
         }
@@ -982,8 +1101,9 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
-            double Rating = 15;
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            string Seasons = "1";
+            string Rating = "15";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there IS an error
             Assert.AreNotEqual(Error, "");
         }
@@ -993,11 +1113,12 @@ namespace Testing3
         {
             clsShow AShow = new clsShow();
             String Error = "";
-            double Rating = -1;
-            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating);
+            string Seasons = "1";
+            string Rating = "Not a valid rating";
+            Error = AShow.Valid(Title, Description, Genre, Creators, StarActors, CoverImage, ReleaseDate, Rating, Seasons);
             //test to see that there IS an error
             Assert.AreNotEqual(Error, "");
         }
-
+        
     }
 }

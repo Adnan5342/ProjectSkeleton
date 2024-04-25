@@ -180,6 +180,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreEqual(Error, "");
         }
@@ -189,7 +190,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            double Rating = -15;
+            string Rating = "-15";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreNotEqual(Error, "");
         }
@@ -199,7 +200,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            double Rating = -0.1;
+            string Rating = "-0.1";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreNotEqual(Error, "");
         }
@@ -209,7 +210,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            double Rating = 0.0;
+            string Rating = "0.1";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreEqual(Error, "");
         }
@@ -219,7 +220,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            double Rating = 0.1;
+            string Rating = "0.1";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreEqual(Error, "");
         }
@@ -229,7 +230,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            double Rating = 2.5;
+            string Rating = "2.5";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreEqual(Error, "");
         }
@@ -239,7 +240,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            double Rating = 4.9;
+            string Rating = "4.9";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreEqual(Error, "");
         }
@@ -249,7 +250,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            double Rating = 5.0;
+            string Rating = "5";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreEqual(Error, "");
         }
@@ -259,7 +260,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            double Rating = 5.1;
+            string Rating = "5.1";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreNotEqual(Error, "");
         }
@@ -269,7 +270,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            double Rating = 15;
+            string Rating = "15";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreNotEqual(Error, "");
         }
@@ -279,7 +280,8 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            string Comment = "";
+            string Rating = "2.5";
+            string Comment = "a";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreEqual(Error, "");
         }
@@ -289,7 +291,8 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            string Comment = "a";
+            string Rating = "2.5";
+            string Comment = "aa";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreEqual(Error, "");
         }
@@ -299,6 +302,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             string Comment = "";
             Comment = Comment.PadRight(250, 'a');
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
@@ -310,6 +314,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             string Comment = "";
             Comment = Comment.PadRight(499, 'a');
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
@@ -321,6 +326,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             string Comment = "";
             Comment = Comment.PadRight(500, 'a');
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
@@ -332,6 +338,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             string Comment = "";
             Comment = Comment.PadRight(501, 'a');
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
@@ -343,6 +350,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             string Comment = "";
             Comment = Comment.PadRight(1000, 'a');
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
@@ -354,6 +362,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddYears(-100);
@@ -367,6 +376,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddYears(-1);
@@ -380,6 +390,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             string DatePosted = TestDate.ToString();
@@ -392,6 +403,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddDays(1);
@@ -405,6 +417,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddYears(100);
@@ -418,6 +431,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
+            string Rating = "2.5";
             string DatePosted = "This is not a date!";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreNotEqual(Error, "");

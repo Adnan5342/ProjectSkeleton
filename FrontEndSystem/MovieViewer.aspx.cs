@@ -9,7 +9,6 @@ using System.Web.UI.WebControls;
 public partial class MovieViewer : System.Web.UI.Page
 {
     Int32 MovieId;
-    Int32 MovieReviewId;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -87,5 +86,10 @@ public partial class MovieViewer : System.Web.UI.Page
         {
             lblError.Text = "Please select a review to delete.";
         }
+    }
+
+    protected void btnTrending_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("TopShowsAndMovies.aspx");
     }
 }

@@ -32,7 +32,7 @@ public partial class MovieReviewEntry : System.Web.UI.Page
 
         Int32 MovieId = Convert.ToInt32(txtMovieId.Text);
         Int32 MemberId = Convert.ToInt32(txtMemberId.Text);
-        double Rating = Convert.ToDouble(txtRating.Text);
+        string Rating = txtRating.Text;
         string Comment = txtComment.Text;
         string DatePosted = txtDatePosted.Text;
 
@@ -44,7 +44,7 @@ public partial class MovieReviewEntry : System.Web.UI.Page
         {
             AMovieReview.MovieId = MovieId;
             AMovieReview.MemberId = MemberId;
-            AMovieReview.Rating = Rating;
+            AMovieReview.Rating = Convert.ToDouble(Rating);
             AMovieReview.Comment = Comment;
             AMovieReview.DatePosted = Convert.ToDateTime(DatePosted);
 

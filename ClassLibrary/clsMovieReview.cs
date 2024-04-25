@@ -75,18 +75,25 @@ namespace ClassLibrary
             }
         }
 
-        public string Valid(double rating, string comment, string datePosted)
+        public string Valid(string rating, string comment, string datePosted)
         {
             String Error = "";
             DateTime DateTemp;
+            double TempRating;
 
             try
             {
-                if (rating < 0)
+                TempRating = Convert.ToDouble(rating);
+
+                if (TempRating == 0)
+                {
+                    Error = Error + "You must enter a rating from 1 to 5.";
+                }
+                if (TempRating < 0)
                 {
                     Error = Error + "The rating must not be negative. ";
                 }
-                if (rating > 5)
+                if (TempRating > 5)
                 {
                     Error = Error + "The rating must not exceed 5. ";
                 }
@@ -94,6 +101,11 @@ namespace ClassLibrary
             catch
             {
                 Error = Error + "The rating must be a valid number. ";
+            }
+
+            if (comment.Length == 0)
+            {
+                Error = Error + "You must not leave the comment box empty.";
             }
 
             if (comment.Length > 500)

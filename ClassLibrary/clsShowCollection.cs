@@ -131,6 +131,18 @@ namespace ClassLibrary
             PopulateArray(DB);
         }
 
+        public void ReportByTop5()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.Execute("sproc_tblShow_FilterByTop5");
+            PopulateArray(DB);
+
+            if (mShowList.Count < 5)
+            {
+                throw new Exception("There are fewer than 5 shows in the database.");
+            }
+        }
+
         
     }
 }

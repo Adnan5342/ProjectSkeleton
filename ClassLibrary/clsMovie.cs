@@ -196,6 +196,11 @@ namespace ClassLibrary
                     Error = Error + "The 'rating' must not be a negative number: ";
                 }
 
+                if (TempRating == 0)
+                {
+                    Error = Error + "You must enter a rating from 1 to 5.";
+                }
+
                 if (TempRating > 5)
                 {
                     Error = Error + "The 'rating' cannot be above 5: ";

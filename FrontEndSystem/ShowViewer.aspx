@@ -8,6 +8,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <p>
+            <asp:Button ID="btnTrending" runat="server" OnClick="btnTrending_Click" style="z-index: 1; left: 254px; top: 533px; position: absolute; height: 42px; width: 281px; right: 602px" Text="View the highest rated shows and movies!" />
+        </p>
         <div>
         <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 10px; top: 34px; position: absolute" OnClick="imgBtnLogo_Click" />
         </div>

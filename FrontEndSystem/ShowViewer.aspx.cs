@@ -15,11 +15,11 @@ public partial class ShowViewer : System.Web.UI.Page
         ShowId = Convert.ToInt32(Session["ShowId"]);
         if (ShowId != -1)
         {
-            DisplayShows();
+            DisplayShow();
         }
     }
 
-    void DisplayShows()
+    void DisplayShow()
     {
         clsShowCollection Shows = new clsShowCollection();
         Shows.ThisShow.Find(ShowId);
@@ -44,5 +44,10 @@ public partial class ShowViewer : System.Web.UI.Page
     protected void imgBtnProfile_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("ProfileViewer.aspx");
+    }
+
+    protected void btnTrending_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("TopShowsAndMovies.aspx");
     }
 }

@@ -297,7 +297,7 @@ namespace Testing4
             Boolean OK = true;
             Int32 MovieId = 4;
             Found = AMovie.Find(MovieId);
-            if (AMovie.CoverImage != "/MovieCoverImages/JurassicParkMoviePoster.jpg")
+            if (AMovie.CoverImage != "/MovieCoverImages/JurassicParkPoster.jpg")
             {
                 OK = false;
             }
@@ -308,8 +308,8 @@ namespace Testing4
         public void ValidMethodOK()
         {
             clsMovie AMovie = new clsMovie();
-            //store any error message
             String Error = "";
+            string Rating = "2.5";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
             Assert.AreEqual(Error, "");
@@ -320,6 +320,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Title = "";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -332,6 +333,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Title = "";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -344,6 +346,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Title = "a";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -356,6 +359,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Title = "a";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -368,6 +372,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Title = "";
             Title = Title.PadRight(50, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -381,6 +386,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Title = "";
             Title = Title.PadRight(99, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -394,6 +400,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Title = "";
             Title = Title.PadRight(100, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -407,6 +414,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Title = "";
             Title = Title.PadRight(101, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -420,6 +428,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Title = "";
             Title = Title.PadRight(300, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -433,6 +442,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             TimeSpan TestRuntime;
             TestRuntime = TimeSpan.Parse("0:01");
             string Runtime = TestRuntime.ToString();
@@ -447,6 +457,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             TimeSpan TestRuntime;
             TestRuntime = TimeSpan.Parse("0:04");
             string Runtime = TestRuntime.ToString();
@@ -461,6 +472,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             TimeSpan TestRuntime;
             TestRuntime = TimeSpan.Parse("0:05");
             string Runtime = TestRuntime.ToString();
@@ -475,6 +487,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             TimeSpan TestRuntime;
             TestRuntime = TimeSpan.Parse("0:06");
             string Runtime = TestRuntime.ToString();
@@ -489,6 +502,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             TimeSpan TestRuntime;
             TestRuntime = TimeSpan.Parse("5:00");
             string Runtime = TestRuntime.ToString();
@@ -503,6 +517,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             TimeSpan TestRuntime;
             TestRuntime = TimeSpan.Parse("9:59");
             string Runtime = TestRuntime.ToString();
@@ -517,6 +532,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             TimeSpan TestRuntime;
             TestRuntime = TimeSpan.Parse("10:00");
             string Runtime = TestRuntime.ToString();
@@ -531,6 +547,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             TimeSpan TestRuntime;
             TestRuntime = TimeSpan.Parse("10:01");
             string Runtime = TestRuntime.ToString();
@@ -545,6 +562,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             TimeSpan TestRuntime;
             TestRuntime = TimeSpan.FromHours(50);
             string Runtime = TestRuntime.ToString();
@@ -559,6 +577,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Runtime = "Must be a valid runtime: ";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -571,6 +590,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = Convert.ToDateTime("01/01/1800");
             string ReleaseDate = TestDate.ToString();
@@ -585,6 +605,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = Convert.ToDateTime("31/12/1899");
             string ReleaseDate = TestDate.ToString();
@@ -599,6 +620,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = Convert.ToDateTime("01/01/1900");
             string ReleaseDate = TestDate.ToString();
@@ -613,6 +635,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = Convert.ToDateTime("02/01/1900");
             string ReleaseDate = TestDate.ToString();
@@ -627,6 +650,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = Convert.ToDateTime("06/06/2000");
             string ReleaseDate = TestDate.ToString();
@@ -641,6 +665,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddDays(59);
@@ -656,6 +681,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddDays(60);
@@ -671,6 +697,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddDays(61);
@@ -686,6 +713,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             TestDate = TestDate.AddDays(200);
@@ -701,6 +729,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string ReleaseDate = "Must be a valid date: ";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -713,6 +742,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Description = "";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -725,6 +755,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Description = "a";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -737,6 +768,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Description = "";
             Description = Description.PadRight(500, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -750,6 +782,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Description = "";
             Description = Description.PadRight(999, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -763,6 +796,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Description = "";
             Description = Description.PadRight(1000, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -776,6 +810,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Description = "";
             Description = Description.PadRight(1001, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -789,6 +824,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Description = "";
             Description = Description.PadRight(1500, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -802,6 +838,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Genre = "a";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -814,6 +851,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Genre = "aa";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -826,6 +864,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Genre = "aaa";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -838,6 +877,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Genre = "aaaa";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -850,6 +890,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Genre = "";
             Genre = Genre.PadRight(26, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -863,6 +904,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Genre = "";
             Genre = Genre.PadRight(49, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -876,6 +918,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Genre = "";
             Genre = Genre.PadRight(50, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -888,6 +931,7 @@ namespace Testing4
         public void GenreMaxPlusOne()
         {
             clsMovie AMovie = new clsMovie();
+            string Rating = "2.5";
             String Error = "";
             string Genre = "";
             Genre = Genre.PadRight(51, 'a');
@@ -902,6 +946,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Genre = "";
             Genre = Genre.PadRight(100, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -915,7 +960,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
-            double Rating = -0.1;
+            string Rating = "0";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
             //test to see that there IS an error
@@ -927,7 +972,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
-            double Rating = 0;
+            string Rating = "0.1";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
             //test to see that there ISN'T an error
@@ -939,7 +984,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
-            double Rating = 0.1;
+            string Rating = "0.2";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
             //test to see that there ISN'T an error
@@ -951,7 +996,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
-            double Rating = 2.5;
+            string Rating = "2.5";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
             //test to see that there ISN'T an error
@@ -963,7 +1008,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
-            double Rating = 4.9;
+            string Rating = "4.9";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
             //test to see that there ISN'T an error
@@ -975,7 +1020,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
-            double Rating = 5;
+            string Rating = "5";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
             //test to see that there ISN'T an error
@@ -987,7 +1032,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
-            double Rating = 5.1;
+            string Rating = "5.1";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
             //test to see that there IS an error
@@ -999,7 +1044,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
-            double Rating = 15;
+            string Rating = "15";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
             //test to see that there IS an error
@@ -1011,7 +1056,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
-            double Rating = -1;
+            string Rating = "-1";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
             //test to see that there IS an error
@@ -1023,6 +1068,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Directors = "";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -1035,6 +1081,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Directors = "a";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -1047,6 +1094,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Directors = "aa";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -1059,6 +1107,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Directors = "";
             Directors = Directors.PadRight(199, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1072,6 +1121,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Directors = "";
             Directors = Directors.PadRight(200, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1085,6 +1135,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Directors = "";
             Directors = Directors.PadRight(201, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1098,6 +1149,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Directors = "";
             Directors = Directors.PadRight(500, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1111,6 +1163,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Writers = "";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -1123,6 +1176,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Writers = "a";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -1135,6 +1189,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Writers = "aa";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -1147,6 +1202,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Writers = "";
             Writers = Writers.PadRight(100, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1160,6 +1216,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Writers = "";
             Writers = Writers.PadRight(199, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1173,6 +1230,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Writers = "";
             Writers = Writers.PadRight(200, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1186,6 +1244,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Writers = "";
             Writers = Writers.PadRight(201, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1199,6 +1258,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string Writers = "";
             Writers = Writers.PadRight(500, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1212,6 +1272,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string StarActors = "";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -1224,6 +1285,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string StarActors = "a";
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
                 Writers, StarActors);
@@ -1236,6 +1298,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string StarActors = "";
             StarActors = StarActors.PadRight(100, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1249,6 +1312,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string StarActors = "";
             StarActors = StarActors.PadRight(199, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1262,6 +1326,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string StarActors = "";
             StarActors = StarActors.PadRight(200, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1275,6 +1340,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string StarActors = "";
             StarActors = StarActors.PadRight(201, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,
@@ -1288,6 +1354,7 @@ namespace Testing4
         {
             clsMovie AMovie = new clsMovie();
             String Error = "";
+            string Rating = "2.5";
             string StarActors = "";
             StarActors = StarActors.PadRight(500, 'a');
             Error = AMovie.Valid(Title, Runtime, ReleaseDate, Description, Genre, Rating, Directors,

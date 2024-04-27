@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Movie Entry</title>
+    <link rel="stylesheet" href="css/Styles.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -25,7 +26,7 @@
         </p>
         <p>
             <asp:Label ID="lblCoverImage" runat="server" style="z-index: 1; left: 13px; top: 399px; position: absolute" Text="Cover Image: "></asp:Label>
-            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 323px; top: 63px; position: absolute" />
+            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 323px; top: 63px; position: absolute" OnClick="imgBtnLogo_Click" />
         </p>
         <asp:Label ID="lblDescription" runat="server" style="z-index: 1; left: 13px; top: 172px; position: absolute" Text="Description:"></asp:Label>
         <p>

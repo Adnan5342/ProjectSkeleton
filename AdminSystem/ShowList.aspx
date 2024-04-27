@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>TV Show List</title>
+    <link rel="stylesheet" href="css/Styles.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,7 +14,7 @@
             <asp:ListBox ID="lstShowList" runat="server" style="z-index: 1; left: 10px; top: 76px; position: absolute; height: 413px; width: 531px"></asp:ListBox>
         <asp:Label ID="lblTitle" runat="server" Font-Bold="True" Font-Size="X-Large" style="z-index: 1; left: 10px; top: 15px; position: absolute" Text="Show List"></asp:Label>
         <p>
-            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 569px; top: 154px; position: absolute" />
+            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 569px; top: 154px; position: absolute" OnClick="imgBtnLogo_Click" />
         <asp:Label ID="lblFilterByTitle" runat="server" style="z-index: 1; left: 569px; top: 76px; position: absolute" Text="Filter by title: "></asp:Label>
         </p>
         <p>

@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>TV Show Entry</title>
+    <link rel="stylesheet" href="css/Styles.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -39,7 +40,7 @@
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 71px; top: 402px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
         <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 287px; top: 30px; position: absolute" Text="Find" />
         <p>
-            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 285px; top: 67px; position: absolute" />
+            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 285px; top: 67px; position: absolute" OnClick="imgBtnLogo_Click" />
         </p>
     </form>
 </body>

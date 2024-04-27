@@ -124,4 +124,9 @@ public partial class _1_DataEntry : System.Web.UI.Page
             txtCoverImage.Text = AMovie.CoverImage;
         }
     }
+
+    protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("AdminHome.aspx");
+    }
 }

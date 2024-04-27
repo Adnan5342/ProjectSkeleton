@@ -85,4 +85,9 @@ public partial class Registration : System.Web.UI.Page
         Response.Redirect("Login.aspx");
     }
 
+
+    protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
+    {
+        lblMessage.Text = "Register or sign in to an account.";
+    }
 }

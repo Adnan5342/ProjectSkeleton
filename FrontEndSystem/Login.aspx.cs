@@ -53,4 +53,9 @@ public partial class Login :  System.Web.UI.Page
     {
         Response.Redirect("Registration.aspx");
     }
+
+    protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
+    {
+        lblError.Text = "Sign into an account or register. ";
+    }
 }

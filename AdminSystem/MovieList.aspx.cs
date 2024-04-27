@@ -94,4 +94,9 @@ public partial class _1_List : System.Web.UI.Page
     {
         Response.Redirect("ShowList.aspx");
     }
+
+    protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("AdminHome.aspx");
+    }
 }

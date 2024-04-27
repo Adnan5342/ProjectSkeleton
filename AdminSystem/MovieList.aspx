@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Movie List</title>
+    <link rel="stylesheet" href="css/Styles.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -23,7 +24,7 @@
         <asp:Button ID="btnClear" runat="server" height="26px" OnClick="btnClear_Click" style="z-index: 1; left: 643px; top: 122px; position: absolute; width: 49px;" Text="Clear" />
         <asp:TextBox ID="txtFilterByTitle" runat="server" style="z-index: 1; left: 570px; top: 91px; position: absolute"></asp:TextBox>
         <p>
-            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 570px; top: 154px; position: absolute" />
+            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 570px; top: 154px; position: absolute" OnClick="imgBtnLogo_Click" />
         </p>
         <p>
             <asp:LinkButton ID="lnkBtnShows" runat="server" OnClick="lnkBtnMovies_Click" style="z-index: 1; left: 567px; top: 273px; position: absolute">Go to &#39;shows&#39; list</asp:LinkButton>

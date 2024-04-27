@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/Styles.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -20,6 +21,9 @@
         <asp:Button ID="btnSignIn" runat="server" OnClick="btnSignIn_Click" style="z-index: 1; left: 19px; top: 258px; position: absolute" Text="Sign in" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 22px; top: 335px; position: absolute"></asp:Label>
         <asp:Button ID="btnRegister" runat="server" BorderStyle="None" OnClick="btnRegister_Click" style="z-index: 1; left: 19px; top: 290px; position: absolute; width: 169px" Text="No account? Register now!" />
+        <p>
+        <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 265px; top: 41px; position: absolute" OnClick="imgBtnLogo_Click" />
+        </p>
     </form>
 </body>
 </html>

@@ -28,7 +28,7 @@ namespace ClassLibrary
             clsDataConnection DB = new clsDataConnection();
 
             DB.AddParameter("@MovieId", mThisMovieReview.MovieId);
-            DB.AddParameter("@MemberId", mThisMovieReview.MemberId);
+            DB.AddParameter("@memberId", mThisMovieReview.MemberId);
             DB.AddParameter("@Rating", mThisMovieReview.Rating);
             DB.AddParameter("@Comment", mThisMovieReview.Comment);
             DB.AddParameter("@DatePosted", mThisMovieReview.DatePosted);
@@ -42,7 +42,7 @@ namespace ClassLibrary
 
             DB.AddParameter("@MovieReviewId", mThisMovieReview.MovieReviewId);
             DB.AddParameter("@MovieId", mThisMovieReview.MovieId);
-            DB.AddParameter("@MemberId", mThisMovieReview.MemberId);
+            DB.AddParameter("@memberId", mThisMovieReview.MemberId);
             DB.AddParameter("@Rating", mThisMovieReview.Rating);
             DB.AddParameter("@Comment", mThisMovieReview.Comment);
             DB.AddParameter("@DatePosted", mThisMovieReview.DatePosted);

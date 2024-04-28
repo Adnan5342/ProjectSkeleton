@@ -12,10 +12,18 @@ public partial class ShowViewer : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        ShowId = Convert.ToInt32(Session["ShowId"]);
-        if (ShowId != -1)
+        if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && Session["ShowId"] != null)
         {
-            DisplayShow();
+            ShowId = Convert.ToInt32(Session["ShowId"]);
+            if (ShowId != -1)
+            {
+                DisplayShow();
+                DisplayShowReviews();
+            }
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 
@@ -35,6 +43,19 @@ public partial class ShowViewer : System.Web.UI.Page
         imgCoverImage.ImageUrl = Shows.ThisShow.CoverImage;
     }
 
+    void DisplayShowReviews()
+    {
+        Int32 ShowId = Convert.ToInt32(Session["ShowId"]);
+
+        clsShowReviewCollection ShowReviews = new clsShowReviewCollection();
+        ShowReviews.ReportByShowId(ShowId);
+
+        lstShowReviewList.DataSource = ShowReviews.ShowReviewList;
+        lstShowReviewList.DataValueField = "ShowReviewId";
+        lstShowReviewList.DataTextField = "Comment";
+        lstShowReviewList.DataBind();
+    }
+
 
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
     {
@@ -49,5 +70,11 @@ public partial class ShowViewer : System.Web.UI.Page
     protected void btnTrending_Click(object sender, EventArgs e)
     {
         Response.Redirect("TopShowsAndMovies.aspx");
+    }
+
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        Session["ShowReviewId"] = -1;
+        Response.Redirect("ShowReviewEntry.aspx");
     }
 }

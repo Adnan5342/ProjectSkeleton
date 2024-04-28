@@ -53,6 +53,8 @@
     <Compile Include="clsMovieReviewCollection.cs" />
     <Compile Include="clsShow.cs" />
     <Compile Include="clsShowCollection.cs" />
+    <Compile Include="clsShowReview.cs" />
+    <Compile Include="clsShowReviewCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

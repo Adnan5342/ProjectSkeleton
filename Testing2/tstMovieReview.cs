@@ -220,7 +220,7 @@ namespace Testing2
         {
             clsMovieReview AMovieReview = new clsMovieReview();
             String Error = "";
-            string Rating = "0.1";
+            string Rating = "0.2";
             Error = AMovieReview.Valid(Rating, Comment, DatePosted);
             Assert.AreEqual(Error, "");
         }

@@ -10,6 +10,10 @@
 <body>
     <form id="form1" runat="server">
         <p>
+        <asp:Label ID="lblReviews" runat="server" Font-Bold="True" style="z-index: 1; left: 25px; top: 585px; position: absolute" Text="Reviews:"></asp:Label>
+        <asp:ListBox ID="lstShowReviewList" runat="server" style="z-index: 1; left: 22px; top: 617px; position: absolute; height: 158px; width: 488px; right: 191px" Font-Italic="True" Font-Underline="True"></asp:ListBox>
+        <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1; left: 521px; top: 620px; position: absolute" Text="Add a review" width="106px" />
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 524px; top: 694px; position: absolute"></asp:Label>
             <asp:Button ID="btnTrending" runat="server" OnClick="btnTrending_Click" style="z-index: 1; left: 254px; top: 533px; position: absolute; height: 42px; width: 281px; right: 602px" Text="View the highest rated shows and movies!" />
         </p>
         <div>

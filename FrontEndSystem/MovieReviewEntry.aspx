@@ -26,6 +26,9 @@
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 13px; top: 336px; position: absolute" Text="OK" width="60px" />
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 95px; top: 338px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 17px; top: 381px; position: absolute"></asp:Label>
+        <p>
+        <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 312px; top: 47px; position: absolute" OnClick="imgBtnLogo_Click" />
+        </p>
     </form>
 </body>
 </html>

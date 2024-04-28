@@ -17,7 +17,7 @@ public partial class MovieViewer : System.Web.UI.Page
             MovieId = Convert.ToInt32(Session["MovieId"]);
             if (MovieId != -1)
             {
-                DisplayMovies();
+                DisplayMovie();
                 DisplayMovieReviews();
             }
         }
@@ -27,7 +27,7 @@ public partial class MovieViewer : System.Web.UI.Page
         }
     }
 
-    void DisplayMovies()
+    void DisplayMovie()
     {
         clsMovieCollection Movies = new clsMovieCollection();
         Movies.ThisMovie.Find(MovieId);
@@ -74,7 +74,7 @@ public partial class MovieViewer : System.Web.UI.Page
     }
 
 
-    protected void btnDelete_Click(object sender, EventArgs e)
+    /*protected void btnDelete_Click(object sender, EventArgs e)
     {
         if (lstMovieReviewList.SelectedIndex != -1)
         {
@@ -86,7 +86,7 @@ public partial class MovieViewer : System.Web.UI.Page
         {
             lblError.Text = "Please select a review to delete.";
         }
-    }
+    }*/
 
     protected void btnTrending_Click(object sender, EventArgs e)
     {

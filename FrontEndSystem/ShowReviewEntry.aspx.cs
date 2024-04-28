@@ -6,11 +6,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class MovieReviewEntry : System.Web.UI.Page
+public partial class ShowReviewEntry : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["memberId"] != null && Session["username"] != null && Session["email"] != null && Session["MovieId"] != null)
+        if (Session["memberId"] != null && Session["username"] != null && Session["email"] != null && Session["ShowId"] != null)
         {
             DisplaySessionIDs();
         }
@@ -22,15 +22,15 @@ public partial class MovieReviewEntry : System.Web.UI.Page
 
     void DisplaySessionIDs()
     {
-        txtMovieId.Text = Session["MovieId"].ToString();
+        txtShowId.Text = Session["ShowId"].ToString();
         txtMemberId.Text = Session["memberId"].ToString();
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
-        clsMovieReview AMovieReview = new clsMovieReview();
+        clsShowReview AShowReview = new clsShowReview();
 
-        Int32 MovieId = Convert.ToInt32(txtMovieId.Text);
+        Int32 ShowId = Convert.ToInt32(txtShowId.Text);
         Int32 MemberId = Convert.ToInt32(txtMemberId.Text);
         string Rating = txtRating.Text;
         string Comment = txtComment.Text;
@@ -38,22 +38,22 @@ public partial class MovieReviewEntry : System.Web.UI.Page
 
         string Error = "";
 
-        Error = AMovieReview.Valid(Rating, Comment, DatePosted);
+        Error = AShowReview.Valid(Rating, Comment, DatePosted);
 
         if (Error == "")
         {
-            AMovieReview.MovieId = MovieId;
-            AMovieReview.MemberId = MemberId;
-            AMovieReview.Rating = Convert.ToDouble(Rating);
-            AMovieReview.Comment = Comment;
-            AMovieReview.DatePosted = Convert.ToDateTime(DatePosted);
+            AShowReview.ShowId = ShowId;
+            AShowReview.MemberId = MemberId;
+            AShowReview.Rating = Convert.ToDouble(Rating);
+            AShowReview.Comment = Comment;
+            AShowReview.DatePosted = Convert.ToDateTime(DatePosted);
 
-            clsMovieReviewCollection MovieReviewList = new clsMovieReviewCollection();
-            
-            MovieReviewList.ThisMovieReview = AMovieReview;
-            MovieReviewList.Add();
+            clsShowReviewCollection ShowReviewList = new clsShowReviewCollection();
 
-            Response.Redirect("MovieViewer.aspx");
+            ShowReviewList.ThisShowReview = AShowReview;
+            ShowReviewList.Add();
+
+            Response.Redirect("ShowViewer.aspx");
         }
         else
         {
@@ -63,7 +63,7 @@ public partial class MovieReviewEntry : System.Web.UI.Page
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("MovieViewer.aspx");
+        Response.Redirect("ShowViewer.aspx");
     }
 
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)

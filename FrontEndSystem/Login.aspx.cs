@@ -24,9 +24,10 @@ public partial class Login :  System.Web.UI.Page
         {
             connection.Open();
 
-            string query = "SELECT MemberId FROM tblRegistration WHERE Email=@Email AND Password=@Password";
+            string query = "SELECT MemberId FROM tblRegistration WHERE Username=@Username AND Email=@Email AND Password=@Password";
 
             SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Username", Username);
             command.Parameters.AddWithValue("@Email", Email);
             command.Parameters.AddWithValue("@Password", Password);
 

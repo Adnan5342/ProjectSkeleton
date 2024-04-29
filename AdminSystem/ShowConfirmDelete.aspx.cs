@@ -20,7 +20,7 @@ public partial class _1_ConfirmDelete : System.Web.UI.Page
     {
         clsShowCollection Shows = new clsShowCollection();
         Shows.ThisShow.Find(ShowId);
-        Shows.Delete();
+        Shows.Delete(ShowId);
         Response.Redirect("ShowList.aspx");
     }
 

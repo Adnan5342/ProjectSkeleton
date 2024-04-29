@@ -17,9 +17,9 @@ public partial class _1_ConfirmDelete : System.Web.UI.Page
 
     protected void btnYes_Click(object sender, EventArgs e)
     {
-        clsMovieCollection MovieList = new clsMovieCollection();
-        MovieList.ThisMovie.Find(MovieId);
-        MovieList.Delete();
+        clsMovieCollection Movies = new clsMovieCollection();
+        Movies.ThisMovie.Find(MovieId);
+        Movies.Delete(MovieId); // pass MovieId as an argument
         Response.Redirect("MovieList.aspx");
     }
 

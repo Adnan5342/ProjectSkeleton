@@ -19,7 +19,7 @@ public partial class MovieReviewConfirmDelete : System.Web.UI.Page
     {
         clsMovieReviewCollection MovieReviews = new clsMovieReviewCollection();
         MovieReviews.ThisMovieReview.Find(MovieReviewId);
-        MovieReviews.Delete();
+        MovieReviews.Delete(MovieReviewId);
         Response.Redirect("MovieViewer.aspx");
     }
 

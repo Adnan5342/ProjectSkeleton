@@ -19,7 +19,7 @@
             &nbsp;</p>
         <p>
             &nbsp;</p>
-        <asp:Button ID="btnYes" runat="server" height="26px" style="z-index: 1; left: 53px; top: 87px; position: absolute" Text="Yes!" width="82px" />
+        <asp:Button ID="btnYes" runat="server" height="26px" OnClick="btnYes_Click" style="z-index: 1; left: 53px; top: 87px; position: absolute" Text="Yes!" width="82px" />
     </form>
 </body>
 </html>

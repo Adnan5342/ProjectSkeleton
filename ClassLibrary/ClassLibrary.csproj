@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsDataConnection.cs" />
+    <Compile Include="clsMember.cs" />
+    <Compile Include="clsMemberCollection.cs" />
     <Compile Include="clsMovie.cs" />
     <Compile Include="clsMovieCollection.cs" />
     <Compile Include="clsMovieReview.cs" />

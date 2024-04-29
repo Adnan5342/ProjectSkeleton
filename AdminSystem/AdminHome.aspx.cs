@@ -26,4 +26,9 @@ public partial class AdminHome : System.Web.UI.Page
     {
         Response.Redirect("AdminHome.aspx");
     }
+
+    protected void btnMembers_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MemberList.aspx");
+    }
 }

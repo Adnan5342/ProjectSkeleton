@@ -50,10 +50,10 @@ namespace ClassLibrary
             DB.Execute("sproc_tblMovieReview_Update");
         }
 
-        public void Delete()
+        public void Delete(int MovieReviewId)
         {
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@MovieReviewId", mThisMovieReview.MovieReviewId);
+            DB.AddParameter("@MovieReviewId", MovieReviewId);
             DB.Execute("sproc_tblMovieReview_Delete");
         }
 
@@ -100,6 +100,23 @@ namespace ClassLibrary
             DB.AddParameter("@MovieId", MovieId);
             DB.Execute("sproc_tblMovieReview_FilterByMovieId");
             PopulateArray(DB);
+        }
+
+        public void DeleteReviewsByMovieId(int MovieId)
+        {
+            List<clsMovieReview> reviewsToDelete = new List<clsMovieReview>();
+
+            foreach (clsMovieReview review in MovieReviewList)
+            {
+                if (review.MovieId == MovieId)
+                {
+                    reviewsToDelete.Add(review);
+                }
+            }
+            foreach (clsMovieReview review in reviewsToDelete)
+            {
+                Delete(review.MovieReviewId);
+            }
         }
 
     }

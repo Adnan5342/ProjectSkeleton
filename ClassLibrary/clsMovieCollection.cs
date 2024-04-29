@@ -118,10 +118,13 @@ namespace ClassLibrary
             DB.Execute("sproc_tblMovie_Update");
         }
 
-        public void Delete()
+        public void Delete(int MovieId)
         {
+            clsMovieReviewCollection MovieReviews = new clsMovieReviewCollection();
+            MovieReviews.DeleteReviewsByMovieId(MovieId); // delete reviews first
+
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@MovieId", mThisMovie.MovieId);
+            DB.AddParameter("@MovieId", MovieId);
             DB.Execute("sproc_tblMovie_Delete");
         }
 

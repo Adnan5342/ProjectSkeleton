@@ -115,10 +115,13 @@ namespace ClassLibrary
             DB.Execute("sproc_tblShow_Update");
         }
 
-        public void Delete()
+        public void Delete(int ShowId)
         {
+            clsShowReviewCollection ShowReviews = new clsShowReviewCollection();
+            ShowReviews.DeleteReviewsByShowId(ShowId);
+
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@ShowId", mThisShow.ShowId);
+            DB.AddParameter("@ShowId", ShowId);
             DB.Execute("sproc_tblShow_Delete");
         }
 

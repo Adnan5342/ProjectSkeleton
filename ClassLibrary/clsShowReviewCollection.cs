@@ -50,10 +50,10 @@ namespace ClassLibrary
             DB.Execute("sproc_tblShowReview_Update");
         }
 
-        public void Delete()
+        public void Delete(int ShowReviewId)
         {
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@ShowReviewId", mThisShowReview.ShowReviewId);
+            DB.AddParameter("@ShowReviewId", ShowReviewId);
             DB.Execute("sproc_tblShowReview_Delete");
         }
 
@@ -99,6 +99,23 @@ namespace ClassLibrary
             DB.AddParameter("@ShowId", ShowId);
             DB.Execute("sproc_tblShowReview_FilterByShowId");
             PopulateArray(DB);
+        }
+
+        public void DeleteReviewsByShowId(Int32 ShowId)
+        {
+            List<clsShowReview> reviewsToDelete = new List<clsShowReview>();
+
+            foreach (clsShowReview review in ShowReviewList)
+            {
+                if (review.ShowId == ShowId)
+                {
+                    reviewsToDelete.Add(review);
+                }
+            }
+            foreach (clsShowReview review in reviewsToDelete)
+            {
+                Delete(review.ShowReviewId);
+            }
         }
     }
 }

@@ -119,5 +119,22 @@ namespace ClassLibrary
             }
         }
 
+        public void DeleteMovieReviewsByMemberId (int MemberId)
+        {
+            List<clsMovieReview> reviewsToDelete = new List<clsMovieReview>();
+
+            foreach (clsMovieReview review in MovieReviewList)
+            {
+                if (review.MemberId == MemberId)
+                {
+                    reviewsToDelete.Add(review);
+                }
+            }
+            foreach (clsMovieReview review in reviewsToDelete)
+            {
+                Delete(review.MovieReviewId);
+            }
+        }
+
     }
 }

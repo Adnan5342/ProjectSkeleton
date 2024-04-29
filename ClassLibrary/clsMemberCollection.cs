@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -55,6 +56,19 @@ namespace ClassLibrary
         {
             get { return mThisMember; }
             set { mThisMember = value; }
+        }
+
+        public void Delete(int MemberId)
+        {
+            clsMovieReviewCollection MovieReviews = new clsMovieReviewCollection();
+            MovieReviews.DeleteMovieReviewsByMemberId(MemberId);
+
+            clsShowReviewCollection ShowReviews = new clsShowReviewCollection();
+            ShowReviews.DeleteShowReviewsByMemberId(MemberId);
+
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@MemberId", MemberId);
+            DB.Execute("sproc_tblRegistration_Delete");
         }
 
     }

@@ -101,13 +101,30 @@ namespace ClassLibrary
             PopulateArray(DB);
         }
 
-        public void DeleteReviewsByShowId(Int32 ShowId)
+        public void DeleteReviewsByShowId(int ShowId)
         {
             List<clsShowReview> reviewsToDelete = new List<clsShowReview>();
 
             foreach (clsShowReview review in ShowReviewList)
             {
                 if (review.ShowId == ShowId)
+                {
+                    reviewsToDelete.Add(review);
+                }
+            }
+            foreach (clsShowReview review in reviewsToDelete)
+            {
+                Delete(review.ShowReviewId);
+            }
+        }
+
+        public void DeleteShowReviewsByMemberId(int MemberId)
+        {
+            List<clsShowReview> reviewsToDelete = new List<clsShowReview>();
+
+            foreach (clsShowReview review in ShowReviewList)
+            {
+                if (review.MemberId == MemberId)
                 {
                     reviewsToDelete.Add(review);
                 }

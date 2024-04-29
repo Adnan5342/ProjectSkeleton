@@ -35,6 +35,16 @@ public partial class MemberList : System.Web.UI.Page
 
     protected void btnDelete_Click(object sender, EventArgs e)
     {
-        lblError.Text = "Has not yet been implemented. ";
+        Int32 MemberId;
+        if (lstMemberList.SelectedIndex != -1)
+        {
+            MemberId = Convert.ToInt32(lstMemberList.SelectedValue);
+            Session["MemberId"] = MemberId;
+            Response.Redirect("MemberConfirmDelete.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a user to delete. ";
+        }
     }
 }

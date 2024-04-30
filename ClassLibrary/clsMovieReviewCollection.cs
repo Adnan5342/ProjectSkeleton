@@ -119,7 +119,7 @@ namespace ClassLibrary
             }
         }
 
-        public void DeleteMovieReviewsByMemberId (int MemberId)
+        public void DeleteMovieReviewsByMemberId(int MemberId)
         {
             List<clsMovieReview> reviewsToDelete = new List<clsMovieReview>();
 

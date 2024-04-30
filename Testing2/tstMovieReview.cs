@@ -10,7 +10,7 @@ namespace Testing2
     public class tstMovieReview
     {
 
-        double Rating = 2.5;
+        string Rating = Convert.ToDouble("4.5").ToString();
         string Comment = "Test comment.";
         string DatePosted = DateTime.Now.Date.ToString();
 

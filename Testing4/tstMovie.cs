@@ -14,7 +14,7 @@ namespace Testing4
         string ReleaseDate = Convert.ToDateTime("07/01/2002").ToString();
         string Description = "A very exciting movie!";
         string Genre = "Action";
-        double Rating = 4.5;
+        string Rating = Convert.ToDouble("4.5").ToString();
         string Directors = "John Smith";
         string Writers = "Smith John";
         String StarActors = "Tom Holland";

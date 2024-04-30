@@ -49,6 +49,8 @@
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsMember.cs" />
     <Compile Include="clsMemberCollection.cs" />
+    <Compile Include="clsMessage.cs" />
+    <Compile Include="clsMessageCollection.cs" />
     <Compile Include="clsMovie.cs" />
     <Compile Include="clsMovieCollection.cs" />
     <Compile Include="clsMovieReview.cs" />

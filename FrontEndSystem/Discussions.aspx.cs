@@ -13,7 +13,48 @@ public partial class Discussions : System.Web.UI.Page
         if (!IsPostBack)
         {
             clsMessageCollection Messages = new clsMessageCollection();
-            
+
+            try
+            {
+                DisplayMessages(Messages);
+            }
+            catch (Exception ex)
+            {
+                lblErrorEx.Text = ex.Message;
+            }
+        }
+    }
+
+    void DisplayMessages(clsMessageCollection Messages)
+    {
+        Messages.ReportByMostRecent10();
+
+        for (int i = 0; i < Messages.MessageList.Count && i < 7; i++)
+        {
+            switch (i + 1)
+            {
+                case 1:
+                    lblMessageText1.Text = Messages.MessageList[i].Message;
+                    break;
+                case 2:
+                    lblMessageText2.Text = Messages.MessageList[i].Message;
+                    break;
+                case 3:
+                    lblMessageText3.Text = Messages.MessageList[i].Message;
+                    break;
+                case 4:
+                    lblMessageText4.Text = Messages.MessageList[i].Message;
+                    break;
+                case 5:
+                    lblMessageText5.Text = Messages.MessageList[i].Message;
+                    break;
+                case 6:
+                    lblMessageText6.Text = Messages.MessageList[i].Message;
+                    break;
+                case 7:
+                    lblMessageText7.Text = Messages.MessageList[i].Message;
+                    break;
+            }
         }
     }
 

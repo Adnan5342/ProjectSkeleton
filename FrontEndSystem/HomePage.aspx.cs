@@ -126,4 +126,9 @@ public partial class HomePage : System.Web.UI.Page
     {
         Response.Redirect("TopShowsAndMovies.aspx");
     }
+
+    protected void btnDiscussions_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Discussions.aspx");
+    }
 }

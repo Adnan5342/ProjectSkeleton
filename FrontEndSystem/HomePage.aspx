@@ -35,6 +35,7 @@
         <p>
             <asp:Button ID="btnTrending" runat="server" OnClick="btnTrending_Click" style="z-index: 1; left: 118px; top: 571px; position: absolute; height: 42px; width: 281px; right: 381px" Text="View the highest rated shows and movies!" />
         </p>
+        <asp:Button ID="btnDiscussions" runat="server" height="42px" OnClick="btnDiscussions_Click" style="z-index: 1; left: 428px; top: 571px; position: absolute" Text="Discussion Board" />
     </form>
 </body>
 </html>

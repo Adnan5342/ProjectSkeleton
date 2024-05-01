@@ -100,5 +100,12 @@ namespace ClassLibrary
                 Delete(message.MessageId);
             }
         }
+
+        public void ReportByMostRecent10()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.Execute("sproc_tblMessage_FilterByMostRecent10");
+            PopulateArray(DB);
+        }
     }
 }

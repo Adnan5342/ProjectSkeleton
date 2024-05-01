@@ -30,21 +30,60 @@ public partial class TopShowsAndMovies : System.Web.UI.Page
     void DisplayTopMovies(clsMovieCollection Movies)
     {
         Movies.ReportByTop5();
-        imgBtnMovieImage1.ImageUrl = Movies.MovieList[0].CoverImage;
-        imgBtnMovieImage2.ImageUrl = Movies.MovieList[1].CoverImage;
-        imgBtnMovieImage3.ImageUrl = Movies.MovieList[2].CoverImage;
-        imgBtnMovieImage4.ImageUrl = Movies.MovieList[3].CoverImage;
-        imgBtnMovieImage5.ImageUrl = Movies.MovieList[4].CoverImage;
+
+        for (int i = 0; i < Movies.MovieList.Count && i < 5; i++)
+        {
+            switch (i + 1)
+            {
+                case 1:
+                    imgBtnMovieImage1.ImageUrl = Movies.MovieList[i].CoverImage;
+                    break;
+                case 2:
+                    imgBtnMovieImage2.ImageUrl = Movies.MovieList[i].CoverImage;
+                    break;
+                case 3:
+                    imgBtnMovieImage3.ImageUrl = Movies.MovieList[i].CoverImage;
+                    break;
+                case 4:
+                    imgBtnMovieImage4.ImageUrl = Movies.MovieList[i].CoverImage;
+                    break;
+                case 5:
+                    imgBtnMovieImage5.ImageUrl = Movies.MovieList[i].CoverImage;
+                    break;
+            }
+        }
     }
 
     void DisplayTopShows(clsShowCollection Shows)
     {
         Shows.ReportByTop5();
-        imgBtnShowImage1.ImageUrl = Shows.ShowList[0].CoverImage;
+
+        for (int i = 0; i < Shows.ShowList.Count && i < 5; i++)
+        {
+            switch (i + 1)
+            {
+                case 1:
+                    imgBtnShowImage1.ImageUrl = Shows.ShowList[i].CoverImage;
+                    break;
+                case 2:
+                    imgBtnShowImage2.ImageUrl = Shows.ShowList[i].CoverImage;
+                    break;
+                case 3:
+                    imgBtnShowImage3.ImageUrl = Shows.ShowList[i].CoverImage;
+                    break;
+                case 4:
+                    imgBtnShowImage4.ImageUrl = Shows.ShowList[i].CoverImage;
+                    break;
+                case 5:
+                    imgBtnShowImage5.ImageUrl = Shows.ShowList[i].CoverImage;
+                    break;
+            }
+        }
+        /*imgBtnShowImage1.ImageUrl = Shows.ShowList[0].CoverImage;
         imgBtnShowImage2.ImageUrl = Shows.ShowList[1].CoverImage;
         imgBtnShowImage3.ImageUrl = Shows.ShowList[2].CoverImage;
         imgBtnShowImage4.ImageUrl = Shows.ShowList[3].CoverImage;
-        imgBtnShowImage5.ImageUrl = Shows.ShowList[4].CoverImage;
+        imgBtnShowImage5.ImageUrl = Shows.ShowList[4].CoverImage;*/
     }
 
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)

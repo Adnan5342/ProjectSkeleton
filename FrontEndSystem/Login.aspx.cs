@@ -45,7 +45,7 @@ public partial class Login :  System.Web.UI.Page
             else
             {
                 lblError.Text = "Invalid username, email, or password.";
-                lblError.Visible = true;
+                lblError.ForeColor = System.Drawing.Color.Red;
             }
         }
     }

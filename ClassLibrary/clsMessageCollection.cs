@@ -27,7 +27,6 @@ namespace ClassLibrary
         {
             clsDataConnection DB = new clsDataConnection();
 
-            DB.AddParameter("@MessageId", mThisMessage.MessageId);
             DB.AddParameter("@memberId", mThisMessage.MemberId);
             DB.AddParameter("@Message", mThisMessage.Message);
             DB.AddParameter("@DatePosted", mThisMessage.DatePosted);

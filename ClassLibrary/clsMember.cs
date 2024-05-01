@@ -64,32 +64,32 @@ namespace ClassLibrary
 
             if (username.Length < 5)
             {
-                Error = Error + "The username must have a minimum of 5 characters. ";
+                Error = Error + "The username must have a minimum of 5 characters.<br />";
             }
 
             if (username.Length > 15)
             {
-                Error = Error + "The username must have less than 16 characters. ";
+                Error = Error + "The username must have less than 16 characters.<br />";
             }
 
             if (email.Length < 5)
             {
-                Error = Error + "The email must have a minimum of 5 characters. ";
+                Error = Error + "The email must have a minimum of 5 characters.<br />";
             }
 
             if (email.Length > 50)
             {
-                Error = Error + "The email must have less than 51 characters. ";
+                Error = Error + "The email must have less than 51 characters.<br />";
             }
 
             if (password.Length < 5)
             {
-                Error = Error + "The password must have a minimum of 5 characters. ";
+                Error = Error + "The password must have a minimum of 5 characters.<br />";
             }
 
             if (password.Length > 15)
             {
-                Error = Error + "The password must have less than 16 characters. ";
+                Error = Error + "The password must have less than 16 characters.<br />";
             }
 
             return Error;

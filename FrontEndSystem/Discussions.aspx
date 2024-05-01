@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="css/Styles.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -23,6 +24,7 @@
         <asp:Label ID="lblMessageText6" runat="server" style="z-index: 1; left: 34px; top: 233px; width: 750px; height: 50px; position: absolute" BorderStyle="Solid"></asp:Label>
         <asp:Label ID="lblMessageText7" runat="server" style="z-index: 1; left: 34px; top: 159px; width: 750px; height: 50px; position: absolute" BorderStyle="Solid"></asp:Label>
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1; left: 34px; top: 677px; position: absolute" Text="Write a message" />
+        <asp:Label ID="lblErrorEx" runat="server" style="z-index: 1; left: 230px; top: 681px; position: absolute"></asp:Label>
     </form>
 </body>
 </html>

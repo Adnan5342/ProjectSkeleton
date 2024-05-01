@@ -19,7 +19,7 @@
         <asp:Label ID="lblPassword" runat="server" style="z-index: 1; left: 17px; top: 201px; position: absolute" Text="Password: "></asp:Label>
         <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 16px; top: 219px; position: absolute; width: 180px" TextMode="Password"></asp:TextBox>
         <asp:Button ID="btnSignIn" runat="server" OnClick="btnSignIn_Click" style="z-index: 1; left: 19px; top: 258px; position: absolute" Text="Sign in" />
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 22px; top: 335px; position: absolute"></asp:Label>
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 22px; top: 335px; position: absolute" Font-Bold="True"></asp:Label>
         <asp:Button ID="btnRegister" runat="server" BorderStyle="None" OnClick="btnRegister_Click" style="z-index: 1; left: 19px; top: 290px; position: absolute; width: 169px" Text="No account? Register now!" />
         <p>
         <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 265px; top: 41px; position: absolute" OnClick="imgBtnLogo_Click" />

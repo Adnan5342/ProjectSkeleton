@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using ClassLibrary;
 
 public partial class Registration : System.Web.UI.Page
 {
@@ -15,55 +16,50 @@ public partial class Registration : System.Web.UI.Page
 
     protected void btnRegister_Click(object sender, EventArgs e)
     {
-        try
+        clsMember newMember = new clsMember();
+        string errorMessage = newMember.Valid(TextBox1.Text, TextBox2.Text, TextBox3.Text);
+
+        if (errorMessage == "")
         {
-            if (TextBox1.Text != "" && TextBox2.Text != "" && TextBox3.Text != "" && TextBox4.Text != "")
+            if (TextBox3.Text == TextBox4.Text)
             {
-                if (TextBox3.Text == TextBox4.Text)
+                int v = check(TextBox2.Text);
+                if (v != 1)
                 {
-                    int v = check(TextBox2.Text);
-                    if (v != 1)
+                    using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"H:\\Project Database\\MovieMindsNetwork.mdf\";Integrated Security=True;Connect Timeout=30"))
                     {
-                        using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"H:\\Project Database\\MovieMindsNetwork.mdf\";Integrated Security=True;Connect Timeout=30"))
-                        {
-                            connection.Open();
-                            string query = "INSERT INTO tblRegistration (Username, Email, Password) VALUES (@Username, @Email, @Password)";
-                            SqlCommand command = new SqlCommand(query, connection);
-                            command.Parameters.AddWithValue("@Username", TextBox1.Text);
-                            command.Parameters.AddWithValue("@Email", TextBox2.Text);
-                            command.Parameters.AddWithValue("@Password", TextBox3.Text);
-                            command.ExecuteNonQuery();
-                            connection.Close();
-                            lblMessage.Text = "Registered successfully!";
-                            lblMessage.ForeColor = System.Drawing.Color.Green;
-                            TextBox1.Text = "";
-                            TextBox2.Text = "";
-                            TextBox3.Text = "";
-                            TextBox4.Text = "";
-                        }
-                    }
-                    else
-                    {
-                        lblMessage.Text = "You are already registered";
-                        lblMessage.ForeColor = System.Drawing.Color.Red;
+                        connection.Open();
+                        string query = "INSERT INTO tblRegistration (Username, Email, Password) VALUES (@Username, @Email, @Password)";
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@Username", TextBox1.Text);
+                        command.Parameters.AddWithValue("@Email", TextBox2.Text);
+                        command.Parameters.AddWithValue("@Password", TextBox3.Text);
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                        lblError.Text = "Registered successfully!";
+                        lblError.ForeColor = System.Drawing.Color.Green;
+                        TextBox1.Text = "";
+                        TextBox2.Text = "";
+                        TextBox3.Text = "";
+                        TextBox4.Text = "";
                     }
                 }
                 else
                 {
-                    lblMessage.Text = "Password does not match";
-                    lblMessage.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "You are already registered";
+                    lblError.ForeColor = System.Drawing.Color.Red;
                 }
             }
             else
             {
-                lblMessage.Text = "Fill in the blanks!";
-                lblMessage.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Password does not match";
+                lblError.ForeColor = System.Drawing.Color.Red;
             }
         }
-        catch (Exception ex)
+        else
         {
-            lblMessage.Text = ex.Message;
-            lblMessage.ForeColor = System.Drawing.Color.Red;
+            lblError.Text = errorMessage;
+            lblError.ForeColor= System.Drawing.Color.Red;
         }
     }
 
@@ -88,6 +84,6 @@ public partial class Registration : System.Web.UI.Page
 
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
     {
-        lblMessage.Text = "Register or sign in to an account.";
+        lblError.Text = "Register or sign in to an account.";
     }
 }

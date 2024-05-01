@@ -12,7 +12,7 @@ public partial class MessageEntry : System.Web.UI.Page
     {
         if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null)
         {
-            DisplayMemberID();
+            DisplaySessionIDs();
         }
         else
         {
@@ -20,7 +20,7 @@ public partial class MessageEntry : System.Web.UI.Page
         }
     }
 
-    void DisplayMemberID()
+    void DisplaySessionIDs()
     {
         txtMemberId.Text = Session["MemberId"].ToString();
     }
@@ -54,6 +54,10 @@ public partial class MessageEntry : System.Web.UI.Page
             MessageList.Add();
 
             Response.Redirect("Discussions.aspx");
+        }
+        else
+        {
+            lblError.Text = Error;
         }
     }
 

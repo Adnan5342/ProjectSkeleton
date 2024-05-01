@@ -22,7 +22,7 @@
         <asp:TextBox ID="TextBox4" runat="server" style="z-index: 1; left: 19px; top: 272px; position: absolute" width="176px" TextMode="Password"></asp:TextBox>
         <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" style="z-index: 1; left: 18px; top: 309px; position: absolute" Text="Register account" />
         <asp:Button ID="btnSignIn" runat="server" BorderStyle="None" OnClick="btnSignIn_Click" style="z-index: 1; left: 20px; top: 347px; position: absolute" Text="Sign in" />
-        <asp:Label ID="lblMessage" runat="server" style="z-index: 1; left: 25px; top: 383px; position: absolute"></asp:Label>
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 25px; top: 383px; position: absolute" Font-Bold="True"></asp:Label>
         <p>
         <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 265px; top: 41px; position: absolute" OnClick="imgBtnLogo_Click" />
         </p>

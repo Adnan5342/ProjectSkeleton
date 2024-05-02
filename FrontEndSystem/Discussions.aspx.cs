@@ -35,37 +35,37 @@ public partial class Discussions : System.Web.UI.Page
             {
                 case 1:
                     lblMessageText1.Text = Messages.MessageList[i].Message;
-                    lblUserId1.Text = lblUserId1.Text + Messages.MessageList[i].MemberId.ToString();
+                    lblUsername1.Text = lblUsername1.Text + Messages.MessageList[i].Username;
                     lblDate1.Text = lblDate1.Text + Messages.MessageList[i].DatePosted.ToShortDateString();
                     break;
                 case 2:
                     lblMessageText2.Text = Messages.MessageList[i].Message;
-                    lblUserId2.Text = lblUserId2.Text + Messages.MessageList[i].MemberId.ToString();
+                    lblUsername2.Text = lblUsername2.Text + Messages.MessageList[i].Username;
                     lblDate2.Text = lblDate2.Text + Messages.MessageList[i].DatePosted.ToShortDateString();
                     break;
                 case 3:
                     lblMessageText3.Text = Messages.MessageList[i].Message;
-                    lblUserId3.Text = lblUserId3.Text + Messages.MessageList[i].MemberId.ToString();
+                    lblUsername3.Text = lblUsername3.Text + Messages.MessageList[i].Username;
                     lblDate3.Text = lblDate3.Text + Messages.MessageList[i].DatePosted.ToShortDateString();
                     break;
                 case 4:
                     lblMessageText4.Text = Messages.MessageList[i].Message;
-                    lblUserId4.Text = lblUserId4.Text + Messages.MessageList[i].MemberId.ToString();
+                    lblUsername4.Text = lblUsername4.Text + Messages.MessageList[i].Username;
                     lblDate4.Text = lblDate4.Text + Messages.MessageList[i].DatePosted.ToShortDateString();
                     break;
                 case 5:
                     lblMessageText5.Text = Messages.MessageList[i].Message;
-                    lblUserId5.Text = lblUserId5.Text + Messages.MessageList[i].MemberId.ToString();
+                    lblUsername5.Text = lblUsername5.Text + Messages.MessageList[i].Username;
                     lblDate5.Text = lblDate5.Text + Messages.MessageList[i].DatePosted.ToShortDateString();
                     break;
                 case 6:
                     lblMessageText6.Text = Messages.MessageList[i].Message;
-                    lblUserId6.Text = lblUserId6.Text + Messages.MessageList[i].MemberId.ToString();
+                    lblUsername6.Text = lblUsername6.Text + Messages.MessageList[i].Username;
                     lblDate6.Text = lblDate6.Text + Messages.MessageList[i].DatePosted.ToShortDateString();
                     break;
                 case 7:
                     lblMessageText7.Text = Messages.MessageList[i].Message;
-                    lblUserId7.Text = lblUserId7.Text + Messages.MessageList[i].MemberId.ToString();
+                    lblUsername7.Text = lblUsername7.Text + Messages.MessageList[i].Username;
                     lblDate7.Text = lblDate7.Text + Messages.MessageList[i].DatePosted.ToShortDateString();
                     break;
             }

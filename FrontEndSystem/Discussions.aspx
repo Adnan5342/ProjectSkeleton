@@ -13,8 +13,8 @@
         <p>
             &nbsp;</p>
         <div>
-        <asp:ImageButton ID="imgBtnProfile" runat="server" ImageUrl="~/Images/ProfileIcon.png" OnClick="imgBtnProfile_Click" style="z-index: 1; left: 733px; top: 66px; position: absolute; height: 50px; " />
-        <asp:Label ID="lblTitle" runat="server" SelectionMode="Single" Font-Bold="True" Font-Italic="False" Font-Size="XX-Large" Font-Underline="True" style="z-index: 1; left: 317px; top: 78px; position: absolute" Text="Discussion Board"></asp:Label>
+        <asp:ImageButton ID="imgBtnProfile" runat="server" ImageUrl="~/Images/ProfileIcon.png" OnClick="imgBtnProfile_Click" style="z-index: 1; left: 807px; top: 66px; position: absolute; height: 50px; " />
+        <asp:Label ID="lblTitle" runat="server" SelectionMode="Single" Font-Bold="True" Font-Italic="False" Font-Size="XX-Large" Font-Underline="True" style="z-index: 1; left: 356px; top: 74px; position: absolute" Text="Discussion Board"></asp:Label>
         </div>
         <asp:Label ID="lblMessageText1" runat="server" style="z-index: 1; left: 34px; top: 598px; width: 750px; height: 50px; position: absolute" BorderStyle="Solid" Font-Bold="True" Font-Italic="True"></asp:Label>
         <asp:Label ID="lblMessageText2" runat="server" style="z-index: 1; left: 34px; top: 523px; width: 750px; height: 50px; position: absolute" BorderStyle="Solid" Font-Bold="True" Font-Italic="True"></asp:Label>
@@ -25,6 +25,13 @@
         <asp:Label ID="lblMessageText7" runat="server" style="z-index: 1; left: 34px; top: 159px; width: 750px; height: 50px; position: absolute" BorderStyle="Solid" Font-Bold="True" Font-Italic="True"></asp:Label>
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1; left: 34px; top: 677px; position: absolute" Text="Write a message" />
         <asp:Label ID="lblErrorEx" runat="server" style="z-index: 1; left: 230px; top: 681px; position: absolute"></asp:Label>
+        <asp:Label ID="lblUserId1" runat="server" style="z-index: 1; left: 795px; top: 602px; position: absolute">User ID: </asp:Label>
+        <asp:Label ID="lblUserId2" runat="server" style="z-index: 1; left: 795px; top: 526px; position: absolute">User ID: </asp:Label>
+        <asp:Label ID="lblUserId3" runat="server" style="z-index: 1; left: 795px; top: 457px; position: absolute">User ID: </asp:Label>
+        <asp:Label ID="lblUserId4" runat="server" style="z-index: 1; left: 795px; top: 380px; position: absolute">User ID: </asp:Label>
+        <asp:Label ID="lblUserId5" runat="server" style="z-index: 1; left: 795px; top: 305px; position: absolute">User ID: </asp:Label>
+        <asp:Label ID="lblUserId6" runat="server" style="z-index: 1; left: 795px; top: 234px; position: absolute">User ID: </asp:Label>
+        <asp:Label ID="lblUserId7" runat="server" style="z-index: 1; left: 795px; top: 159px; position: absolute">User ID: </asp:Label>
     </form>
 </body>
 </html>

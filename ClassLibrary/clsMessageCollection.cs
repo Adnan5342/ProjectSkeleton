@@ -69,10 +69,18 @@ namespace ClassLibrary
                 AMessage.MemberId = Convert.ToInt32(DB.DataTable.Rows[Index]["MemberId"]);
                 AMessage.Message = Convert.ToString(DB.DataTable.Rows[Index]["Message"]);
                 AMessage.DatePosted = Convert.ToDateTime(DB.DataTable.Rows[Index]["DatePosted"]);
-            
+                AMessage.Username = GetUsernameFromMemberId(AMessage.MemberId);
+                
                 mMessageList.Add(AMessage);
                 Index++;
             }
+        }
+
+        private string GetUsernameFromMemberId(int memberId)
+        {
+            clsMember member = new clsMember();
+            member.Find(memberId);
+            return member.Username;
         }
 
         public void ReportByMessageId(Int32 MessageId)

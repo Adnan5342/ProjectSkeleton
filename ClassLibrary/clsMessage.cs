@@ -15,6 +15,8 @@ namespace ClassLibrary
         private string mMessage;
         private DateTime mDatePosted;
 
+        private string mUsername;
+
         public int MessageId
         {
             get { return mMessageId; }
@@ -39,6 +41,12 @@ namespace ClassLibrary
             set { mDatePosted = value; }
         }
 
+        public string Username
+        {
+            get { return mUsername; }
+            set { mUsername = value; }
+        }
+
         public bool Find(int MessageId)
         {
             clsDataConnection DB = new clsDataConnection();
@@ -51,13 +59,21 @@ namespace ClassLibrary
                 mMemberId = Convert.ToInt32(DB.DataTable.Rows[0]["MemberId"]);
                 mMessage = Convert.ToString(DB.DataTable.Rows[0]["Message"]);
                 mDatePosted = Convert.ToDateTime(DB.DataTable.Rows[0]["DatePosted"]);
-
+                mUsername = GetUsernameFromMemberId(mMemberId);
+                
                 return true;
             }
             else
             {
                 return false;
             }
+        }
+
+        private string GetUsernameFromMemberId(int memberId)
+        {
+            clsMember member = new clsMember();
+            member.Find(memberId);
+            return member.Username;
         }
 
         public string Valid(string message, string datePosted)

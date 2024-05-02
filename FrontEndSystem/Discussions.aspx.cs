@@ -17,6 +17,7 @@ public partial class Discussions : System.Web.UI.Page
             try
             {
                 DisplayMessages(Messages);
+                DisplayUsers(Messages);
             }
             catch (Exception ex)
             {
@@ -53,6 +54,39 @@ public partial class Discussions : System.Web.UI.Page
                     break;
                 case 7:
                     lblMessageText7.Text = Messages.MessageList[i].Message;
+                    break;
+            }
+        }
+    }
+
+    void DisplayUsers(clsMessageCollection Messages)
+    {
+        Messages.ReportByMostRecent10();
+
+        for (int i = 0; i < Messages.MessageList.Count && i < 7; i++)
+        {
+            switch (i + 1)
+            {
+                case 1:
+                    lblUserId1.Text = lblUserId1.Text + Messages.MessageList[i].MemberId.ToString();
+                    break;
+                case 2:
+                    lblUserId2.Text = lblUserId2.Text + Messages.MessageList[i].MemberId.ToString();
+                    break;
+                case 3:
+                    lblUserId3.Text = lblUserId3.Text + Messages.MessageList[i].MemberId.ToString();
+                    break;
+                case 4:
+                    lblUserId4.Text = lblUserId4.Text + Messages.MessageList[i].MemberId.ToString();
+                    break;
+                case 5:
+                    lblUserId5.Text = lblUserId5.Text + Messages.MessageList[i].MemberId.ToString();
+                    break;
+                case 6:
+                    lblUserId6.Text = lblUserId6.Text + Messages.MessageList[i].MemberId.ToString();
+                    break;
+                case 7:
+                    lblUserId7.Text = lblUserId7.Text + Messages.MessageList[i].MemberId.ToString();
                     break;
             }
         }

@@ -2,6 +2,7 @@
 using System.CodeDom;
 using System.IO;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace ClassLibrary
 {
@@ -88,10 +89,18 @@ namespace ClassLibrary
                 AMovieReview.Rating = Convert.ToDouble(DB.DataTable.Rows[Index]["Rating"]);
                 AMovieReview.Comment = Convert.ToString(DB.DataTable.Rows[Index]["Comment"]);
                 AMovieReview.DatePosted = Convert.ToDateTime(DB.DataTable.Rows[Index]["DatePosted"]);
+                AMovieReview.Username = GetUsernameFromMemberId(AMovieReview.MemberId);
 
                 mMovieReviewList.Add(AMovieReview);
                 Index++;
             }
+        }
+
+        private string GetUsernameFromMemberId(int memberId)
+        {
+            clsMember member = new clsMember();
+            member.Find(memberId);
+            return member.Username;
         }
 
         public void ReportByMovieId(Int32 MovieId)

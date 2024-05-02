@@ -23,7 +23,6 @@ public partial class MovieReviewEntry : System.Web.UI.Page
     void DisplaySessionIDs()
     {
         txtMovieId.Text = Session["MovieId"].ToString();
-        txtMemberId.Text = Session["memberId"].ToString();
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
@@ -31,10 +30,10 @@ public partial class MovieReviewEntry : System.Web.UI.Page
         clsMovieReview AMovieReview = new clsMovieReview();
 
         Int32 MovieId = Convert.ToInt32(txtMovieId.Text);
-        Int32 MemberId = Convert.ToInt32(txtMemberId.Text);
+        Int32 MemberId = Convert.ToInt32(Session["memberId"]);
         string Rating = txtRating.Text;
         string Comment = txtComment.Text;
-        string DatePosted = txtDatePosted.Text;
+        string DatePosted = DateTime.Now.Date.ToString();
 
         string Error = "";
 

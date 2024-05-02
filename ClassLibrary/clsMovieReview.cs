@@ -15,6 +15,8 @@ namespace ClassLibrary
         private double mRating;
         private string mComment;
 
+        private string mUsername;
+
         public int MovieReviewId
         {
             get { return mMovieReviewId; }
@@ -52,6 +54,12 @@ namespace ClassLibrary
             set { mComment = value; }
         }
 
+        public string Username
+        {
+            get { return mUsername; }
+            set { mUsername = value; }
+        }
+
         public bool Find(int MovieReviewId)
         {
             clsDataConnection DB = new clsDataConnection();
@@ -66,13 +74,21 @@ namespace ClassLibrary
                 mDatePosted = Convert.ToDateTime(DB.DataTable.Rows[0]["DatePosted"]);
                 mRating = Convert.ToDouble(DB.DataTable.Rows[0]["Rating"]);
                 mComment = Convert.ToString(DB.DataTable.Rows[0]["Comment"]);
-
+                mUsername = GetUsernameFromMemberId(mMemberId);
+                
                 return true;
             }
             else
             {
                 return false;
             }
+        }
+
+        private string GetUsernameFromMemberId(int memberId)
+        {
+            clsMember member = new clsMember();
+            member.Find(memberId);
+            return member.Username;
         }
 
         public string Valid(string rating, string comment, string datePosted)

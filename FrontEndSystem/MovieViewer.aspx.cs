@@ -12,7 +12,7 @@ public partial class MovieViewer : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && Session["MovieId"] != null)
+        if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && Session["MovieId"] != null && !IsPostBack)
         {
             MovieId = Convert.ToInt32(Session["MovieId"]);
             if (MovieId != -1)

@@ -10,7 +10,7 @@ public partial class Discussions : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && !IsPostBack)
         {
             clsMessageCollection Messages = new clsMessageCollection();
 
@@ -23,6 +23,7 @@ public partial class Discussions : System.Web.UI.Page
                 lblErrorEx.Text = ex.Message;
             }
         }
+
     }
 
     void DisplayMessages(clsMessageCollection Messages)
@@ -82,8 +83,34 @@ public partial class Discussions : System.Web.UI.Page
         Response.Redirect("ProfileViewer.aspx");
     }
 
-    protected void btnAdd_Click(object sender, EventArgs e)
+    protected void btnSend_Click(object sender, EventArgs e)
     {
-        Response.Redirect("MessageEntry.aspx");
+        clsMessage AMessage = new clsMessage();
+
+        Int32 MemberId = Convert.ToInt32(Session["MemberId"]);
+        string Message = txtMessage.Text;
+        string DatePosted = DateTime.Now.Date.ToString();
+
+        string Error = "";
+
+        Error = AMessage.Valid(Message, DatePosted);
+
+        if (Error == "")
+        {
+            AMessage.MemberId = MemberId;
+            AMessage.Message = Message;
+            AMessage.DatePosted = Convert.ToDateTime(DatePosted);
+
+            clsMessageCollection MessageList = new clsMessageCollection();
+
+            MessageList.ThisMessage = AMessage;
+            MessageList.Add();
+
+            Response.Redirect("Discussions.aspx");
+        }
+        else
+        {
+            lblError.Text = Error;
+        }
     }
 }

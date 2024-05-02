@@ -24,7 +24,9 @@ public partial class Registration : System.Web.UI.Page
             if (TextBox3.Text == TextBox4.Text)
             {
                 int v = check(TextBox2.Text);
-                if (v != 1)
+                int v2 = checkUser(TextBox1.Text);
+
+                if (v != 1 && v2 != 1)
                 {
                     using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"H:\\Project Database\\MovieMindsNetwork.mdf\";Integrated Security=True;Connect Timeout=30"))
                     {
@@ -69,6 +71,19 @@ public partial class Registration : System.Web.UI.Page
         {
             connection.Open();
             string query = "select count(*) from tblRegistration where Email='" + Email + "'";
+            SqlCommand command = new SqlCommand(query, connection);
+            int v = (int)command.ExecuteScalar();
+            connection.Close();
+            return v;
+        }
+    }
+
+    int checkUser(string Username)
+    {
+        using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"H:\\Project Database\\MovieMindsNetwork.mdf\";Integrated Security=True;Connect Timeout=30"))
+        {
+            connection.Open();
+            string query = "select count(*) from tblRegistration where Username='" + Username + "'";
             SqlCommand command = new SqlCommand(query, connection);
             int v = (int)command.ExecuteScalar();
             connection.Close();

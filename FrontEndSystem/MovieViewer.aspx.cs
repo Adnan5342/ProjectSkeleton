@@ -12,7 +12,7 @@ public partial class MovieViewer : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && Session["MovieId"] != null && !IsPostBack)
+        if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && Session["MovieId"] != null)
         {
             MovieId = Convert.ToInt32(Session["MovieId"]);
             if (MovieId != -1)
@@ -53,8 +53,13 @@ public partial class MovieViewer : System.Web.UI.Page
 
         lstMovieReviewList.DataSource = MovieReviews.MovieReviewList;
         lstMovieReviewList.DataValueField = "MovieReviewId";
-        lstMovieReviewList.DataTextField = "Comment";
+        lstMovieReviewList.DataTextField = "Username";
         lstMovieReviewList.DataBind();
+
+        foreach (ListItem item in lstMovieReviewList.Items)
+        {
+            item.Text += " - \"" + MovieReviews.MovieReviewList.Find(x => x.MovieReviewId == Convert.ToInt32(item.Value)).Comment + "\"";
+        }
     }
 
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)

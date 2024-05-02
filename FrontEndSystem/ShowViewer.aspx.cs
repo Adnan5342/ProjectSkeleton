@@ -34,7 +34,7 @@ public partial class ShowViewer : System.Web.UI.Page
 
         lblTitleText.Text = Shows.ThisShow.Title;
         lblSeasonsText.Text = Shows.ThisShow.Seasons.ToString();
-        lblReleaseDateText.Text = Shows.ThisShow.ReleaseDate.ToString();
+        lblReleaseDateText.Text = Shows.ThisShow.ReleaseDate.ToShortDateString();
         lblDescriptionText.Text = Shows.ThisShow.Description;
         lblCreatorsText.Text = Shows.ThisShow.Creators;
         lblStarActorsText.Text = Shows.ThisShow.StarActors;

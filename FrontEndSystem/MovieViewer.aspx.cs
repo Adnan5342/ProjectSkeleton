@@ -34,7 +34,7 @@ public partial class MovieViewer : System.Web.UI.Page
 
         lblTitle.Text = Movies.ThisMovie.Title;
         lblRuntimeText.Text = Movies.ThisMovie.Runtime.ToString();
-        lblReleaseDateText.Text = Movies.ThisMovie.ReleaseDate.ToString();
+        lblReleaseDateText.Text = Movies.ThisMovie.ReleaseDate.ToShortDateString();
         lblDescriptionText.Text = Movies.ThisMovie.Description;
         lblGenreText.Text = Movies.ThisMovie.Genre;
         lblRatingText.Text = Movies.ThisMovie.Rating.ToString();

@@ -41,6 +41,13 @@ namespace ClassLibrary
             DB.Execute("sproc_tblMessage_Delete");
         }
 
+        public void DeleteMessage(clsMessage Message)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@MessageId", Message.MessageId);
+            DB.Execute("sproc_tblMessage_Delete");
+        }
+
         public clsMessage ThisMessage
         {
             get { return mThisMessage; }
@@ -113,6 +120,26 @@ namespace ClassLibrary
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblMessage_FilterByMostRecent10");
             PopulateArray(DB);
+        }
+
+        public void Sort()
+        {
+            mMessageList.Sort(delegate (clsMessage m1, clsMessage m2)
+            {
+                return m1.MessageId.CompareTo(m2.MessageId);
+            });
+        }
+
+        public clsMessage GetMessageAtIndex(int index)
+        {
+            if (index >= 0 && index < mMessageList.Count)
+            {
+                return mMessageList[index];
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

@@ -30,7 +30,7 @@
         <asp:Label ID="lblComment" runat="server" style="z-index: 1; left: 10px; top: 217px; position: absolute" Text="Comment"></asp:Label>
         </p>
         <p>
-        <asp:TextBox ID="txtComment" runat="server" style="z-index: 1; left: 131px; top: 219px; position: absolute; height: 92px; width: 252px; bottom: 357px"></asp:TextBox>
+        <asp:TextBox ID="txtComment" runat="server" style="z-index: 1; left: 131px; top: 219px; position: absolute; height: 92px; width: 252px; bottom: 357px" TextMode="MultiLine"></asp:TextBox>
         </p>
         <p>
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 13px; top: 336px; position: absolute" Text="OK" width="60px" />

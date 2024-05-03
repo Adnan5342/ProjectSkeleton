@@ -41,8 +41,37 @@ public partial class MovieReviewList : System.Web.UI.Page
         Response.Redirect("AdminHome.aspx");
     }
 
+    /*protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        Int32 MovieReviewId;
+        if (lstMovieReviewList.SelectedIndex != 1)
+        {
+            MovieReviewId = Convert.ToInt32(lstMovieReviewList.SelectedValue);
+            Session["MovieReviewId"] = MovieReviewId;
+            Response.Redirect("MovieReviewConfirmDelete.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a review to delete. ";
+        }
+    }*/
+
     protected void btnDelete_Click(object sender, EventArgs e)
     {
+        if (lstMovieReviewList.SelectedIndex == -1)
+        {
+            lblError.Text = "Please select a review to delete. ";
+            return;
+        }
 
+        int movieReviewId;
+        if (!int.TryParse(lstMovieReviewList.SelectedValue, out movieReviewId))
+        {
+            lblError.Text = "Invalid review ID. Please select a valid review to delete. ";
+            return;
+        }
+
+        Session["MovieReviewId"] = movieReviewId;
+        Response.Redirect("MovieReviewConfirmDelete.aspx");
     }
 }

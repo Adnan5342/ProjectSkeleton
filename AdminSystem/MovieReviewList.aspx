@@ -20,6 +20,7 @@
             <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 12px; top: 17px; position: absolute" OnClick="imgBtnLogo_Click" />
             <asp:LinkButton ID="lnkBtnShowReviews" runat="server" OnClick="lnkBtnMovies_Click" style="z-index: 1; left: 234px; top: 141px; position: absolute">Reviews for shows</asp:LinkButton>
         </p>
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 177px; top: 594px; position: absolute"></asp:Label>
     </form>
 </body>
 </html>

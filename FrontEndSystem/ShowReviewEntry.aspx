@@ -12,20 +12,14 @@
         <div>
         </div>
         <p>
-        <asp:Label ID="lblShowReviewId" runat="server" style="z-index: 1; left: 10px; top: 34px; position: absolute" Text="Show Review ID"></asp:Label>
-        <asp:TextBox ID="txtShowReviewId" runat="server" style="z-index: 1; left: 131px; top: 32px; position: absolute"></asp:TextBox>
-        </p>
+            &nbsp;</p>
         <p>
         <asp:Label ID="lblShowId" runat="server" style="z-index: 1; left: 10px; top: 66px; position: absolute" Text="Show ID"></asp:Label>
         <asp:TextBox ID="txtShowId" runat="server" style="z-index: 1; left: 131px; top: 63px; position: absolute"></asp:TextBox>
         </p>
         <p>
-        <asp:Label ID="lblMemberId" runat="server" style="z-index: 1; left: 10px; top: 99px; position: absolute" Text="Member ID"></asp:Label>
-        <asp:TextBox ID="txtMemberId" runat="server" style="z-index: 1; left: 131px; top: 95px; position: absolute"></asp:TextBox>
-        </p>
+            &nbsp;</p>
         <p>
-        <asp:Label ID="lblDatePosted" runat="server" style="z-index: 1; left: 9px; top: 131px; position: absolute" Text="Date posted"></asp:Label>
-        <asp:TextBox ID="txtDatePosted" runat="server" style="z-index: 1; left: 131px; top: 131px; position: absolute"></asp:TextBox>
         <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 312px; top: 47px; position: absolute" OnClick="imgBtnLogo_Click" />
         </p>
         <p>

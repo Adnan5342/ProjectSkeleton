@@ -66,6 +66,9 @@ namespace ClassLibrary
             clsShowReviewCollection ShowReviews = new clsShowReviewCollection();
             ShowReviews.DeleteShowReviewsByMemberId(MemberId);
 
+            clsMessageCollection Messages = new clsMessageCollection();
+            Messages.DeleteMessagesByMemberId(MemberId);
+
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@MemberId", MemberId);
             DB.Execute("sproc_tblRegistration_Delete");

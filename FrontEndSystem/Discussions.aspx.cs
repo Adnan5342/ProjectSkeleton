@@ -106,6 +106,13 @@ public partial class Discussions : System.Web.UI.Page
             MessageList.ThisMessage = AMessage;
             MessageList.Add();
 
+            // Delete the oldest message if there are more than 10 messages in the database
+            if (MessageList.Count > 10)
+            {
+                clsMessage oldestMessage = MessageList.MessageList.OrderBy(m => m.DatePosted).First();
+                MessageList.DeleteMessage(oldestMessage);
+            }
+
             Response.Redirect("Discussions.aspx");
         }
         else

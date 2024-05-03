@@ -87,10 +87,18 @@ namespace ClassLibrary
                 AShowReview.Rating = Convert.ToDouble(DB.DataTable.Rows[Index]["Rating"]);
                 AShowReview.Comment = Convert.ToString(DB.DataTable.Rows[Index]["Comment"]);
                 AShowReview.DatePosted = Convert.ToDateTime(DB.DataTable.Rows[Index]["DatePosted"]);
-            
+                AShowReview.Username = GetUsernameFromMemberId(AShowReview.MemberId);
+                
                 mShowReviewList.Add(AShowReview);
                 Index++;
             }
+        }
+
+        private string GetUsernameFromMemberId(int memberId)
+        {
+            clsMember member = new clsMember();
+            member.Find(memberId);
+            return member.Username;
         }
 
         public void ReportByShowId(Int32 ShowId)

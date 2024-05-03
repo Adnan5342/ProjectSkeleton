@@ -52,8 +52,13 @@ public partial class ShowViewer : System.Web.UI.Page
 
         lstShowReviewList.DataSource = ShowReviews.ShowReviewList;
         lstShowReviewList.DataValueField = "ShowReviewId";
-        lstShowReviewList.DataTextField = "Comment";
+        lstShowReviewList.DataTextField = "Username";
         lstShowReviewList.DataBind();
+
+        foreach (ListItem item in lstShowReviewList.Items)
+        {
+            item.Text += " - \"" + ShowReviews.ShowReviewList.Find(x => x.ShowReviewId == Convert.ToInt32(item.Value)).Comment + "\"";
+        }
     }
 
 

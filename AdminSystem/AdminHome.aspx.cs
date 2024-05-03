@@ -31,4 +31,14 @@ public partial class AdminHome : System.Web.UI.Page
     {
         Response.Redirect("MemberList.aspx");
     }
+
+    protected void btnMovieReviews_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieReviewList.aspx");
+    }
+
+    protected void btnShowReviews_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowReviewList.aspx");
+    }
 }

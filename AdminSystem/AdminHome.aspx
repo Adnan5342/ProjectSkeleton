@@ -18,8 +18,8 @@
         <asp:Button ID="btnMovies" runat="server" style="z-index: 1; left: 88px; top: 210px; position: absolute; right: 973px;" Text="Manage Movies" height="26px" OnClick="btnMovies_Click" width="151px" />
         <asp:Button ID="btnShows" runat="server" style="z-index: 1; left: 251px; top: 209px; position: absolute" Text="Manage Shows" width="151px" height="26px" OnClick="btnShows_Click" />
         <asp:Button ID="btnMembers" runat="server" height="26px" OnClick="btnMembers_Click" style="z-index: 1; left: 166px; top: 290px; position: absolute" Text="Manage Users" width="151px" />
-        <asp:Button ID="btnMovieReviews" runat="server" height="26px" style="z-index: 1; left: 91px; top: 248px; position: absolute; width: 151px" Text="Manage Movie Reviews" />
-        <asp:Button ID="btnShowReviews" runat="server" height="26px" style="z-index: 1; left: 252px; top: 249px; position: absolute" Text="Manage Show Reviews" width="151px" />
+        <asp:Button ID="btnMovieReviews" runat="server" height="26px" style="z-index: 1; left: 91px; top: 248px; position: absolute; width: 151px" Text="Manage Movie Reviews" OnClick="btnMovieReviews_Click" />
+        <asp:Button ID="btnShowReviews" runat="server" height="26px" style="z-index: 1; left: 252px; top: 249px; position: absolute" Text="Manage Show Reviews" width="151px" OnClick="btnShowReviews_Click" />
     </form>
 </body>
 </html>

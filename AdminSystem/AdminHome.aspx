@@ -21,6 +21,7 @@
         <asp:Button ID="btnMovieReviews" runat="server" height="26px" style="z-index: 1; left: 88px; top: 248px; position: absolute; width: 151px; right: 1129px;" Text="Manage Movie Reviews" OnClick="btnMovieReviews_Click" />
         <asp:Button ID="btnShowReviews" runat="server" height="26px" style="z-index: 1; left: 252px; top: 248px; position: absolute" Text="Manage Show Reviews" width="151px" OnClick="btnShowReviews_Click" />
         <asp:Button ID="btnMessages" runat="server" height="26px" OnClick="btnMessages_Click" style="z-index: 1; left: 252px; top: 286px; position: absolute" Text="Manage Messages" width="151px" />
+        <asp:LinkButton ID="lnkBtnSignOut" runat="server" OnClick="lnkBtnSignOut_Click" style="z-index: 1; left: 216px; top: 336px; position: absolute">Sign out</asp:LinkButton>
     </form>
 </body>
 </html>

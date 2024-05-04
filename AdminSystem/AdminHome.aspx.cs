@@ -46,4 +46,10 @@ public partial class AdminHome : System.Web.UI.Page
     {
         Response.Redirect("MessageList.aspx");
     }
+
+    protected void lnkBtnSignOut_Click(object sender, EventArgs e)
+    {
+        Session.Clear();
+        Response.Redirect("AdminLogin.aspx");
+    }
 }

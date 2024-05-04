@@ -31,7 +31,7 @@ public partial class MovieReviewList : System.Web.UI.Page
         }
     }
 
-    protected void lnkBtnMovies_Click(object sender, EventArgs e)
+    protected void lnkBtnShowReviews_Click(object sender, EventArgs e)
     {
         Response.Redirect("ShowReviewList.aspx");
     }
@@ -67,7 +67,7 @@ public partial class MovieReviewList : System.Web.UI.Page
         int movieReviewId;
         if (!int.TryParse(lstMovieReviewList.SelectedValue, out movieReviewId))
         {
-            lblError.Text = "Invalid review ID. Please select a valid review to delete. ";
+            lblError.Text = "Invalid review ID. ";
             return;
         }
 

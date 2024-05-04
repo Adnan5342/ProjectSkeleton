@@ -41,4 +41,9 @@ public partial class AdminHome : System.Web.UI.Page
     {
         Response.Redirect("ShowReviewList.aspx");
     }
+
+    protected void btnMessages_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MessageList.aspx");
+    }
 }

@@ -15,15 +15,15 @@
         <asp:Label ID="lblTitle" runat="server" style="z-index: 1; left: 17px; top: 193px; position: absolute" Font-Bold="True" Font-Size="Large"></asp:Label>
         <asp:Image ID="imgCoverImage" runat="server" style="z-index: 1; left: 22px; top: 229px; width: 200px; height: 300px; position: absolute" />
         <p>
-            <asp:Label ID="lblRuntimeText" runat="server" style="z-index: 1; left: 368px; top: 358px; width: 400px; position: absolute"></asp:Label>
+            <asp:Label ID="lblRuntimeText" runat="server" style="z-index: 1; left: 364px; top: 358px; width: 400px; position: absolute"></asp:Label>
         </p>
         <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 10px; top: 34px; position: absolute" OnClick="imgBtnLogo_Click" />
         <asp:Label ID="lblReleaseDateText" runat="server" style="z-index: 1; left: 364px; top: 249px; width: 400px; position: absolute"></asp:Label>
         <asp:Label ID="lblDescriptionText" runat="server" style="z-index: 1; left: 268px; top: 422px; width: 600px; height: 100px; position: absolute; " BorderStyle="Groove"></asp:Label>
-        <asp:Label ID="lblGenreText" runat="server" style="z-index: 1; left: 362px; top: 222px; width: 400px; position: absolute"></asp:Label>
-        <asp:Label ID="lblRatingText" runat="server" style="z-index: 1; left: 368px; top: 390px; width: 400px; position: absolute"></asp:Label>
-        <asp:Label ID="lblDirectorsText" runat="server" style="z-index: 1; left: 366px; top: 276px; width: 400px; position: absolute"></asp:Label>
-        <asp:Label ID="lblWritersText" runat="server" style="z-index: 1; left: 367px; top: 333px; width: 400px; position: absolute"></asp:Label>
+        <asp:Label ID="lblGenreText" runat="server" style="z-index: 1; left: 364px; top: 222px; width: 400px; position: absolute"></asp:Label>
+        <asp:Label ID="lblRatingText" runat="server" style="z-index: 1; left: 364px; top: 390px; width: 400px; position: absolute"></asp:Label>
+        <asp:Label ID="lblDirectorsText" runat="server" style="z-index: 1; left: 364px; top: 276px; width: 400px; position: absolute"></asp:Label>
+        <asp:Label ID="lblWritersText" runat="server" style="z-index: 1; left: 364px; top: 333px; width: 400px; position: absolute"></asp:Label>
         <asp:Label ID="lblStarActorsText" runat="server" style="z-index: 1; left: 364px; top: 302px; width: 400px; position: absolute"></asp:Label>
         <p> 
         <asp:ImageButton ID="imgBtnProfile" runat="server" ImageUrl="~/Images/ProfileIcon.png" OnClick="imgBtnProfile_Click" style="z-index: 1; left: 843px; top: 59px; position: absolute; height: 50px; " />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,7 +10,31 @@ public partial class AdminHome : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["AdminId"] != null && Session["Email"] != null && IsPostBack == false)
+        {
+            DisplayRecordCount();
+        }
+    }
 
+    void DisplayRecordCount()
+    {
+        clsMovieCollection Movies = new clsMovieCollection();
+        lblMovieCount.Text = lblMovieCount.Text + Movies.Count.ToString();
+
+        clsShowCollection Shows = new clsShowCollection();
+        lblShowCount.Text = lblShowCount.Text + Shows.Count.ToString();
+
+        clsMemberCollection Users = new clsMemberCollection();
+        lblUserCount.Text = lblUserCount.Text + Users.Count.ToString();
+
+        clsMovieReviewCollection MovieReviews = new clsMovieReviewCollection();
+        lblMReviewCount.Text = lblMReviewCount.Text + MovieReviews.Count.ToString();
+
+        clsShowReviewCollection ShowReviews = new clsShowReviewCollection();
+        lblSReviewCount.Text = lblSReviewCount.Text + ShowReviews.Count.ToString();
+
+        clsMessageCollection Messages = new clsMessageCollection();
+        lblMessageCount.Text = lblMessageCount.Text + Messages.Count.ToString();
     }
 
     protected void btnMovies_Click(object sender, EventArgs e)

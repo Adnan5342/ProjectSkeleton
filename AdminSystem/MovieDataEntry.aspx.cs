@@ -27,7 +27,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         clsMovieCollection MovieList = new clsMovieCollection();
         MovieList.ThisMovie.Find(MovieId);
 
-        txtMovieId.Text = MovieList.ThisMovie.MovieId.ToString();
+        lblMovieIdText.Text = MovieList.ThisMovie.MovieId.ToString();
         txtTitle.Text = MovieList.ThisMovie.Title;
         txtRuntime.Text = MovieList.ThisMovie.Runtime.ToString();
         txtReleaseDate.Text = MovieList.ThisMovie.ReleaseDate.ToString();
@@ -101,7 +101,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         Response.Redirect("MovieList.aspx");
     }
 
-    protected void btnFind_Click(object sender, EventArgs e)
+    /*protected void btnFind_Click(object sender, EventArgs e)
     {
         clsMovie AMovie = new clsMovie();
         Int32 MovieId;
@@ -123,7 +123,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
             txtStarActors.Text = AMovie.StarActors;
             txtCoverImage.Text = AMovie.CoverImage;
         }
-    }
+    }*/
 
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
     {

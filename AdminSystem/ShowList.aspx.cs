@@ -115,4 +115,24 @@ public partial class _1_List : System.Web.UI.Page
             lblError.ForeColor = System.Drawing.Color.Red;
         }
     }
+
+    protected void lnkBtnShowReviews_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowReviewList.aspx");
+    }
+
+    protected void lnkBtnMovieReviewList_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieReviewList.aspx");
+    }
+
+    protected void lnkBtnUsers_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MemberList.aspx");
+    }
+
+    protected void lnkBtnMessages_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MessageList.aspx");
+    }
 }

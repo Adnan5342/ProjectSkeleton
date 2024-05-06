@@ -54,4 +54,29 @@ public partial class MessageList : System.Web.UI.Page
     {
         Response.Redirect("AdminHome.aspx");
     }
+
+    protected void lnkBtnMembers_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MemberList.aspx");
+    }
+
+    protected void lnkBtnMovies_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieList.aspx");
+    }
+
+    protected void lnkBtnShows_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowList.aspx");
+    }
+
+    protected void lnkBtnMovieReviews_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieReviewList.aspx");
+    }
+
+    protected void lnkBtnShowReviews_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowReviewList.aspx");
+    }
 }

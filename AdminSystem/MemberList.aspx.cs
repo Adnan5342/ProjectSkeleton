@@ -44,4 +44,29 @@ public partial class MemberList : System.Web.UI.Page
             lblError.Text = "Please select a user to delete. ";
         }
     }
+
+    protected void lnkBtnMessages_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MessageList.aspx");
+    }
+
+    protected void lnkBtnMovies_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieList.aspx");
+    }
+
+    protected void lnkBtnShows_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowList.aspx");
+    }
+
+    protected void lnkBtnMovieReviews_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieReviewList.aspx");
+    }
+
+    protected void lnkBtnShowReviews_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowReviewList.aspx");
+    }
 }

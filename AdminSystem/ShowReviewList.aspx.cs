@@ -31,7 +31,7 @@ public partial class ShowReviewList : System.Web.UI.Page
         }
     }
 
-    protected void lnkBtnMovies_Click(object sender, EventArgs e)
+    protected void lnkBtnMovieReviews_Click(object sender, EventArgs e)
     {
         Response.Redirect("MovieReviewList.aspx");
     }
@@ -73,5 +73,25 @@ public partial class ShowReviewList : System.Web.UI.Page
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("AdminHome.aspx");
+    }
+
+    protected void lnkBtnShows_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowList.aspx");
+    }
+
+    protected void lnkBtnMovies_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieList.aspx");
+    }
+
+    protected void lnkBtnUsers_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MemberList.aspx");
+    }
+
+    protected void lnkBtnMessages_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MessageList.aspx");
     }
 }

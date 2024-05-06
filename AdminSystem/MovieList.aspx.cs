@@ -85,12 +85,7 @@ public partial class _1_List : System.Web.UI.Page
         lstMovieList.DataBind();
     }
 
-    protected void btnShowPage_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("ShowList.aspx");
-    }
-
-    protected void lnkBtnMovies_Click(object sender, EventArgs e)
+    protected void lnkBtnShows_Click(object sender, EventArgs e)
     {
         Response.Redirect("ShowList.aspx");
     }
@@ -115,5 +110,25 @@ public partial class _1_List : System.Web.UI.Page
             lblError.Text = "Please select a movie to view. ";
             lblError.ForeColor = System.Drawing.Color.Red;
         }
+    }
+
+    protected void lnkBtnMovieReviews_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieReviewList.aspx");
+    }
+
+    protected void lnkBtnShowReviews_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowReviewList.aspx");
+    }
+
+    protected void lnkBtnUsers_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MemberList.aspx");
+    }
+
+    protected void lnkBtnMessages_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MessageList.aspx");
     }
 }

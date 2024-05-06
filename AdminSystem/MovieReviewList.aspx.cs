@@ -74,4 +74,24 @@ public partial class MovieReviewList : System.Web.UI.Page
         Session["MovieReviewId"] = movieReviewId;
         Response.Redirect("MovieReviewConfirmDelete.aspx");
     }
+
+    protected void lnkBtnMovies_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieList.aspx");
+    }
+
+    protected void lnkBtnShows_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowList.aspx");
+    }
+
+    protected void lnkBtnUsers_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MemberList.aspx");
+    }
+
+    protected void lnkBtnMessages_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MessageList.aspx");
+    }
 }

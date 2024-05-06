@@ -40,7 +40,7 @@ public partial class AdminLogin : System.Web.UI.Page
             }
             else
             {
-                lblError.Text = "Invalid email or password.";
+                lblError.Text = "Email or password is incorrect. ";
                 lblError.ForeColor = System.Drawing.Color.Red;
             }
         }

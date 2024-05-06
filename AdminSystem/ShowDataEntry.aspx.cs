@@ -27,7 +27,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         clsShowCollection ShowList = new clsShowCollection();
         ShowList.ThisShow.Find(ShowId);
 
-        txtShowId.Text = ShowList.ThisShow.ShowId.ToString();
+        lblShowIdText.Text = ShowList.ThisShow.ShowId.ToString();
         txtTitle.Text = ShowList.ThisShow.Title;
         txtSeasons.Text = ShowList.ThisShow.Seasons.ToString();
         txtDescription.Text = ShowList.ThisShow.Description;
@@ -87,27 +87,6 @@ public partial class _1_DataEntry : System.Web.UI.Page
         else
         {
             lblError.Text = Error;
-        }
-    }
-
-    protected void btnFind_Click(object sender, EventArgs e)
-    {
-        clsShow AShow = new clsShow();
-        Int32 ShowId;
-        Boolean Found = false;
-        ShowId = Convert.ToInt32(txtShowId.Text);
-        Found = AShow.Find(ShowId);
-        if (Found == true)
-        {
-            txtTitle.Text = AShow.Title;
-            txtSeasons.Text = AShow.Seasons.ToString();
-            txtReleaseDate.Text = AShow.ReleaseDate.ToString();
-            txtDescription.Text = AShow.Description;
-            txtGenre.Text = AShow.Genre;
-            txtRating.Text = AShow.Rating.ToString();
-            txtCreators.Text = AShow.Creators;
-            txtStarActors.Text = AShow.StarActors;
-            txtCoverImage.Text = AShow.CoverImage;
         }
     }
 

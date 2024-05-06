@@ -98,4 +98,21 @@ public partial class _1_List : System.Web.UI.Page
     {
         Response.Redirect("AdminHome.aspx");
     }
+
+    protected void btnView_Click(object sender, EventArgs e)
+    {
+        Int32 ShowId;
+
+        if (lstShowList.SelectedIndex != -1)
+        {
+            ShowId = Convert.ToInt32(lstShowList.SelectedValue);
+            Session["ShowId"] = ShowId;
+            Response.Redirect("ShowViewer.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a show to view. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
+        }
+    }
 }

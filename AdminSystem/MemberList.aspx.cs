@@ -25,9 +25,6 @@ public partial class MemberList : System.Web.UI.Page
         lstMemberList.DataBind();
     }
 
-
-
-
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("AdminHome.aspx");

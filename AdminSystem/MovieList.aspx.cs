@@ -99,4 +99,21 @@ public partial class _1_List : System.Web.UI.Page
     {
         Response.Redirect("AdminHome.aspx");
     }
+
+    protected void btnView_Click(object sender, EventArgs e)
+    {
+        Int32 MovieId;
+
+        if (lstMovieList.SelectedIndex != -1)
+        {
+            MovieId = Convert.ToInt32(lstMovieList.SelectedValue);
+            Session["MovieId"] = MovieId;
+            Response.Redirect("MovieViewer.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a movie to view. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
+        }
+    }
 }

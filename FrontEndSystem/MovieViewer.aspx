@@ -42,6 +42,7 @@
         <p>
             <asp:Button ID="btnTrending" runat="server" OnClick="btnTrending_Click" style="z-index: 1; left: 268px; top: 533px; position: absolute; height: 42px; width: 281px; " Text="View the highest rated shows and movies!" />
         </p>
+        <asp:Button ID="btnViewReview" runat="server" OnClick="btnViewReview_Click" style="z-index: 1; left: 522px; top: 651px; position: absolute" Text="View review" />
     </form>
 </body>
 </html>

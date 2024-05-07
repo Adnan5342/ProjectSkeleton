@@ -15,7 +15,7 @@ public partial class MovieViewer : System.Web.UI.Page
         if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && Session["MovieId"] != null)
         {
             MovieId = Convert.ToInt32(Session["MovieId"]);
-            if (MovieId != -1)
+            if (MovieId != -1 && !IsPostBack)
             {
                 DisplayMovie();
                 DisplayMovieReviews();
@@ -96,5 +96,19 @@ public partial class MovieViewer : System.Web.UI.Page
     protected void btnTrending_Click(object sender, EventArgs e)
     {
         Response.Redirect("TopShowsAndMovies.aspx");
+    }
+
+    protected void btnViewReview_Click(object sender, EventArgs e)
+    {
+        if (lstMovieReviewList.SelectedIndex != -1)
+        {
+            Int32 MovieReviewId = Convert.ToInt32(lstMovieReviewList.SelectedValue);
+            Session["MovieReviewId"] = MovieReviewId;
+            Response.Redirect("MovieReviewViewer.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a review to view. ";
+        }
     }
 }

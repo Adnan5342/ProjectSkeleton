@@ -118,30 +118,30 @@ namespace ClassLibrary
 
                 if (TempRating == 0)
                 {
-                    Error = Error + "You must enter a rating from 1 to 5.";
+                    Error = Error + "You must enter a rating from 1 to 5. <br /> ";
                 }
                 if (TempRating < 0)
                 {
-                    Error = Error + "The rating must not be negative. ";
+                    Error = Error + "The rating must not be negative. <br /> ";
                 }
                 if (TempRating > 5)
                 {
-                    Error = Error + "The rating must not exceed 5. ";
+                    Error = Error + "The rating must not exceed 5. <br /> ";
                 }
             }
             catch
             {
-                Error = Error + "The rating must be a valid number. ";
+                Error = Error + "The rating must be a valid number. <br /> ";
             }
 
             if (comment.Length == 0)
             {
-                Error = Error + "You must not leave the comment box empty.";
+                Error = Error + "You must not leave the comment box empty. <br /> ";
             }
 
             if (comment.Length > 500)
             {
-                Error = Error + "Comments must not exceed 500 characters. ";
+                Error = Error + "Comments must not exceed 500 characters. <br /> ";
             }
 
             try
@@ -149,16 +149,16 @@ namespace ClassLibrary
                 DateTemp = Convert.ToDateTime(datePosted);
                 if (DateTemp < DateTime.Now.Date)
                 {
-                    Error = Error + "The date cannot be in the past. ";
+                    Error = Error + "The date cannot be in the past. <br /> ";
                 }
                 if (DateTemp > DateTime.Now.Date)
                 {
-                    Error = Error + "The date cannot be in the future. ";
+                    Error = Error + "The date cannot be in the future. <br /> ";
                 }
             }
             catch
             {
-                Error = Error + "The date must be a valid date. ";
+                Error = Error + "The date must be a valid date. <br /> ";
             }
             return Error;
         }

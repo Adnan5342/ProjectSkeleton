@@ -61,6 +61,7 @@ public partial class MovieReviewList : System.Web.UI.Page
         if (lstMovieReviewList.SelectedIndex == -1)
         {
             lblError.Text = "Please select a review to delete. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
             return;
         }
 
@@ -68,6 +69,7 @@ public partial class MovieReviewList : System.Web.UI.Page
         if (!int.TryParse(lstMovieReviewList.SelectedValue, out movieReviewId))
         {
             lblError.Text = "Invalid review ID. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
             return;
         }
 

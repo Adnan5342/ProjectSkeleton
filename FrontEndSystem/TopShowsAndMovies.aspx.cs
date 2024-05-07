@@ -196,4 +196,19 @@ public partial class TopShowsAndMovies : System.Web.UI.Page
 
         Response.Redirect("ShowViewer.aspx");
     }
+
+    protected void btnHome_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("HomePage.aspx");
+    }
+
+    protected void btnTrending_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("TopShowsAndMovies.aspx");
+    }
+
+    protected void btnDiscussions_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Discussions.aspx");
+    }
 }

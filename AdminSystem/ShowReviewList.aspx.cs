@@ -56,6 +56,7 @@ public partial class ShowReviewList : System.Web.UI.Page
         if (lstShowReviewList.SelectedIndex == -1)
         {
             lblError.Text = "Please select a review to delete. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
             return;
         }
 
@@ -63,6 +64,7 @@ public partial class ShowReviewList : System.Web.UI.Page
         if (!int.TryParse(lstShowReviewList.SelectedValue, out showReviewId))
         {
             lblError.Text = "Invalid review ID. Please select a valid review to delete. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
             return;
         }
 

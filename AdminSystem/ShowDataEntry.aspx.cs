@@ -87,6 +87,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         else
         {
             lblError.Text = Error;
+            lblError.ForeColor = System.Drawing.Color.Red;
         }
     }
 

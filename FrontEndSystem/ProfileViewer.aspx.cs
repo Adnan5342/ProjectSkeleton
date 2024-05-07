@@ -33,4 +33,24 @@ public partial class ProfileViewer : System.Web.UI.Page
         Session.Clear();
         Response.Redirect("Login.aspx");
     }
+
+    protected void imgBtnProfile_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("ProfileViewer.aspx");
+    }
+
+    protected void btnHome_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("HomePage.aspx");
+    }
+
+    protected void btnTrending_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("TopShowsAndMovies.aspx");
+    }
+
+    protected void btnDiscussions_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Discussions.aspx");
+    }
 }

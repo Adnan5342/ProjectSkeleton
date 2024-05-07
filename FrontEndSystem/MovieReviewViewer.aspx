@@ -32,7 +32,7 @@
         <asp:Label ID="lblCommentText" runat="server" style="z-index: 1; left: 349px; top: 229px; width: 300px; height: 100px; position: absolute" BorderStyle="Groove"></asp:Label>
         <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" style="z-index: 1; left: 349px; top: 344px; position: absolute" Text="Delete Review" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 211px; top: 386px; position: absolute"></asp:Label>
-        <asp:Button ID="btnBack" runat="server" OnClick="btnBack_Click" style="z-index: 1; left: 211px; top: 344px; position: absolute; right: 1066px" Text="Back to movie" />
+        <asp:Button ID="btnBack" runat="server" OnClick="btnBack_Click" style="z-index: 1; left: 211px; top: 344px; position: absolute; right: 1066px" Text="Back to movie" height="26px" width="123px" />
     </form>
 </body>
 </html>

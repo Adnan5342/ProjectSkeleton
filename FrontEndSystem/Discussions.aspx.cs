@@ -118,6 +118,22 @@ public partial class Discussions : System.Web.UI.Page
         else
         {
             lblError.Text = Error;
+            lblError.ForeColor = System.Drawing.Color.Red;
         }
+    }
+
+    protected void btnDiscussions_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Discussions.aspx");
+    }
+
+    protected void btnHome_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("HomePage.aspx");
+    }
+
+    protected void btnTrending_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("TopShowsAndMovies.aspx");
     }
 }

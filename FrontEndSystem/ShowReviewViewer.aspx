@@ -22,7 +22,7 @@
         <asp:Label ID="lblComment" runat="server" style="z-index: 1; left: 223px; top: 225px; position: absolute" Text="Comment: "></asp:Label>
         <asp:Label ID="lblRatingText" runat="server" style="z-index: 1; left: 350px; top: 197px; position: absolute"></asp:Label>
         <asp:Label ID="lblCommentText" runat="server" style="z-index: 1; left: 349px; top: 229px; width: 300px; height: 100px; position: absolute" BorderStyle="Groove"></asp:Label>
-        <asp:Button ID="btnBack" runat="server" style="z-index: 1; left: 211px; top: 344px; position: absolute" Text="Back to show" OnClick="btnBack_Click" />
+        <asp:Button ID="btnBack" runat="server" style="z-index: 1; left: 211px; top: 344px; position: absolute" Text="Back to show" height="26px" OnClick="btnBack_Click" width="114px" />
         <asp:Button ID="btnDelete" runat="server" style="z-index: 1; left: 349px; top: 344px; position: absolute" Text="Delete review" OnClick="btnDelete_Click" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 211px; top: 386px; position: absolute"></asp:Label>
     </form>

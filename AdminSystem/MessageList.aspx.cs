@@ -36,6 +36,7 @@ public partial class MessageList : System.Web.UI.Page
         if (lstMessageList.SelectedIndex == -1)
         {
             lblError.Text = "Please select a message to delete. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
             return;
         }
 
@@ -43,6 +44,7 @@ public partial class MessageList : System.Web.UI.Page
         if (!int.TryParse(lstMessageList.SelectedValue, out messageId))
         {
             lblError.Text = "Invalid message ID. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
             return;
         }
 

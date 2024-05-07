@@ -42,6 +42,7 @@
             <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 18px; top: 25px; position: absolute" OnClick="imgBtnLogo_Click" />
         </p>
         <asp:Label ID="lblShowEntry" runat="server" Font-Bold="True" Font-Size="X-Large" Font-Underline="True" style="z-index: 1; left: 235px; top: 85px; position: absolute" Text="TV Show Entry Form"></asp:Label>
+        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 462px; top: 266px; position: absolute; width: 14px" Text="/5"></asp:Label>
     </form>
 </body>
 </html>

@@ -12,7 +12,7 @@
         <div>
         </div>
         <p>
-            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 17px; top: 18px; position: absolute" OnClick="imgBtnLogo_Click" />
+            <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="~/Images/MovieMindsNetworkLogo.png" style="z-index: 1; left: 10px; top: 34px; position: absolute" OnClick="imgBtnLogo_Click" />
         </p>
         <asp:Label ID="lblWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 469px; top: 134px; width: 450px; position: absolute" Text="Welcome to the Admin System. "></asp:Label>
         <asp:Button ID="btnMovies" runat="server" style="z-index: 1; left: 425px; top: 199px; position: absolute; right: 844px;" Text="Manage Movies" height="26px" OnClick="btnMovies_Click" width="151px" />

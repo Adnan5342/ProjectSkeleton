@@ -15,7 +15,7 @@ public partial class ShowViewer : System.Web.UI.Page
         if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && Session["ShowId"] != null)
         {
             ShowId = Convert.ToInt32(Session["ShowId"]);
-            if (ShowId != -1)
+            if (ShowId != -1 && !IsPostBack)
             {
                 DisplayShow();
                 DisplayShowReviews();
@@ -81,5 +81,19 @@ public partial class ShowViewer : System.Web.UI.Page
     {
         Session["ShowReviewId"] = -1;
         Response.Redirect("ShowReviewEntry.aspx");
+    }
+
+    protected void btnViewReview_Click(object sender, EventArgs e)
+    {
+        if (lstShowReviewList.SelectedIndex != -1)
+        {
+            Int32 ShowReviewId = Convert.ToInt32(lstShowReviewList.SelectedValue);
+            Session["ShowReviewId"] = ShowReviewId;
+            Response.Redirect("ShowReviewViewer.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a review to view. ";
+        }
     }
 }

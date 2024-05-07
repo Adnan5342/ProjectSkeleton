@@ -8,11 +8,14 @@ using System.Web.UI.WebControls;
 
 public partial class MovieReviewEntry : System.Web.UI.Page
 {
+    Int32 MovieId; 
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["memberId"] != null && Session["username"] != null && Session["email"] != null && Session["MovieId"] != null)
         {
-            DisplaySessionIDs();
+            MovieId = Convert.ToInt32(Session["MovieId"]);
+            DisplayMovie();
         }
         else
         {
@@ -20,16 +23,18 @@ public partial class MovieReviewEntry : System.Web.UI.Page
         }
     }
 
-    void DisplaySessionIDs()
+    void DisplayMovie()
     {
-        txtMovieId.Text = Session["MovieId"].ToString();
+        clsMovieCollection Movies = new clsMovieCollection();
+        Movies.ThisMovie.Find(MovieId);
+        lblMovieTitleText.Text = Movies.ThisMovie.Title;
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
         clsMovieReview AMovieReview = new clsMovieReview();
 
-        Int32 MovieId = Convert.ToInt32(txtMovieId.Text);
+        Int32 MovieId = Convert.ToInt32(Session["MovieId"]);
         Int32 MemberId = Convert.ToInt32(Session["memberId"]);
         string Rating = txtRating.Text;
         string Comment = txtComment.Text;

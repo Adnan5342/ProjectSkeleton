@@ -25,6 +25,6 @@ public partial class MovieReviewConfirmDelete : System.Web.UI.Page
 
     protected void btnNo_Click(object sender, EventArgs e)
     {
-        Response.Redirect("MovieViewer.aspx");
+        Response.Redirect("MovieReviewViewer.aspx");
     }
 }

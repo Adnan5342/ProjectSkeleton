@@ -88,6 +88,7 @@ namespace ClassLibrary
                 AShowReview.Comment = Convert.ToString(DB.DataTable.Rows[Index]["Comment"]);
                 AShowReview.DatePosted = Convert.ToDateTime(DB.DataTable.Rows[Index]["DatePosted"]);
                 AShowReview.Username = GetUsernameFromMemberId(AShowReview.MemberId);
+                AShowReview.ShowTitle = GetShowTitleFromShowId(AShowReview.ShowId);
                 
                 mShowReviewList.Add(AShowReview);
                 Index++;
@@ -99,6 +100,13 @@ namespace ClassLibrary
             clsMember member = new clsMember();
             member.Find(memberId);
             return member.Username;
+        }
+
+        private string GetShowTitleFromShowId(int showId)
+        {
+            clsShow Show = new clsShow();
+            Show.Find(showId);
+            return Show.Title;
         }
 
         public void ReportByShowId(Int32 ShowId)

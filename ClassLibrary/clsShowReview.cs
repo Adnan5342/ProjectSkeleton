@@ -16,6 +16,7 @@ namespace ClassLibrary
         private string mComment;
 
         private string mUsername;
+        private string mShowTitle;
 
         public int ShowReviewId
         {
@@ -59,6 +60,12 @@ namespace ClassLibrary
             set { mUsername = value; }
         }
 
+        public string ShowTitle
+        {
+            get { return mShowTitle; }
+            set { mShowTitle = value; }
+        }
+
         public bool Find(int ShowReviewId)
         {
             clsDataConnection DB = new clsDataConnection();
@@ -74,6 +81,7 @@ namespace ClassLibrary
                 mRating = Convert.ToDouble(DB.DataTable.Rows[0]["Rating"]);
                 mComment = Convert.ToString(DB.DataTable.Rows[0]["Comment"]);
                 mUsername = GetUsernameFromMemberId(mMemberId);
+                mShowTitle = GetShowTitleFromShowId(mShowId);
 
                 return true;
             }
@@ -88,6 +96,13 @@ namespace ClassLibrary
             clsMember member = new clsMember();
             member.Find(memberId);
             return member.Username;
+        }
+
+        private string GetShowTitleFromShowId(int showId)
+        {
+            clsShow Show = new clsShow();
+            Show.Find(showId);
+            return Show.Title;
         }
 
         public string Valid(string rating, string comment, string datePosted)

@@ -45,6 +45,7 @@
         <p>
         <asp:Label ID="lblRating" runat="server" style="z-index: 1; left: 266px; top: 363px; position: absolute" Text="Rating: "></asp:Label>
         <asp:Label ID="lblRatingText" runat="server" style="z-index: 1; left: 367px; top: 365px; width: 400px; position: absolute"></asp:Label>
+        <asp:Button ID="btnViewReview" runat="server" OnClick="btnViewReview_Click" style="z-index: 1; left: 521px; top: 651px; position: absolute" Text="View review" height="26px" width="106px" />
         </p>
     </form>
 </body>

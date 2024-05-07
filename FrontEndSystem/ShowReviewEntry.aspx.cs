@@ -8,11 +8,14 @@ using System.Web.UI.WebControls;
 
 public partial class ShowReviewEntry : System.Web.UI.Page
 {
+    Int32 ShowId;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["memberId"] != null && Session["username"] != null && Session["email"] != null && Session["ShowId"] != null)
         {
-            DisplaySessionIDs();
+            ShowId = Convert.ToInt32(Session["ShowId"]);
+            DisplayShow();
         }
         else
         {
@@ -20,16 +23,18 @@ public partial class ShowReviewEntry : System.Web.UI.Page
         }
     }
 
-    void DisplaySessionIDs()
+    void DisplayShow()
     {
-        txtShowId.Text = Session["ShowId"].ToString();
+        clsShowCollection Shows = new clsShowCollection();
+        Shows.ThisShow.Find(ShowId);
+        lblShowTitleText.Text = Shows.ThisShow.Title;
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
         clsShowReview AShowReview = new clsShowReview();
 
-        Int32 ShowId = Convert.ToInt32(txtShowId.Text);
+        Int32 ShowId = Convert.ToInt32(Session["ShowId"]);
         Int32 MemberId = Convert.ToInt32(Session["memberId"]);
         string Rating = txtRating.Text;
         string Comment = txtComment.Text;

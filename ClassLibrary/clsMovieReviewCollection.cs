@@ -90,6 +90,7 @@ namespace ClassLibrary
                 AMovieReview.Comment = Convert.ToString(DB.DataTable.Rows[Index]["Comment"]);
                 AMovieReview.DatePosted = Convert.ToDateTime(DB.DataTable.Rows[Index]["DatePosted"]);
                 AMovieReview.Username = GetUsernameFromMemberId(AMovieReview.MemberId);
+                AMovieReview.MovieTitle = GetMovieTitleFromMovieId(AMovieReview.MovieId);
 
                 mMovieReviewList.Add(AMovieReview);
                 Index++;
@@ -101,6 +102,13 @@ namespace ClassLibrary
             clsMember member = new clsMember();
             member.Find(memberId);
             return member.Username;
+        }
+
+        private string GetMovieTitleFromMovieId(int movieId)
+        {
+            clsMovie Movie = new clsMovie();
+            Movie.Find(movieId);
+            return Movie.Title;
         }
 
         public void ReportByMovieId(Int32 MovieId)

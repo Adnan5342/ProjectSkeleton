@@ -31,8 +31,8 @@ public partial class MovieReviewViewer : System.Web.UI.Page
         clsMovieReviewCollection MovieReviews = new clsMovieReviewCollection();
         MovieReviews.ThisMovieReview.Find(MovieReviewId);
 
-        lblMovieIdText.Text = MovieReviews.ThisMovieReview.MovieId.ToString();
-        lblMemberIdText.Text = MovieReviews.ThisMovieReview.MemberId.ToString();
+        lblMovieTitleText.Text = MovieReviews.ThisMovieReview.MovieTitle;
+        lblUserText.Text = MovieReviews.ThisMovieReview.Username;
         lblRatingText.Text = MovieReviews.ThisMovieReview.Rating.ToString();
         lblCommentText.Text = MovieReviews.ThisMovieReview.Comment;
     }
@@ -56,5 +56,10 @@ public partial class MovieReviewViewer : System.Web.UI.Page
         {
             lblError.Text = "You cannot delete another user's review. ";
         }
+    }
+
+    protected void btnBack_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MovieViewer.aspx");
     }
 }

@@ -10,13 +10,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
-        <asp:Label ID="lblConfirmDelete" runat="server" style="z-index: 1; left: 17px; top: 52px; position: absolute" Text="Are you sure you want to delete this user?"></asp:Label>
+        <asp:Label ID="lblConfirmDelete" runat="server" style="z-index: 1; left: 17px; top: 52px; position: absolute" Text="Are you sure you want to delete this user?" Font-Size="XX-Large"></asp:Label>
         </div>
         <p>
             &nbsp;</p>
         <p>
-        <asp:Button ID="btnYes" runat="server" height="26px" OnClick="btnYes_Click" style="z-index: 1; left: 53px; top: 87px; position: absolute" Text="Yes!" width="82px" />
-            <asp:Button ID="btnNo" runat="server" height="26px" OnClick="btnNo_Click" style="z-index: 1; left: 164px; top: 87px; position: absolute; width: 82px;" Text="No!" />
+        <asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" style="z-index: 1; left: 87px; top: 118px; position: absolute; height: 36px; width: 166px;" Text="Yes!" />
+            <asp:Button ID="btnNo" runat="server" height="36px" OnClick="btnNo_Click" style="z-index: 1; left: 291px; top: 118px; position: absolute; width: 166px;" Text="No!" />
         </p>
     </form>
 </body>

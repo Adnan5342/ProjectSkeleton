@@ -39,6 +39,9 @@
         <p>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 225px; top: 359px; position: absolute"></asp:Label>
         </p>
+        <p>
+        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 442px; top: 174px; position: absolute" Text="/5"></asp:Label>
+        </p>
     </form>
 </body>
 </html>

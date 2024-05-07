@@ -109,6 +109,17 @@ public partial class MovieViewer : System.Web.UI.Page
         else
         {
             lblError.Text = "Please select a review to view. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
         }
+    }
+
+    protected void btnHome_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("HomePage.aspx");
+    }
+
+    protected void btnDiscussions_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Discussions.aspx");
     }
 }

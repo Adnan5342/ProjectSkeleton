@@ -121,17 +121,17 @@ namespace ClassLibrary
             
             if (title.Length == 0)
             {
-                Error = Error + "The 'title' must not be blank: ";
+                Error = Error + "The 'title' must not be blank. <br /> ";
             }
 
             if (title.Length < 1)
             {
-                Error = Error + "The 'title' must have at least 1 character: ";
+                Error = Error + "The 'title' must have at least 1 character. <br /> ";
             }
 
             if (title.Length > 100)
             {
-                Error = Error + "The 'title' must be under 100 characters: ";
+                Error = Error + "The 'title' must be under 100 characters. <br /> ";
             }
 
             try
@@ -140,17 +140,17 @@ namespace ClassLibrary
 
                 if (TempRuntime < TimeSpan.Parse("0:05"))
                 {
-                    Error = Error + "The 'runtime' must be more than 5 minutes: ";
+                    Error = Error + "The 'runtime' must be more than 5 minutes. <br /> ";
                 }
 
                 if (TempRuntime > TimeSpan.Parse("10:00"))
                 {
-                    Error = Error + "The 'runtime' must not exceed 10 hours: ";
+                    Error = Error + "The 'runtime' must not exceed 10 hours. <br /> ";
                 }
             } 
             catch
             {
-                Error = Error + "The 'runtime' must be a valid timespan: ";
+                Error = Error + "The 'runtime' must be a valid timespan. <br /> ";
             }
 
             try
@@ -159,32 +159,32 @@ namespace ClassLibrary
 
                 if (TempReleaseDate < Convert.ToDateTime("01/01/1900"))
                 {
-                    Error = Error + "The 'release date' must be no earlier than 01/01/1900: ";
+                    Error = Error + "The 'release date' must be no earlier than 01/01/1900. <br /> ";
                 }
 
                 if (TempReleaseDate > DateTime.Now.Date.AddDays(60))
                 {
-                    Error = Error + "The 'release date' must be no later than 60 days in the future: ";
+                    Error = Error + "The 'release date' must be no later than 60 days in the future. <br /> ";
                 }
             }
             catch
             {
-                Error = Error + "The 'release date' must be a valid date: ";
+                Error = Error + "The 'release date' must be a valid date. <br /> ";
             }
 
             if (description.Length > 1000)
             {
-                Error = Error + "The 'description' must not exceed 1000 characters: ";
+                Error = Error + "The 'description' must not exceed 1000 characters. <br /> ";
             }
 
             if (genre.Length < 3)
             {
-                Error = Error + "The 'genre' section must have at least 3 characters: ";
+                Error = Error + "The 'genre' section must have at least 3 characters. <br /> ";
             }
 
             if (genre.Length > 50)
             {
-                Error = Error + "The 'genre' section must not exceed 50 characters: ";
+                Error = Error + "The 'genre' section must not exceed 50 characters. <br /> ";
             }
 
             try
@@ -193,47 +193,47 @@ namespace ClassLibrary
 
                 if (TempRating < 0)
                 {
-                    Error = Error + "The 'rating' must not be a negative number: ";
+                    Error = Error + "The 'rating' must not be a negative number. <br /> ";
                 }
 
                 if (TempRating == 0)
                 {
-                    Error = Error + "You must enter a rating from 1 to 5.";
+                    Error = Error + "You must enter a rating from 1 to 5. <br /> ";
                 }
 
                 if (TempRating > 5)
                 {
-                    Error = Error + "The 'rating' cannot be above 5: ";
+                    Error = Error + "The 'rating' cannot be above 5. <br /> ";
                 }
             } 
             catch
             {
-                Error = Error + "The 'rating' must be a valid number from 0 to 5: ";
+                Error = Error + "The 'rating' must be a valid number from 0 to 5. <br /> ";
             }
 
             if (directors.Length == 0)
             {
-                Error = Error + "The 'directors' section must not be blank: ";
+                Error = Error + "The 'directors' section must not be blank. <br /> ";
             }
 
             if (directors.Length > 200)
             {
-                Error = Error + "The 'directors' section must not exceed 200 characters: ";
+                Error = Error + "The 'directors' section must not exceed 200 characters. <br /> ";
             }
 
             if (writers.Length == 0)
             {
-                Error = Error + "The 'writers' section must not be blank: ";
+                Error = Error + "The 'writers' section must not be blank. <br /> ";
             }
 
             if (writers.Length > 200)
             {
-                Error = Error + "The 'writers' section must not be blank: ";
+                Error = Error + "The 'writers' section must not be blank. <br /> ";
             }
 
             if (starActors.Length > 200)
             {
-                Error = Error + "The 'star actors' section must not exceed 200 characters: ";
+                Error = Error + "The 'star actors' section must not exceed 200 characters. <br /> ";
             }
 
             return Error;

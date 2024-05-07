@@ -33,9 +33,12 @@
         <asp:Button ID="btnClearMovies" runat="server" height="26px" OnClick="btnClearMovies_Click" style="z-index: 1; left: 383px; top: 547px; position: absolute" Text="Clear" width="56px" />
         <asp:Button ID="btnClearShows" runat="server" height="26px" OnClick="btnClearShows_Click" style="z-index: 1; left: 866px; top: 547px; position: absolute" Text="Clear" width="56px" />
         <p>
-            <asp:Button ID="btnTrending" runat="server" OnClick="btnTrending_Click" style="z-index: 1; left: 425px; top: 34px; position: absolute; height: 42px; width: 281px; right: 695px" Text="View the highest rated shows and movies!" />
+            <asp:Button ID="btnTrending" runat="server" OnClick="btnTrending_Click" style="z-index: 1; left: 592px; top: 34px; position: absolute; height: 42px; width: 222px; " Text="Trending" />
         </p>
-        <asp:Button ID="btnDiscussions" runat="server" height="42px" OnClick="btnDiscussions_Click" style="z-index: 1; left: 706px; top: 34px; position: absolute" Text="Discussion Board" width="281px" />
+        <asp:Button ID="btnDiscussions" runat="server" height="42px" OnClick="btnDiscussions_Click" style="z-index: 1; left: 814px; top: 34px; position: absolute" Text="Discussion Board" width="222px" />
+        <p>
+            <asp:Button ID="btnHome" runat="server" height="42px" style="z-index: 1; left: 370px; top: 34px; position: absolute" Text="Home Page" width="222px" />
+        </p>
     </form>
 </body>
 </html>

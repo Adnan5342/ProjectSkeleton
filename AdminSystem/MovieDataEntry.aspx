@@ -52,6 +52,7 @@
         <asp:TextBox ID="txtCoverImage" runat="server" style="z-index: 1; left: 595px; top: 229px; position: absolute" width="120px"></asp:TextBox>
         <p>
             &nbsp;</p>
+        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 472px; top: 292px; position: absolute" Text="/5"></asp:Label>
     </form>
 </body>
 </html>

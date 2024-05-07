@@ -42,6 +42,7 @@ public partial class MemberList : System.Web.UI.Page
         else
         {
             lblError.Text = "Please select a user to delete. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
         }
     }
 

@@ -94,6 +94,17 @@ public partial class ShowViewer : System.Web.UI.Page
         else
         {
             lblError.Text = "Please select a review to view. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
         }
+    }
+
+    protected void btnDiscussions_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Discussions.aspx");
+    }
+
+    protected void btnHome_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("HomePage.aspx");
     }
 }

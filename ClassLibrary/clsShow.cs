@@ -111,40 +111,40 @@ namespace ClassLibrary
 
             if (title.Length == 0)
             {
-                Error = Error + "The title may not be blank: ";
+                Error = Error + "The title may not be blank. <br /> ";
             }
             if (title.Length > 100)
             {
-                Error = Error + "The title must not exceed 100 characters: ";
+                Error = Error + "The title must not exceed 100 characters. <br /> ";
             }
 
             if (description.Length > 1000)
             {
-                Error = Error + "The description must not exceed 1000 characters: ";
+                Error = Error + "The description must not exceed 1000 characters. <br /> ";
             }
 
             if (genre.Length < 3)
             {
-                Error = Error + "The genre must be at least 3 characters: ";
+                Error = Error + "The genre must be at least 3 characters. <br /> ";
             }
             if (genre.Length > 50)
             {
-                Error = Error + "The genre must not exceed 50 characters: ";
+                Error = Error + "The genre must not exceed 50 characters. <br /> ";
             }
 
             if (creators.Length > 200)
             {
-                Error = Error + "'Creators' must not exceed 200 characters: ";
+                Error = Error + "'Creators' must not exceed 200 characters. <br /> ";
             }
 
             if (starActors.Length > 200)
             {
-                Error = Error + "'Star Actors must not exceed 200 characters: ";
+                Error = Error + "'Star Actors must not exceed 200 characters. <br /> ";
             }
 
             if (coverImage.Length > 100)
             {
-                Error = Error + "The cover image must not exceed 100 characters: ";
+                Error = Error + "The cover image must not exceed 100 characters. <br /> ";
             }
 
             try
@@ -153,16 +153,16 @@ namespace ClassLibrary
 
                 if (TempReleaseDate < Convert.ToDateTime("01/01/1900"))
                 {
-                    Error = Error + "The 'release date' must be no earlier than 01/01/1900: ";
+                    Error = Error + "The 'release date' must be no earlier than 01/01/1900. <br /> ";
                 }
                 if (TempReleaseDate > DateTime.Now.Date.AddDays(60))
                 {
-                    Error = Error + "The 'release date' must be no later than 60 days in the future: ";
+                    Error = Error + "The 'release date' must be no later than 60 days in the future. <br /> ";
                 }
             }
             catch
             {
-                Error = Error + "The 'release date' must be a valid date: ";
+                Error = Error + "The 'release date' must be a valid date. <br /> ";
             }
 
             try
@@ -171,22 +171,22 @@ namespace ClassLibrary
 
                 if (TempRating < 0)
                 {
-                    Error = Error + "The 'rating' must not be a negative number: ";
+                    Error = Error + "The 'rating' must not be a negative number. <br /> ";
                 }
 
                 if (TempRating == 0)
                 {
-                    Error = Error + "You must enter a rating from 1 to 5: ";
+                    Error = Error + "You must enter a rating from 1 to 5. <br /> ";
                 }
 
                 if (TempRating > 5)
                 {
-                    Error = Error + "The 'rating' cannot be above 5: ";
+                    Error = Error + "The 'rating' cannot be above 5. <br /> ";
                 }
             }
             catch
             {
-                Error = Error + "The 'rating' must be a valid number from 0 to 5: ";
+                Error = Error + "The 'rating' must be a valid number from 0 to 5. <br /> ";
             }
 
             try
@@ -195,12 +195,12 @@ namespace ClassLibrary
 
                 if (TempSeasons < 0)
                 {
-                    Error = Error + "The number of seasons cannot be negative: ";
+                    Error = Error + "The number of seasons cannot be negative. <br /> ";
                 }
             }
             catch
             {
-                Error = Error + "'Seasons' must a valid number: ";
+                Error = Error + "'Seasons' must a valid number. <br /> ";
             }
             return Error;
         }

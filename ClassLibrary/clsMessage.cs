@@ -83,12 +83,12 @@ namespace ClassLibrary
 
             if (message.Length < 5)
             {
-                Error = Error + "You must enter at least 5 characters. ";
+                Error = Error + "You must enter at least 5 characters.<br /> ";
             }
 
             if (message.Length > 150)
             {
-                Error = Error + "The maximum length is 150 characters. ";
+                Error = Error + "The maximum length is 150 characters.<br /> ";
             }
 
             try
@@ -97,17 +97,17 @@ namespace ClassLibrary
 
                 if (DateTemp < DateTime.Now.Date)
                 {
-                    Error = Error + "The date cannot be in the past. ";
+                    Error = Error + "The date cannot be in the past.<br /> ";
                 }
 
                 if (DateTemp > DateTime.Now.Date)
                 {
-                    Error = Error + "The date cannot be in the future. ";
+                    Error = Error + "The date cannot be in the future.<br /> ";
                 }
             }
             catch
             {
-                Error = Error + "The date must be a valid date. ";
+                Error = Error + "The date must be a valid date.<br /> ";
             }
             return Error;
         }

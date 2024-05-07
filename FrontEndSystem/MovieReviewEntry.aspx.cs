@@ -62,6 +62,7 @@ public partial class MovieReviewEntry : System.Web.UI.Page
         else
         {
             lblError.Text = Error;
+            lblError.ForeColor = System.Drawing.Color.Red;
         }
     }
 

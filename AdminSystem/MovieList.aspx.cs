@@ -46,6 +46,7 @@ public partial class _1_List : System.Web.UI.Page
         else
         {
             lblError.Text = "Please select a record to edit: ";
+            lblError.ForeColor = System.Drawing.Color.Red;
         }                
     }
 
@@ -61,6 +62,7 @@ public partial class _1_List : System.Web.UI.Page
         else
         {
             lblError.Text = "Please select a record to delete: ";
+            lblError.ForeColor = System.Drawing.Color.Red;
         }
     }
 

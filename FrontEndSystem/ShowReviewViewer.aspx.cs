@@ -9,15 +9,28 @@ using System.Web.UI.WebControls;
 public partial class ShowReviewViewer : System.Web.UI.Page
 {
     Int32 ShowReviewId;
+    Int32 ReviewMemberId;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && Session["ShowReviewId"] != null)
         {
             ShowReviewId = Convert.ToInt32(Session["ShowReviewId"]);
+            clsShowReviewCollection ShowReviews = new clsShowReviewCollection();
+            ShowReviews.ThisShowReview.Find(ShowReviewId);
+            ReviewMemberId = Convert.ToInt32(ShowReviews.ThisShowReview.MemberId);
+
             if (ShowReviewId != -1 && !IsPostBack)
             {
                 DisplayReview();
+                if (ReviewMemberId == Convert.ToInt32(Session["MemberId"]))
+                {
+                    btnDelete.Visible = true;
+                }
+                else
+                {
+                    btnDelete.Visible = false;
+                }
             }
         }
         else
@@ -52,7 +65,7 @@ public partial class ShowReviewViewer : System.Web.UI.Page
         clsShowReviewCollection ShowReviews = new clsShowReviewCollection();
         ShowReviews.ThisShowReview.Find(ShowReviewId);
 
-        Int32 ReviewMemberId = Convert.ToInt32(ShowReviews.ThisShowReview.MemberId);
+        ReviewMemberId = Convert.ToInt32(ShowReviews.ThisShowReview.MemberId);
         if (ReviewMemberId == Convert.ToInt32(Session["MemberId"]))
         {
             Response.Redirect("ShowReviewConfirmDelete.aspx");
@@ -60,6 +73,7 @@ public partial class ShowReviewViewer : System.Web.UI.Page
         else
         {
             lblError.Text = "You cannot delete another user's review. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
         }
     }
 }

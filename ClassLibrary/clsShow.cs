@@ -14,7 +14,7 @@ namespace ClassLibrary
         private string mCreators;
         private string mStarActors;
         private string mCoverImage;
-
+         
         public Int32 ShowId
         {
             get { return mShowId; }

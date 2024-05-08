@@ -39,7 +39,7 @@
         <asp:ListBox ID="lstMovieReviewList" runat="server" style="z-index: 1; left: 255px; top: 617px; position: absolute; height: 158px; width: 812px; right: 339px" Font-Italic="True" Font-Underline="True"></asp:ListBox>
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1; left: 1102px; top: 617px; position: absolute" Text="Add a review" width="106px" />
         <asp:Label ID="lblReviews" runat="server" Font-Bold="True" style="z-index: 1; left: 255px; top: 585px; position: absolute" Text="Reviews:"></asp:Label>
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 1102px; top: 712px; position: absolute"></asp:Label>
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 1104px; top: 724px; position: absolute"></asp:Label>
         <p>
             <asp:Button ID="btnTrending" runat="server" OnClick="btnTrending_Click" style="z-index: 1; left: 604px; top: 34px; position: absolute; height: 42px; width: 222px; " Text="Trending" />
         </p>
@@ -47,6 +47,7 @@
             <asp:Button ID="btnHome" runat="server" height="42px" OnClick="btnHome_Click" style="z-index: 1; left: 383px; top: 34px; position: absolute" Text="Home Page" width="222px" />
         <asp:Button ID="btnViewReview" runat="server" OnClick="btnViewReview_Click" style="z-index: 1; left: 1102px; top: 655px; position: absolute" Text="View review" height="26px" width="106px" />
         </p>
+        <asp:Label ID="lblAverageRating" runat="server" style="z-index: 1; left: 1107px; top: 691px; position: absolute"></asp:Label>
     </form>
 </body>
 </html>

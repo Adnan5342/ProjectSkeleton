@@ -135,7 +135,7 @@ namespace ClassLibrary
             }
 
             if (comment.Length == 0)
-            {
+            { 
                 Error = Error + "You must not leave the comment box empty. <br /> ";
             }
 

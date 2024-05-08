@@ -1,5 +1,6 @@
 ﻿using ClassLibrary;
 using System;
+using System.Activities.Expressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,6 +20,7 @@ public partial class MovieViewer : System.Web.UI.Page
             {
                 DisplayMovie();
                 DisplayMovieReviews();
+                CalculateAverageRating();
             }
         }
         else
@@ -62,6 +64,35 @@ public partial class MovieViewer : System.Web.UI.Page
         }
     }
 
+    private void CalculateAverageRating()
+    {
+        MovieId = Convert.ToInt32(Session["MovieId"]);
+
+        clsMovieReviewCollection MovieReviews = new clsMovieReviewCollection();
+
+        MovieReviews.ReportByMovieId(MovieId);
+
+        double AverageRating = 0;
+        int ReviewCount = 0;
+        foreach (clsMovieReview Review in MovieReviews.MovieReviewList)
+        {
+            AverageRating += Review.Rating;
+            ReviewCount++;
+        }
+        if (ReviewCount > 0)
+        {
+            AverageRating /= ReviewCount;
+            lblAverageRating.Text = "Average user rating: " + AverageRating.ToString("N2");
+        }
+        else
+        {
+            lblAverageRating.Text = "No reviews yet. ";
+        }
+        
+        
+    }
+
+
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("HomePage.aspx");
@@ -77,21 +108,6 @@ public partial class MovieViewer : System.Web.UI.Page
         Session["MovieReviewId"] = -1;
         Response.Redirect("MovieReviewEntry.aspx");
     }
-
-
-    /*protected void btnDelete_Click(object sender, EventArgs e)
-    {
-        if (lstMovieReviewList.SelectedIndex != -1)
-        {
-            Int32 MovieReviewId = Convert.ToInt32(lstMovieReviewList.SelectedItem.Value);
-            Session["MovieReviewId"] = MovieReviewId;
-            Response.Redirect("MovieReviewConfirmDelete.aspx");
-        }
-        else
-        {
-            lblError.Text = "Please select a review to delete.";
-        }
-    }*/
 
     protected void btnTrending_Click(object sender, EventArgs e)
     {

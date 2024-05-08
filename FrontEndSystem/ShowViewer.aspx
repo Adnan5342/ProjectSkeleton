@@ -11,9 +11,9 @@
     <form id="form1" runat="server">
         <p>
         <asp:Label ID="lblReviews" runat="server" Font-Bold="True" style="z-index: 1; left: 255px; top: 585px; position: absolute" Text="Reviews:"></asp:Label>
-        <asp:ListBox ID="lstShowReviewList" runat="server" style="z-index: 1; left: 255px; top: 617px; position: absolute; height: 158px; width: 488px; " Font-Italic="True" Font-Underline="True"></asp:ListBox>
-        <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1; left: 760px; top: 617px; position: absolute" Text="Add a review" width="106px" />
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 760px; top: 687px; position: absolute"></asp:Label>
+        <asp:ListBox ID="lstShowReviewList" runat="server" style="z-index: 1; left: 255px; top: 617px; position: absolute; height: 158px; width: 812px; " Font-Italic="True" Font-Underline="True"></asp:ListBox>
+        <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1; left: 1102px; top: 617px; position: absolute" Text="Add a review" width="106px" />
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 1102px; top: 712px; position: absolute"></asp:Label>
             <asp:Button ID="btnTrending" runat="server" OnClick="btnTrending_Click" style="z-index: 1; left: 611px; top: 34px; position: absolute; height: 42px; width: 222px; " Text="Trending " />
         </p>
         <div>
@@ -46,7 +46,7 @@
         <p>
         <asp:Label ID="lblRating" runat="server" style="z-index: 1; left: 600px; top: 363px; position: absolute" Text="Rating: "></asp:Label>
         <asp:Label ID="lblRatingText" runat="server" style="z-index: 1; left: 700px; top: 365px; width: 400px; position: absolute"></asp:Label>
-        <asp:Button ID="btnViewReview" runat="server" OnClick="btnViewReview_Click" style="z-index: 1; left: 760px; top: 650px; position: absolute" Text="View review" height="26px" width="106px" />
+        <asp:Button ID="btnViewReview" runat="server" OnClick="btnViewReview_Click" style="z-index: 1; left: 1102px; top: 655px; position: absolute" Text="View review" height="26px" width="106px" />
         </p>
         <asp:Button ID="btnHome" runat="server" height="42px" OnClick="btnHome_Click" style="z-index: 1; left: 389px; top: 34px; position: absolute" Text="Home Page" width="222px" />
     </form>

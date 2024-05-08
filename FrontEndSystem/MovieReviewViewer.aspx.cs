@@ -9,15 +9,28 @@ using ClassLibrary;
 public partial class MovieReviewViewer : System.Web.UI.Page
 {
     Int32 MovieReviewId;
+    Int32 ReviewMemberId;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && Session["MovieReviewId"] != null)
         {
             MovieReviewId = Convert.ToInt32(Session["MovieReviewId"]);
+            clsMovieReviewCollection MovieReviews = new clsMovieReviewCollection();
+            MovieReviews.ThisMovieReview.Find(MovieReviewId);
+            ReviewMemberId = Convert.ToInt32(MovieReviews.ThisMovieReview.MemberId);
+
             if (MovieReviewId != -1 && !IsPostBack)
             {
                 DisplayReview();
+                if (ReviewMemberId == Convert.ToInt32(Session["MemberId"]))
+                {
+                    btnDelete.Visible = true;
+                }
+                else
+                {
+                    btnDelete.Visible = false;
+                }
             }
         }
         else
@@ -47,7 +60,7 @@ public partial class MovieReviewViewer : System.Web.UI.Page
         clsMovieReviewCollection MovieReviews = new clsMovieReviewCollection();
         MovieReviews.ThisMovieReview.Find(MovieReviewId);
 
-        Int32 ReviewMemberId = Convert.ToInt32(MovieReviews.ThisMovieReview.MemberId);
+        ReviewMemberId = Convert.ToInt32(MovieReviews.ThisMovieReview.MemberId);
         if (ReviewMemberId == Convert.ToInt32(Session["MemberId"]))
         {
             Response.Redirect("MovieReviewConfirmDelete.aspx");
@@ -55,6 +68,7 @@ public partial class MovieReviewViewer : System.Web.UI.Page
         else
         {
             lblError.Text = "You cannot delete another user's review. ";
+            lblError.ForeColor = System.Drawing.Color.Red;
         }
     }
 

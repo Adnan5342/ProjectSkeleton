@@ -20,7 +20,7 @@ public partial class MovieViewer : System.Web.UI.Page
             {
                 DisplayMovie();
                 DisplayMovieReviews();
-                CalculateAverageRating();
+                DisplayAverageRating();
             }
         }
         else
@@ -35,7 +35,7 @@ public partial class MovieViewer : System.Web.UI.Page
         Movies.ThisMovie.Find(MovieId);
 
         lblTitle.Text = Movies.ThisMovie.Title;
-        lblRuntimeText.Text = Movies.ThisMovie.Runtime.ToString();
+        lblRuntimeText.Text = (Movies.ThisMovie.Runtime.Hours * 60 + Movies.ThisMovie.Runtime.Minutes).ToString() + " minutes";
         lblReleaseDateText.Text = Movies.ThisMovie.ReleaseDate.ToShortDateString();
         lblDescriptionText.Text = Movies.ThisMovie.Description;
         lblGenreText.Text = Movies.ThisMovie.Genre;
@@ -64,7 +64,7 @@ public partial class MovieViewer : System.Web.UI.Page
         }
     }
 
-    private void CalculateAverageRating()
+    private void DisplayAverageRating()
     {
         MovieId = Convert.ToInt32(Session["MovieId"]);
 
@@ -79,6 +79,7 @@ public partial class MovieViewer : System.Web.UI.Page
             AverageRating += Review.Rating;
             ReviewCount++;
         }
+
         if (ReviewCount > 0)
         {
             AverageRating /= ReviewCount;

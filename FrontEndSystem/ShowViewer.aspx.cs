@@ -19,6 +19,7 @@ public partial class ShowViewer : System.Web.UI.Page
             {
                 DisplayShow();
                 DisplayShowReviews();
+                DisplayAverageRating();
             }
         }
         else
@@ -61,6 +62,32 @@ public partial class ShowViewer : System.Web.UI.Page
         }
     }
 
+    private void DisplayAverageRating()
+    {
+        ShowId = Convert.ToInt32(Session["ShowId"]);
+
+        clsShowReviewCollection ShowReviews = new clsShowReviewCollection();
+
+        ShowReviews.ReportByShowId(ShowId);
+
+        double AverageRating = 0;
+        int ReviewCount = 0;
+        foreach (clsShowReview Review in ShowReviews.ShowReviewList)
+        {
+            AverageRating += Review.Rating;
+            ReviewCount++;
+        }
+
+        if (ReviewCount > 0)
+        {
+            AverageRating /= ReviewCount;
+            lblAverageRating.Text = "Average user rating: " + AverageRating.ToString("N2");
+        }
+        else
+        {
+            lblAverageRating.Text = "No reviews yet. ";
+        }
+    }
 
     protected void imgBtnLogo_Click(object sender, ImageClickEventArgs e)
     {

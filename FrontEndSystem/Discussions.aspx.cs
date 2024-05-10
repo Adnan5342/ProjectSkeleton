@@ -23,7 +23,10 @@ public partial class Discussions : System.Web.UI.Page
                 lblErrorEx.Text = ex.Message;
             }
         }
-
+        else
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 
     void DisplayMessages(clsMessageCollection Messages)

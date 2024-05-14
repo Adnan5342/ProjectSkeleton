@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingShow", "Testing3\Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingMovieReview", "Testing2\TestingMovieReview.csproj", "{53F17854-E215-4FE3-9860-C1E18BF9C6C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingAdmin", "Testing1\TestingAdmin.csproj", "{4186B3B3-EBEA-434E-844F-F79D774C252B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingMessage", "Testing1\TestingMessage.csproj", "{4186B3B3-EBEA-434E-844F-F79D774C252B}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FrontEndSystem", "FrontEndSystem\", "{79AFD657-E067-4D6C-A46E-586A2B4F5288}"
 	ProjectSection(WebsiteProperties) = preProject

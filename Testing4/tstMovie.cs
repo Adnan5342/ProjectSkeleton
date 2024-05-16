@@ -17,7 +17,7 @@ namespace Testing4
         string Rating = Convert.ToDouble("4.5").ToString();
         string Directors = "John Smith";
         string Writers = "Smith John";
-        String StarActors = "Tom Holland";
+        string StarActors = "Tom Holland";
 
         [TestMethod]
         public void InstanceOK()

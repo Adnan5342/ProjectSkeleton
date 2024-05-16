@@ -22,7 +22,7 @@ public partial class _1Viewer : System.Web.UI.Page
         }
         else
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("AdminLogin.aspx");
         }
     }
 

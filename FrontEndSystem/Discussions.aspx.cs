@@ -10,17 +10,20 @@ public partial class Discussions : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["MemberId"] != null && Session["Username"] != null && Session["Email"] != null && !IsPostBack)
+        if (Session["memberId"] != null && Session["username"] != null && Session["email"] != null)
         {
             clsMessageCollection Messages = new clsMessageCollection();
 
-            try
+            if (!IsPostBack)
             {
-                DisplayMessages(Messages);
-            }
-            catch (Exception ex)
-            {
-                lblErrorEx.Text = ex.Message;
+                try
+                {
+                    DisplayMessages(Messages);
+                }
+                catch (Exception ex)
+                {
+                    lblErrorEx.Text = ex.Message;
+                }
             }
         }
         else
